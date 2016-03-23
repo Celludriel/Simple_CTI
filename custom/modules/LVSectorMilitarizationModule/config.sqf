@@ -1,0 +1,5 @@
+#define LV_MINIMUM_INFANTRY=20;
+#define LV_VARIABLE_INFANTRY=20;
+#define LV_MINIMUM_VEHICLES=3;
+#define LV_VARIABLE_VEHICLES=4;
+#define LV_SKILL_LEVEL = "default";
