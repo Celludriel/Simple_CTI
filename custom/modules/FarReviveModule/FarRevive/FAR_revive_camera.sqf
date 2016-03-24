@@ -19,7 +19,7 @@ while { true } do {
 	if ( (date select 3) < 4 || (date select 3) >= 20 ) then { camUseNVG true; } else { camUseNVG false; };
 	_cam camSetTarget _camobj;
 
-	_dialog = createDialog "blackscreen";
+	_dialog = createDialog "Blackscreen";
 	0 fadesound 0;
 
 	[] spawn {

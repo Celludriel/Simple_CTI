@@ -25,6 +25,7 @@ FAR_ReviveMode = 1;
 //------------------------------------------//
 
 call compile preprocessFile "custom\modules\FarReviveModule\FarRevive\FAR_revive_funcs.sqf";
+[] spawn compile preprocessFileLineNumbers "custom\modules\FarReviveModule\FarRevive\FAR_revive_camera.sqf";
 
 #define SCRIPT_VERSION "1.5"
 

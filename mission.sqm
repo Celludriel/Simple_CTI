@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=129;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=29;
+		nextID=30;
 	};
 	class MarkerIDProvider
 	{
-		nextID=5;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={2178.9663,259.24304,5481.0913};
-		dir[]={-0.12877749,-0.65296322,0.74636447};
-		up[]={-0.1110258,0.75736827,0.6434797};
-		aside[]={0.98544192,-7.4483978e-008,0.17002784};
+		pos[]={2122.1489,31.26,5687.1841};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -27,8 +27,7 @@ addons[]=
 {
 	"A3_Characters_F_BLUFOR",
 	"a3_characters_f",
-	"A3_Soft_F_MRAP_01",
-	"A3_Modules_F_Multiplayer"
+	"A3_Soft_F_MRAP_01"
 };
 randomSeed=9028453;
 class ScenarioData
@@ -37,7 +36,7 @@ class ScenarioData
 	overviewText="Simple CTI experience";
 	disabledAI=1;
 	respawn=3;
-	respawnDelay=300;
+	respawnDelay=5;
 	class Header
 	{
 		gameType="CTI";
@@ -51,6 +50,25 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -111,25 +129,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -450,222 +449,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2122.1106,9.0182447,5712.209};
-				angles[]={0,1.823493,0};
+				position[]={2122.1111,9.0182447,5712.209};
+				angles[]={0,1.823485,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				name="veh_1";
 			};
 			id=8;
 			type="B_MRAP_01_hmg_F";
 		};
 		class Item4
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={2120.6211,6.2600002,5714.2949};
-				angles[]={0,1.9219391,0};
-			};
-			id=10;
-			type="ModuleRespawnVehicle_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleRespawnVehicle_F_ForcedRespawn";
-					expression="_this setVariable ['ForcedRespawn',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="1";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleRespawnVehicle_F_Init";
-					expression="_this setVariable ['Init',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleRespawnVehicle_F_RespawnWhenDisabled";
-					expression="_this setVariable ['RespawnWhenDisabled',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleRespawnVehicle_F_DesertedDistance";
-					expression="_this setVariable ['DesertedDistance',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="500";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleRespawnVehicle_F_PositionType";
-					expression="_this setVariable ['PositionType',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ModuleRespawnVehicle_F_RespawnCount";
-					expression="_this setVariable ['RespawnCount',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ModuleRespawnVehicle_F_Position";
-					expression="_this setVariable ['Position',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ModuleRespawnVehicle_F_Wreck";
-					expression="_this setVariable ['Wreck',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="2";
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ModuleRespawnVehicle_F_Delay";
-					expression="_this setVariable ['Delay',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="5";
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ModuleRespawnVehicle_F_ShowNotification";
-					expression="_this setVariable ['ShowNotification',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0";
-						};
-					};
-				};
-				nAttributes=10;
-			};
-		};
-		class Item5
 		{
 			dataType="Marker";
 			position[]={1544.2423,5.491519,4950.3931};
@@ -674,7 +469,7 @@ class Mission
 			type="Empty";
 			id=18;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
 			position[]={2734.7788,2.6584716,5780.916};
@@ -683,7 +478,7 @@ class Mission
 			type="Empty";
 			id=19;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
 			position[]={2119.7524,6.2600002,5705.8745};
@@ -692,36 +487,14 @@ class Mission
 			type="Empty";
 			id=26;
 		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
+		class Item7
 		{
-			nextID=2;
-		};
-		class Links
-		{
-			items=2;
-			class Item0
-			{
-				linkID=0;
-				item0=10;
-				item1=8;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item1
-			{
-				linkID=1;
-				item0=10;
-				item1=8;
-				class CustomData
-				{
-					type="TriggerOwner";
-				};
-			};
+			dataType="Marker";
+			position[]={2122.1489,6.2600002,5712.1841};
+			name="respawn_veh_1";
+			type="Empty";
+			angle=101.99999;
+			id=29;
 		};
 	};
 };
