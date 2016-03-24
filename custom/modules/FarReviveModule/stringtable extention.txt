@@ -33,6 +33,48 @@
                 <Original>Stabilized</Original>
                 <French>Stabilisé</French>
                 <German>Stabilisiert</German>
-				<Spanish>Estabilizado</Spanish>
+                <Spanish>Estabilizado</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_FAR_REVIVE_OPTIONS">
+                <Original>FAR Revive options</Original>
+                <French>Options de FAR Revive</French>
+                <German>FAR Revive Optionen</German>
+                <Spanish>Opciones FAR Revive</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_BLEED_OUT_TIMER">
+                <Original>Bleedout timer</Original>
+                <French>Minuterie ressuage</French>
+                <German>Ausbluten Timer</German>
+                <Spanish>Temporizador del desangrado</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_ENABLE_DEATH_MESSAGES">
+                <Original>Enable death messages</Original>
+                <French>Activer les messages de mort</French>
+                <German>Aktivieren Tod Nachrichten</German>
+                <Spanish>Activar los mensajes de muerte</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_REVIVE_MODE">
+                <Original>Revive mode</Original>
+                <French>Mode revive</French>
+                <German>Revive modus</German>
+                <Spanish>El modo de revivir</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_ONLY_MEDICS">
+                <Original>Only medics</Original>
+                <French>Seuls les médecins</French>
+                <German>Nur medizinern</German>
+                <Spanish>Solamente los médicos</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_ALL">
+                <Original>Everyone</Original>
+                <French>Tout le monde</French>
+                <German>Jeder</German>
+                <Spanish>Todo el mundo</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_ALL_WITH_MEDIKIT">
+                <Original>Everyone with medical kit</Original>
+                <French>Tout le monde avec le kit médical</French>
+                <German>Jeder mit Medizin-Kit</German>
+				<Spanish>Todo el mundo con el kit médico</Spanish>
             </Key>
 		</Container>
