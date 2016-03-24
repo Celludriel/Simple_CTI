@@ -25,7 +25,7 @@ _sectorCountOPFOR = 0;
 
 		//check if sector needs to change side
 		_handle = [_x, _sectorBLUFORcount, _sectorOPFORcount] execVM "core\server\sector\sectorControlHandler.sqf";
-		waitUntil {isNull _handle};S
+		waitUntil {isNull _handle};
 	};
 
 	if(_x getVariable "side" == east) then {

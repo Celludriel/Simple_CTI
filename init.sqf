@@ -13,3 +13,4 @@ call compileFinal preprocessFileLineNumbers "core\shared\coreFunctions.sqf";
 // init modules
 [] execVM "custom\modules\LVSectorMilitarizationModule\initModule.sqf";
 [] execVM "custom\modules\FarReviveModule\initModule.sqf";
+[] execVM "custom\modules\SimpleMhqModule\initModule.sqf";

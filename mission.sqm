@@ -8,26 +8,25 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=30;
+		nextID=31;
 	};
 	class MarkerIDProvider
 	{
-		nextID=6;
+		nextID=7;
 	};
 	class Camera
 	{
-		pos[]={2122.1489,31.26,5687.1841};
+		pos[]={2078.6477,30.877895,5689.5229};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Characters_F_BLUFOR",
-	"a3_characters_f",
-	"A3_Soft_F_MRAP_01"
+	"a3_characters_f"
 };
 randomSeed=9028453;
 class ScenarioData
@@ -446,22 +445,6 @@ class Mission
 		};
 		class Item3
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2122.1111,9.0182447,5712.209};
-				angles[]={0,1.823485,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="veh_1";
-			};
-			id=8;
-			type="B_MRAP_01_hmg_F";
-		};
-		class Item4
-		{
 			dataType="Marker";
 			position[]={1544.2423,5.491519,4950.3931};
 			name="sec_base_air_art";
@@ -469,7 +452,7 @@ class Mission
 			type="Empty";
 			id=18;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Marker";
 			position[]={2734.7788,2.6584716,5780.916};
@@ -478,7 +461,7 @@ class Mission
 			type="Empty";
 			id=19;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
 			position[]={2119.7524,6.2600002,5705.8745};
@@ -487,14 +470,25 @@ class Mission
 			type="Empty";
 			id=26;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
 			position[]={2122.1489,6.2600002,5712.1841};
-			name="respawn_veh_1";
+			name="mhq_car_1";
+			text="Mobile Hq One";
 			type="Empty";
-			angle=101.99999;
+			angle=101.99998;
 			id=29;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={2078.6477,5.8778944,5714.5229};
+			name="mhq_air_2";
+			text="Mobile Hq Two";
+			type="Empty";
+			angle=106.91999;
+			id=30;
 		};
 	};
 };
