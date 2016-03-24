@@ -1,5 +1,8 @@
 enableDebugConsole = 1;
 
+#include "interface.hpp"
+#include "custom\modules\FarReviveModule\FarRevive\FAR_interface.hpp"
+
 class Params
 {
 	#include "core\server\coreParams.hpp"

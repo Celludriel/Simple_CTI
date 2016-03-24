@@ -89,7 +89,7 @@ FAR_Player_Init =
 		}
 	];
 
-	player setVariable ["GREUH_isUnconscious", 0, true];
+	player setVariable ["FAR_deathScene", 0, true];
 	player setVariable ["FAR_isUnconscious", 0, true];
 	player setVariable ["FAR_isStabilized", 0, true];
 	player setVariable ["FAR_isDragged", 0, true];

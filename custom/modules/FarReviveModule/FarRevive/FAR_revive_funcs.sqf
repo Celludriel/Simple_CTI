@@ -55,7 +55,7 @@ FAR_Player_Unconscious =
 		disableUserInput true;
 	};
 
-	_unit setVariable ["GREUH_isUnconscious", 1, true];
+	_unit setVariable ["FAR_deathScene", 1, true];
 
 	// Eject unit if inside vehicle
 	if (vehicle _unit != _unit && alive vehicle _unit) then
@@ -74,7 +74,7 @@ FAR_Player_Unconscious =
 	};
 
 	if (vehicle _unit != _unit) then {
-		_unit setVariable ["GREUH_isUnconscious", 0, true];
+		_unit setVariable ["FAR_deathScene", 0, true];
 		_unit setDamage 1;
 		if (isPlayer _unit) then
 		{
