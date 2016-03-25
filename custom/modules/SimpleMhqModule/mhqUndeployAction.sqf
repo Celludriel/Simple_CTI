@@ -17,5 +17,5 @@ if(_isDeployed) then {
     _respawnId call BIS_fnc_removeRespawnPosition;
 
     [_mhq, _actionId] remoteExec ["removeAction", 0, true];
-	[_mhq, ["Deploy", "custom\modules\SimpleMhqModule\mhqDeployAction.sqf"]] remoteExec ["addAction", 0, true];
+	[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && isTouchingGround _target"]] remoteExec ["addAction", 0, true];
 };

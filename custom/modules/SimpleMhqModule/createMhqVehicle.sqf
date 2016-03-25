@@ -10,7 +10,7 @@ _mhq setVariable ["markerName", _marker, true];
 _mhq setVariable ["type", _type, true];
 _mhq setVariable ["MhqDeployed", false, true];
 
-[_mhq, ["Deploy", "custom\modules\SimpleMhqModule\mhqDeployAction.sqf"]] remoteExec ["addAction", 0, true];
+[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && isTouchingGround _target"]] remoteExec ["addAction", 0, true];
 [_mhq, ["killed", {		[["I'm killed", []]] call F_log;
 						_killedMhq = _this select 0;
 						_killedMhq remoteExec ["removeAllActions", 0, true];

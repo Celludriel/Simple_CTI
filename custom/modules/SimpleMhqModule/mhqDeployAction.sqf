@@ -9,6 +9,12 @@ _isDeployed = _mhq getVariable "MhqDeployed";
 if(!_isDeployed)then{
 
     _mhq setVehicleLock "LOCKED";
+    {
+        unassignVehicle _x;
+        _x action ["getOut", vehicle _x];
+        sleep 0.4;
+    } foreach crew _mhq;
+
     _mhq setVariable ["MhqDeployed", true, true];
 
     _pos          = getpos _mhq;
@@ -22,5 +28,5 @@ if(!_isDeployed)then{
     _mhq setVariable ["respawnId", _respawnId, true];
 
     [_mhq, _actionId] remoteExec ["removeAction", 0, true];
-    [_mhq, ["Undeploy", "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
+    [_mhq, [(localize "STR_MHQ_UNDEPLOY"), "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
 };

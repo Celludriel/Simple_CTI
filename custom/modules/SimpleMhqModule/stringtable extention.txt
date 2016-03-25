@@ -1,0 +1,14 @@
+		<Container name="Simple Mhq">
+            <Key ID="STR_MHQ_DEPLOY">
+                <Original>Deploy</Original>
+                <French>Déployer</French>
+                <German>Stationieren</German>
+                <Spanish>Desplegar</Spanish>
+            </Key>
+            <Key ID="STR_MHQ_UNDEPLOY">
+                <Original>Undeploy</Original>
+                <French>Non déployer</French>
+                <German>Unstationieren</German>
+				<Spanish>No desplegar</Spanish>
+            </Key>
+		</Container>
