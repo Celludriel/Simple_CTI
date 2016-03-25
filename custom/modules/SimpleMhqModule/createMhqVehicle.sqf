@@ -11,15 +11,15 @@ _mhq setVariable ["markerName", _marker, true];
 _mhq setVariable ["type", _type, true];
 _mhq setVariable ["MhqDeployed", false, true];
 
-[_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT, [], 6, false, false, "", "_target getVariable 'MhqDeployed'"]] remoteExec ["addAction", 0, true];
-[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && isTouchingGround _target"]] remoteExec ["addAction", 0, true];
+[_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT, [], 7, false, false, "", "_target getVariable 'MhqDeployed'"]] remoteExec ["addAction", 0, true];
+[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
 [_mhq, ["killed", {		[["I'm killed", []]] call F_log;
 						_killedMhq = _this select 0;
 						_killedMhq remoteExec ["removeAllActions", 0, true];
 
-						_respawnId = _killedMhq getVariable ["respawnId", objNull];
+						_respawnId = _killedMhq getVariable ["respawnId", nil];
     					[["_respawnId: %1", _respawnId]] call F_log;
-						if(!isNull _respawnId) then {
+						if(!isNil("_respawnId")) then {
 							_respawnId call BIS_fnc_removeRespawnPosition;
 						};
 
