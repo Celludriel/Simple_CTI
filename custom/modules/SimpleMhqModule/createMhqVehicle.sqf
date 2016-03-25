@@ -3,10 +3,10 @@ private ["_marker", "_type"];
 
 _coord = getmarkerpos _marker;
 _mhq = createVehicle [_type, _coord, [], 0, "can_collide"];
-_mhq setDir (markerDir _marker);
 
 waitUntil { !isNil("_mhq") };
 
+_mhq setDir (markerDir _marker);
 _mhq setVariable ["markerName", _marker, true];
 _mhq setVariable ["type", _type, true];
 _mhq setVariable ["MhqDeployed", false, true];
