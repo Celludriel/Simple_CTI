@@ -3,6 +3,7 @@ private ["_marker", "_type"];
 
 _coord = getmarkerpos _marker;
 _mhq = createVehicle [_type, _coord, [], 0, "can_collide"];
+_mhq setDir (markerDir _marker);
 
 waitUntil { !isNil("_mhq") };
 
