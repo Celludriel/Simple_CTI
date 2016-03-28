@@ -1,7 +1,6 @@
 if (!isDedicated) exitWith {};
 
 params ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
-private ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
 
 // a sector can only contested if it's not of the BlueFor side
 _sectorSide = _sector getVariable "side";

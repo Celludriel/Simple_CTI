@@ -1,7 +1,6 @@
 if (!isDedicated) exitWith {};
 
 params ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
-private ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
 
 _sectorState = _sector getVariable "condition";
 

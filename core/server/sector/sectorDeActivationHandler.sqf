@@ -1,7 +1,6 @@
 if (!isDedicated) exitWith {};
 
 params ["_sector", "_activationBLUFORcount"];
-private ["_sector","_activationBLUFORcount"];
 
 // a sector can only deactivate if it's not of the BlueFor side
 _sectorSide = _sector getVariable "side";

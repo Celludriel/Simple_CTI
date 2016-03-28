@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=31;
+		nextID=37;
 	};
 	class MarkerIDProvider
 	{
@@ -16,17 +16,18 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2078.6477,30.877895,5689.5229};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={2020.9656,44.893631,5691.8721};
+		dir[]={0.28202251,-0.43499467,0.85518849};
+		up[]={0.13624097,0.90041929,0.41312963};
+		aside[]={0.94973481,-6.2827166e-007,-0.31320265};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
 	"A3_Characters_F_BLUFOR",
-	"a3_characters_f"
+	"a3_characters_f",
+	"A3_Air_F_Heli_Heli_Transport_03"
 };
 randomSeed=9028453;
 class ScenarioData
@@ -49,25 +50,6 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -114,6 +96,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -167,7 +168,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=8;
+		items=9;
 		class Item0
 		{
 			dataType="Marker";
@@ -463,7 +464,7 @@ class Mission
 			name="mhq_car_1";
 			text="Mobile Hq One";
 			type="Empty";
-			angle=101.99998;
+			angle=101.99997;
 			id=29;
 		};
 		class Item7
@@ -475,6 +476,21 @@ class Mission
 			type="Empty";
 			angle=106.91999;
 			id=30;
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2030.0271,8.7580776,5733.3535};
+				angles[]={0,1.8080271,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=32;
+			type="B_Heli_Transport_03_F";
 		};
 	};
 };

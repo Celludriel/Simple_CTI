@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_sectorType"];
-private "_sectorType";
 
 _icon = "n_art";
 {

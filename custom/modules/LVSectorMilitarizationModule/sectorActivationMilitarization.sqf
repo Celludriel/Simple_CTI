@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_sector", "_activationBLUFORcount", "_sectorBLUFORcount"];
-private ["_sector","_activationBLUFORcount", "_sectorBLUFORcount"];
 
 _newCounter = GROUP_COUNTER + 1;
 

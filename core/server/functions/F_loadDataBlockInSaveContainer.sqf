@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_key"];
-private ["_key"];
 
 //Data shouldn't be loaded when a save is in progress so wait until the lock is false (deadlock danger if it never gets to false)
 waitUntil { !SAVE_LOCK };

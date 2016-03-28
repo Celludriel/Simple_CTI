@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_sector"];
-private "_sector";
 
 _indicatorName = [_sector] call F_createSectorIndicatorName;
 [["_indicatorName: %1", _indicatorName]] call F_log;

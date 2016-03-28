@@ -1,7 +1,6 @@
 [["Calling mhq_undeploy_action with %1", _this]] call F_log;
 
 params ["_mhq", "_caller", "_actionId", "_arguments"];
-private ["_mhq", "_caller", "_actionId", "_arguments"];
 
 _isDeployed = _mhq getVariable "MhqDeployed";
 [["_isDeployed: %1", _isDeployed]] call F_log;
@@ -9,11 +8,11 @@ _isDeployed = _mhq getVariable "MhqDeployed";
 if(_isDeployed) then {
 
 	// Unlock so it can be used again
-    [_mhq, "UNLOCKED"] remoteExec ["setVehicleLock", 2, false];
+    [_mhq, "UNLOCKED"] remoteExec ["setVehicleLock", 0, false];
 
 	// Revert to original mass so it can be slingloaded again
 	_originalMass = _mhq getVariable "originalMass";
-	[_mhq, _originalMass] remoteExec ["setMass", 2, false];
+	[_mhq, _originalMass] remoteExec ["setMass", 0, false];
 
 	// Mark as undeployed
     _mhq setVariable ["MhqDeployed", false, true];

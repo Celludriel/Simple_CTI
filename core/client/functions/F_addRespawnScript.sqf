@@ -1,6 +1,5 @@
 if(hasInterface) then {
 	params ["_script"];
-	private "_script";
 
 	RESPAWN_SCRIPTS pushBack _script;
 

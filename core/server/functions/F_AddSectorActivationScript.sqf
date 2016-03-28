@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_script"];
-private "_script";
 
 SECTOR_ACTIVATION_SCRIPTS pushBack _script;
 

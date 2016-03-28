@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_script"];
-private "_script";
 
 PRE_INIT_SERVER_SCRIPTS pushBack _script;
 

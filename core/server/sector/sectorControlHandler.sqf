@@ -1,7 +1,6 @@
 if (!isDedicated) exitWith {};
 
 params ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
-private ["_sector", "_sectorBLUFORcount", "_sectorOPFORcount"];
 
 if([_sector, _sectorBLUFORcount, _sectorOPFORcount] call sectorControlRule) then {
 	// Change sides of sector and turn neutral again

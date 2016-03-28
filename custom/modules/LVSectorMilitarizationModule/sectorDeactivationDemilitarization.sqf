@@ -1,7 +1,6 @@
 if (!isDedicated) exitWith {};
 
 params ["_sector", "_activationBLUFORcount"];
-private ["_sector","_activationBLUFORcount"];
 
 _lvGroupId = _sector getVariable "LVgroupId";
 

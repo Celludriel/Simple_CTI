@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_sector", "_color", "_range"];
-private ["_sector", "_color", "_range"];
 
 _sectorLocation = getpos _sector;
 _marker = nil;

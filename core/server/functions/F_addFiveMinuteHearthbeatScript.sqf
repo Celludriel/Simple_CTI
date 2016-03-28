@@ -1,7 +1,6 @@
 if(!isDedicated) exitWith {};
 
 params ["_script"];
-private "_script";
 
 FIVE_MINUTE_HEARTHBEATS pushBack _script;
 
