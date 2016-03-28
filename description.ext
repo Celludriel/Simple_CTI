@@ -7,6 +7,7 @@ class Params
 {
 	#include "core\server\coreParams.hpp"
 	#include "custom\modules\FarReviveModule\params.hpp"
+	#include "custom\modules\AuxillerySlingModule\params.hpp"
 };
 
 class CfgDebriefing

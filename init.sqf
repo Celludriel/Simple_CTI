@@ -14,3 +14,6 @@ call compileFinal preprocessFileLineNumbers "core\shared\coreFunctions.sqf";
 [] execVM "custom\modules\LVSectorMilitarizationModule\initModule.sqf";
 [] execVM "custom\modules\FarReviveModule\initModule.sqf";
 [] execVM "custom\modules\SimpleMhqModule\initModule.sqf";
+[] execVM "custom\modules\AuxillerySlingModule\initModule.sqf";
+
+//init overrides

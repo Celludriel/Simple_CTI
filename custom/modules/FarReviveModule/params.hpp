@@ -5,7 +5,7 @@ class FarReviveSpacer{
 	default = "";
 };
 
-class FarReviveOptions{
+class FarReviveOptionsTitle{
 	title = $STR_PARAMS_FAR_REVIVE_OPTIONS;
 	values[] = { "" };
 	texts[] = { "" };

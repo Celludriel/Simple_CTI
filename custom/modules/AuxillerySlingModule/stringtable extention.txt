@@ -1,0 +1,38 @@
+		<Container name="Auxillery sling loading">
+            <Key ID="STR_PARAMS_AUX_SLING_OPTIONS">
+                <Original>Auxillery sling loading options</Original>
+                <French>Auxillery options de fronde de chargement</French>
+                <German>Auxillery Schlinge Ladeoptionen</German>
+				<Spanish>Opciones auxiliar de la eslinga de carga</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_WEIGHT_DEPENDENT">
+                <Original>Weight dependent</Original>
+            	<French>Poids à charge</French>
+                <German>Gewicht abhängig</German>
+				<Spanish>Peso dependientes</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_CAN_SLING_SLINGABLE">
+                <Original>Only chopper allowed slingloadables</Original>
+                <French>Seuls chopper permis slingloadables</French>
+                <German>Nur Chopper erlaubt slingloadables</German>
+				<Spanish>Sólo slingloadables chopper permitido</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_CAN_SLING_EVERYTHING">
+            	<Original>Can slingload any object</Original>
+                <French>Peut slingload tout objet</French>
+            	<German>Kann slingload jedes Objekt</German>
+				<Spanish>Puede slingload cualquier objeto</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_LOAD_INDESTRUCTABLE">
+                <Original>Load becomes indestructable</Original>
+                <French>Charge devient indestructable</French>
+                <German>Last wird unzerstörbar</German>
+				<Spanish>La carga se vuelve indestructible</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_AllowDeathCarry">
+                <Original>Can carry wrecks</Original>
+                <French>Peut transporter épaves</French>
+                <German>Kann tragen Wracks</German>
+                <Spanish>Puede llevar restos de naufragios</Spanish>
+            </Key>
+		</Container>

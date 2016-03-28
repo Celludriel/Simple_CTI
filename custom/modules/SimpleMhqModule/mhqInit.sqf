@@ -7,7 +7,8 @@
     [["_mhqCheck: %1", _mhqCheck]] call F_log;
 
     if ( toString _mhqCheck == "mhq_car" ) then {
-        [_x, CAR_TYPE] call createMhqVehicle;
+        _mhq = [_x, CAR_TYPE] call createMhqVehicle;
+        _mhq enableRopeAttach true;
     };
 
     if ( toString _mhqCheck == "mhq_air" ) then {

@@ -16,16 +16,19 @@ _mhq setVariable ["MhqDeployed", false, true];
 [_mhq, ["killed", {		[["I'm killed", []]] call F_log;
 						_killedMhq = _this select 0;
 						_killedMhq remoteExec ["removeAllActions", 0, true];
+                        _marker = _killedMhq getVariable "markerName";
 
 						_respawnId = _killedMhq getVariable ["respawnId", nil];
     					[["_respawnId: %1", _respawnId]] call F_log;
 						if(!isNil("_respawnId")) then {
 							_respawnId call BIS_fnc_removeRespawnPosition;
+							deleteMarker (_marker + "_indicator");
 						};
 
-                        _marker = _killedMhq getVariable "markerName";
+
                         _vehType = _killedMhq getVariable "type";
 
 						[["Creating %1 at %2", _vehType, _marker]] call F_log;
                         [_marker, _vehType] call createMhqVehicle;
                     }]] remoteExec ["addEventHandler", 0, true];
+_mhq

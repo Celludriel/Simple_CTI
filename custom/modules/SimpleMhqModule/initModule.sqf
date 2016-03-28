@@ -1,4 +1,5 @@
-[] execVM "custom\modules\SimpleMhqModule\config.sqf";
+_handle = [] execVM "custom\modules\SimpleMhqModule\config.sqf";
+waitUntil {isNull _handle};
 
 createMhqVehicle = compileFinal preprocessFileLineNumbers "custom\modules\SimpleMhqModule\createMhqVehicle.sqf";
 
