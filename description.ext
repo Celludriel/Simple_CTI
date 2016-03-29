@@ -8,6 +8,8 @@ class Params
 	#include "core\server\coreParams.hpp"
 	#include "custom\modules\FarReviveModule\params.hpp"
 	#include "custom\modules\AuxillerySlingModule\params.hpp"
+	#include "custom\modules\TimeAccelerationModule\params.hpp"
+	#include "custom\modules\DynamicWeatherModule\params.hpp"
 };
 
 class CfgDebriefing
