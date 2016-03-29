@@ -1,20 +1,17 @@
 if(!hasInterface) exitWith {};
 
 params ["_unit"];
+private ["_unit"];
 
 waitUntil { !isNil("_unit") };
 
 _deployMarkerName = _unit getVariable "markerName";
-_marker = createMarkerLocal [_deployMarkerName + "_pos", getPos _unit];
+_flagMarkerName = _deployMarkerName + "_pos";
+if(!isNil(_flagMarkerName)) then { deleteMarkerLocal (_flagMarkerName);};
+_marker = createMarkerLocal [_flagMarkerName, getPos _unit];
 _marker setMarkerShapeLocal "ICON";
 _marker setMarkerTypeLocal "hd_flag";
 _marker setMarkerColorLocal "ColorBLUFOR";
-
-_unit addEventHandler ["Killed",	{
-										_killedMhq = _this select 0;
-										_marker = _killedMhq getVariable "markerName";
-										deleteMarkerLocal (_marker + "_pos");
-									}];
 
 while{ alive _unit } do {
 	_isDeployed = _unit getVariable ["MhqDeployed", false];
