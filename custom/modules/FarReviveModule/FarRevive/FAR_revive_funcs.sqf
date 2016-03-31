@@ -43,7 +43,7 @@ FAR_Player_Unconscious =
 	params [ "_unit", "_killer" ];
 
 	// Death message
-	if (FAR_EnableDeathMessages && !isNil "_killer" && isPlayer _killer && _killer != _unit) then
+	if (FAR_EnableDeathMessages == 1 && !isNil "_killer" && isPlayer _killer && _killer != _unit) then
 	{
 		FAR_deathMessage = [_unit, _killer];
 		publicVariable "FAR_deathMessage";

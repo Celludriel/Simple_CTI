@@ -1,3 +1,5 @@
+waitUntil { alive player };
+
 params ["_weatherTemplates", "_currentWeather"];
 
 private["_weatherInitialArray","_weatherCurrentName","_weatherInitialSettings","_weatherInitialOvercast","_weatherInitialRainSnow","_weatherInitialFog","_weatherInitialWindEW","_weatherInitialWindNS"];

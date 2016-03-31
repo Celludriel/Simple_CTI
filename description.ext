@@ -10,6 +10,7 @@ class Params
 	#include "custom\modules\AuxillerySlingModule\params.hpp"
 	#include "custom\modules\TimeAccelerationModule\params.hpp"
 	#include "custom\modules\DynamicWeatherModule\params.hpp"
+	#include "custom\modules\FatigueModule\params.hpp"
 };
 
 class CfgDebriefing

@@ -9,6 +9,8 @@ if(hasInterface) then {
 		call compileFinal preprocessFileLineNumbers "core\client\debug\initDebugTools.sqf";
 	};
 
+	[] execVM "core\client\initArsenal.sqf";
+
 	//add all Respawn handlers to the player
 	{
 		[["Adding Respawn handler: %1", _x]] call F_log;

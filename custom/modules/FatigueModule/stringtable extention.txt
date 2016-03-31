@@ -1,0 +1,14 @@
+		<Container name="Fatigue module">
+            <Key ID="STR_PARAMS_FATIGUE_MODULE_OPTIONS">
+                <Original>Fatigue module</Original>
+                <French>Fatigue module</French>
+                <German>Ermüden modul</German>
+                <Spanish>Módulo de fatiga</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_DISABLE_FATIGUE">
+                <Original>Disable fatigue</Original>
+                <French>Désactiver la fatigue</French>
+                <German>Deaktivieren Müdigkeit</German>
+                <Spanish>Desactivar la fatiga</Spanish>
+            </Key>
+		</Container>
