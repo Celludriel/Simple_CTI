@@ -15,7 +15,7 @@ if([_sector, _sectorBLUFORcount, _sectorOPFORcount] call sectorControlRule) then
 	[_sector] call CTISRV_fnc_deleteIndicatorMarker;
 
 	_targetCompleteText = format [SECTOR_COMPLETED_MESSAGE, _marker];
-	[_targetCompleteText] remoteExec ["execVM",0,false];
+	[_targetCompleteText] remoteExec ["CTISHR_fnc_globalHint", 0, false];
 
 	// Run all scripts pertaining sector control change
 	[SECTOR_CONTROL_CHANGE_SCRIPTS, [_sector, _sectorBLUFORcount, _sectorOPFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
