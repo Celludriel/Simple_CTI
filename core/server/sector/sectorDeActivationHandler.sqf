@@ -14,6 +14,7 @@ if(_sectorSide != WEST) then {
 			//mark the sector for deactivation, the deactivation will happen later
 			_sector setVariable ["condition", "deactivation", false];
 			_sector setVariable ["deactivationTime", time + SECONDS_TO_DEACTIVATION, false];
+			[_sector, "ColorUNKNOWN", SECTOR_RANGE] call CTISRV_fnc_createOrUpdateIndicationMarker;
 		};
 	};
 
@@ -25,10 +26,10 @@ if(_sectorSide != WEST) then {
 			_sector setVariable ["condition", "neutral", false];
 
 			//any markers will be removed
-			[_sector] call F_deleteIndicatorMarker;
+			[_sector] call CTISRV_fnc_deleteIndicatorMarker;
 
 			//run any scripts related to deactivating a sector
-			[SECTOR_DEACTIVATION_SCRIPTS, [_sector, _activationBLUFORcount]] call F_runArrayOfScriptsUnsynced;
+			[SECTOR_DEACTIVATION_SCRIPTS, [_sector, _activationBLUFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 		};
 	};
 };

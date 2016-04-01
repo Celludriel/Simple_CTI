@@ -1,9 +1,9 @@
-[["Calling mhq_undeploy_action with %1", _this]] call F_log;
+[["Calling mhq_undeploy_action with %1", _this]] call CTISHR_fnc_ctiLog;
 
 params ["_mhq", "_caller", "_actionId", "_arguments"];
 
 _isDeployed = _mhq getVariable "MhqDeployed";
-[["_isDeployed: %1", _isDeployed]] call F_log;
+[["_isDeployed: %1", _isDeployed]] call CTISHR_fnc_ctiLog;
 
 if(_isDeployed) then {
 
@@ -19,7 +19,7 @@ if(_isDeployed) then {
 
 	// Undeploy
     _respawnId = _mhq getVariable ["respawnId", 0];
-    [["_respawnId: %1", _respawnId]] call F_log;
+    [["_respawnId: %1", _respawnId]] call CTISHR_fnc_ctiLog;
 
     _respawnId call BIS_fnc_removeRespawnPosition;
 
@@ -27,6 +27,6 @@ if(_isDeployed) then {
 	deleteMarker (_deployMarkerName + "_indicator");
 
 	// Handle actions
-    [_mhq, _actionId] remoteExec ["removeAction", 0, true];
+    _mhq remoteExec ["removeAllActions", 0, true];
 	[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
 };

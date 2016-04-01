@@ -11,8 +11,8 @@ if(!SAVE_LOCK) then {
 		_ctiSectorObjectData pushBack _sectorData;
 	} forEach CTI_SECTOR_OBJECTS;
 
-	["core", _ctiSectorObjectData] call F_storeDataBlockInSaveContainer;
+	["core", _ctiSectorObjectData] call CTISRV_fnc_storeDataBlockInSaveContainer;
 
-	[SAVE_SCRIPTS, []] call F_runArrayOfScriptsUnsynced;
+	[SAVE_SCRIPTS, []] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 	SAVE_LOCK = false;
 };

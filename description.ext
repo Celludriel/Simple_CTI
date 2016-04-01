@@ -1,8 +1,12 @@
 enableDebugConsole = 1;
 
+// gui
 #include "interface.hpp"
+#include "custom\modules\TawdModule\taw_vd\GUI.h"
 #include "custom\modules\FarReviveModule\FarRevive\FAR_interface.hpp"
+#include "custom\modules\SimpleMhqModule\gui\deployDialog.hpp"
 
+// params
 class Params
 {
 	#include "core\server\coreParams.hpp"
@@ -11,8 +15,20 @@ class Params
 	#include "custom\modules\TimeAccelerationModule\params.hpp"
 	#include "custom\modules\DynamicWeatherModule\params.hpp"
 	#include "custom\modules\FatigueModule\params.hpp"
+	#include "custom\modules\TawdModule\params.hpp"
 };
 
+// functions
+class CfgFunctions
+{
+	#include "core\server\CfgFunctions.hpp"
+	#include "core\shared\CfgFunctions.hpp"
+	#include "core\client\CfgFunctions.hpp"
+	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
+	#include "custom\modules\T8SectorMilitarizationModule\T8\FUNCTIONS.hpp"
+};
+
+// debrief
 class CfgDebriefing
 {
 	class End1

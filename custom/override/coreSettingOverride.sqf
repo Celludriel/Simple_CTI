@@ -10,7 +10,7 @@ if(!isDedicated) exitWith {};
 // SECTOR_RANGE = 300;
 
 // Seconds it takes for a sector marked as deactivation to go back to neutral (default=60)
-// SECONDS_TO_DEACTIVATION = 60;
+SECONDS_TO_DEACTIVATION = 600;
 
 // Script that decides what the requirements are for a sector to be taken over must return a boolean.  Parameters passed to the script: (the invisible sector object)
 // SECTOR_CONTROL_RULE_SCRIPT = "core\server\sector\sectorControlRule.sqf";

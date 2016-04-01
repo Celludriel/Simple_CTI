@@ -4,6 +4,7 @@ GAME_RUNNING = true;
 SAVE_LOCK = false;
 SAVEGAME_NAME = "CTI_TEMPLATE";
 CTI_SECTOR_OBJECTS = [];
+SECTOR_COMPLETED_MESSAGE = "<t align='center' size='2.2'>AO Complete</t><br/><t size='1.5' align='center' color='#00FF80'>%1</t><br/>____________________<br/><t align='left'>Fantastic job at %1, boys! Give us a moment here at HQ and we'll line up your next target.</t>";
 
 // Expantion scripts
 PRE_INIT_SERVER_SCRIPTS = [];
@@ -32,3 +33,5 @@ SECTOR_TYPES = [["sec_town", "n_art"],["sec_fuel", "loc_Fuelstation"],["sec_base
 // Rules
 SECTOR_CONTROL_RULE_SCRIPT = "core\server\sector\sectorControlRule.sqf";
 GAME_ENDING_RULE_SCRIPT = "core\server\game\gameEndingRule.sqf";
+
+call compileFinal preprocessFileLineNumbers "custom\override\coreSettingOverride.sqf";

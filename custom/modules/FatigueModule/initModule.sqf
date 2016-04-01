@@ -1,6 +1,6 @@
 if(!hasInterface) exitWith {};
 
-_fatigueDisabled = ["FatigueDisabledOption", false] call BIS_fnc_getParamValue;
+_fatigueDisabled = ["FatigueDisabledOption", 0] call BIS_fnc_getParamValue;
 
 diag_log format ["Fatigue disabled: %1", _fatigueDisabled];
 

@@ -347,13 +347,15 @@ AuxSling_fnc_Conditions2 = {
 
 AuxSling_fnc_AddAction = {
 	_unit = _this select 0;
-	if (isNil {_unit getVariable "AuxSling_Added"}) then {
-		AuxSling_Load_Action = _unit addAction ["<t color='#FF0000'>Sling Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoAttaching},"",-99,true,true,"",'[_this,_target] call AuxSling_fnc_Conditions1'];
-		_unit setVariable ["AuxSling_Load_Action",AuxSling_Load_Action,true];
-		AuxSling_unLoad_Action = _unit addAction ["<t color='#FF0000'>Detach Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoDetaching},"",-99,false,true,"",'[_this,_target] call AuxSling_fnc_Conditions2'];
-		_unit setVariable ["AuxSling_unLoad_Action",AuxSling_unLoad_Action,true];
-		_unit setVariable ["AuxSling_Added",true,true];
-	};
+	if(player == driver _unit) then {
+		if (isNil {_unit getVariable "AuxSling_Added"}) then {
+			AuxSling_Load_Action = _unit addAction ["<t color='#FF0000'>Sling Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoAttaching},"",-99,true,true,"",'[_this,_target] call AuxSling_fnc_Conditions1'];
+			_unit setVariable ["AuxSling_Load_Action",AuxSling_Load_Action,true];
+			AuxSling_unLoad_Action = _unit addAction ["<t color='#FF0000'>Detach Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoDetaching},"",-99,false,true,"",'[_this,_target] call AuxSling_fnc_Conditions2'];
+			_unit setVariable ["AuxSling_unLoad_Action",AuxSling_unLoad_Action,true];
+			_unit setVariable ["AuxSling_Added",true,true];
+		};
+	}
 };
 
 [player] spawn AuxSling_fnc_AddAction;

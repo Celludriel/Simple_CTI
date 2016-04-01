@@ -1,9 +1,9 @@
-[["Calling mhq_deploy_action with %1", _this]] call F_log;
+[["Calling mhq_deploy_action with %1", _this]] call CTISHR_fnc_ctiLog;
 
 params ["_mhq", "_caller", "_actionId", "_arguments"];
 
 _isDeployed = _mhq getVariable "MhqDeployed";
-[["_isDeployed: %1", _isDeployed]] call F_log;
+[["_isDeployed: %1", _isDeployed]] call CTISHR_fnc_ctiLog;
 
 if(!_isDeployed)then{
     // Kick everyone out of vehicle
@@ -42,11 +42,13 @@ if(!_isDeployed)then{
     _spawnPostion = [(_pos select 0) + (sin _dir) * _dist, (_pos select 1) + (cos _dir) * _dist, 0];
 
     _respawnId = [west, _spawnPostion, _markerText] call BIS_fnc_addRespawnPosition;
-    [["_respawnId: %1", _respawnId]] call F_log;
+    [["_respawnId: %1", _respawnId]] call CTISHR_fnc_ctiLog;
 
     _mhq setVariable ["respawnId", _respawnId, true];
 
     // Handle actions remove deploy add undeploy
-    [_mhq, _actionId] remoteExec ["removeAction", 0, true];
+    _mhq remoteExec ["removeAllActions", 0, true];
+    [_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT]] remoteExec ["addAction", 0, true];
+    [_mhq, [(localize "STR_MHQ_REDEPLOY"), "[] call mhqOpenDialog;"]] remoteExec ["addAction", 0, true];
     [_mhq, [(localize "STR_MHQ_UNDEPLOY"), "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
 };

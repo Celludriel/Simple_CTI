@@ -13,10 +13,10 @@ if(_sectorSide != WEST) then {
 		_sector setVariable ["condition", "active", false];
 
 		//create or update indication marker
-		[_sector, "ColorUNKNOWN", SECTOR_RANGE] call F_createOrUpdateIndicationMarker;
+		[_sector, "ColorUNKNOWN", SECTOR_RANGE] call CTISRV_fnc_createOrUpdateIndicationMarker;
 
 		//run any scripts related to activating a sector
-		[SECTOR_ACTIVATION_SCRIPTS, [_sector, _activationBLUFORcount, _sectorBLUFORcount]] call F_runArrayOfScriptsUnsynced;
+		[SECTOR_ACTIVATION_SCRIPTS, [_sector, _activationBLUFORcount, _sectorBLUFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 	};
 
 	if(_activationBLUFORcount > 0 && _sectorState == 'deactivation') then {
@@ -28,7 +28,7 @@ if(_sectorSide != WEST) then {
 		if(_sectorBLUFORcount == 0) then {
 			//reactivate the sector and change the color of the marker
 			_sector setVariable ["condition", "active", false];
-			[_sector, "ColorUNKNOWN", SECTOR_RANGE] call F_createOrUpdateIndicationMarker;
+			[_sector, "ColorUNKNOWN", SECTOR_RANGE] call CTISRV_fnc_createOrUpdateIndicationMarker;
 		};
 	};
 };

@@ -6,9 +6,9 @@ diag_log format ["Before loop %1", time];
 _sectorCountBlUFOR = 0;
 _sectorCountOPFOR = 0;
 {
-	_activationBLUFORcount = [_x, ACTIVATION_RANGE, WEST] call F_getUnitCount;
-	_sectorBLUFORcount = [_x, SECTOR_RANGE, WEST] call F_getUnitCount;
-	_sectorOPFORcount = [_x, SECTOR_RANGE, EAST] call F_getUnitCount;
+	_activationBLUFORcount = [_x, ACTIVATION_RANGE, WEST] call CTISHR_fnc_getUnitCount;
+	_sectorBLUFORcount = [_x, SECTOR_RANGE, WEST] call CTISHR_fnc_getUnitCount;
+	_sectorOPFORcount = [_x, SECTOR_RANGE, EAST] call CTISHR_fnc_getUnitCount;
 
 	if(_activationBLUFORcount > 0 || _sectorBLUFORcount > 0 || _sectorOPFORcount > 0) then {
 		//check if a sector needs to be deactivated
@@ -25,7 +25,7 @@ _sectorCountOPFOR = 0;
 
 		//check if sector needs to change side
 		_handle = [_x, _sectorBLUFORcount, _sectorOPFORcount] execVM "core\server\sector\sectorControlHandler.sqf";
-		waitUntil {isNull _handle};S
+		waitUntil {isNull _handle};
 	};
 
 	if(_x getVariable "side" == east) then {

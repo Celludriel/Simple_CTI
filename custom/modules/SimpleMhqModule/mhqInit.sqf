@@ -1,10 +1,10 @@
 {
-    [["Processing map marker %1", _x]] call F_log;
+    [["Processing map marker %1", _x]] call CTISHR_fnc_ctiLog;
 
     _mhqCheck = toArray _x;
     _mhqCheck resize 7;
 
-    [["_mhqCheck: %1", _mhqCheck]] call F_log;
+    [["_mhqCheck: %1", _mhqCheck]] call CTISHR_fnc_ctiLog;
 
     if ( toString _mhqCheck == "mhq_car" ) then {
         _mhq = [_x, CAR_TYPE] call createMhqVehicle;
@@ -13,5 +13,9 @@
 
     if ( toString _mhqCheck == "mhq_air" ) then {
         [_x, AIR_TYPE] call createMhqVehicle;
+    };
+
+    if ( _x == "respawn_west_1" ) then {
+        [REDEPLOY_FLAG] call createRedeployFlag;
     };
 } forEach allMapMarkers;

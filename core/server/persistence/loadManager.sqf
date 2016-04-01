@@ -6,7 +6,7 @@ if(!isNil("_clearSave") && _clearSave == 1) then {
 	saveProfileNamespace;
 };
 
-_ctiSectorObjectData = ["core"] call F_loadDataBlockInSaveContainer;
+_ctiSectorObjectData = ["core"] call CTISRV_fnc_loadDataBlockInSaveContainer;
 if ( count _ctiSectorObjectData > 0 ) then {
 
 	{
@@ -14,7 +14,7 @@ if ( count _ctiSectorObjectData > 0 ) then {
 		_side = _x select 1;
 
 		_markerLocation = getmarkerpos _markerName;
-		_invisibleSectorObject = [_markerLocation] call F_spawnInvisibleObject;
+		_invisibleSectorObject = [_markerLocation] call CTISRV_fnc_spawnInvisibleObject;
 		_invisibleSectorObject setVariable ["markerName", _markerName, false];
 		_invisibleSectorObject setVariable ["side", _side, false];
 		_invisibleSectorObject setVariable ["condition", "neutral", false];
@@ -22,5 +22,5 @@ if ( count _ctiSectorObjectData > 0 ) then {
 		CTI_SECTOR_OBJECTS pushback _invisibleSectorObject;
 	} forEach _ctiSectorObjectData;
 
-	[LOAD_SCRIPTS, []] call F_runArrayOfScriptsUnsynced;
+	[LOAD_SCRIPTS, []] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 };

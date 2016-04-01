@@ -14,9 +14,9 @@ if(_sectorSide != WEST) then {
 		_sector setVariable ["condition", "contested", false];
 
 		//create or update indication marker
-		[_sector, "ColorOPFOR", SECTOR_RANGE] call F_createOrUpdateIndicationMarker;
+		[_sector, "ColorOPFOR", SECTOR_RANGE] call CTISRV_fnc_createOrUpdateIndicationMarker;
 
 		//run any scripts related to contesting a sector
-		[SECTOR_CONTESTED_SCRIPTS, [_sector, _sectorBLUFORcount, _sectorOPFORcount]] call F_runArrayOfScriptsUnsynced;
+		[SECTOR_CONTESTED_SCRIPTS, [_sector, _sectorBLUFORcount, _sectorOPFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 	};
 };
