@@ -263,5 +263,19 @@
                 <Spanish>Puede desactivar la hierba</Spanish>
             </Key>
         </Container>
+        <Container name="Tactical icons module">
+            <Key ID="STR_PARAMS_TACTICAL_ICONS_MODULE_OPTIONS">
+                <Original>Tactical icons module</Original>
+                <French>Icone tactique module</French>
+                <German>Taktische symbol modul</German>
+                <Spanish>Módulo icono de táctica</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_ENABLE_TACTICAL_ICONS">
+                <Original>Enable tactical icons</Original>
+                <French>Activer l'icône tactique</French>
+                <German>Ermöglichen taktische Symbol</German>
+                <Spanish>Permitir icono de táctica</Spanish>
+            </Key>
+        </Container>
 	</Package>
 </Project>

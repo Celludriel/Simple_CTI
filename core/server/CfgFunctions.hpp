@@ -12,6 +12,7 @@ class CTITemplateServerFunctions {
 		class addSectorContestedScript {};
 		class addSectorCreatedScript {};
 		class addSectorDeActivationScript {};
+		class addSectorControlChangeScript {};
 		class addSectorLoadedScript {};
 		class addSectorType {};
 

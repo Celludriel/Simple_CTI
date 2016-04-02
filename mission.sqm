@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7083.436,29.543438,5901.0439};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={6987.9351,628.90533,5516.7974};
+		dir[]={-0.057645723,-0.83353198,0.54945916};
+		up[]={-0.086976722,0.55239195,0.82903379};
+		aside[]={0.99454176,-1.0857912e-007,0.10434087};
 	};
 };
 binarizationWanted=0;
@@ -41,7 +41,7 @@ class ScenarioData
 	overviewText="Simple CTI experience";
 	disabledAI=1;
 	respawn=3;
-	respawnDelay=1;
+	respawnDelay=5;
 	class Header
 	{
 		gameType="CTI";
@@ -55,25 +55,6 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -120,6 +101,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -186,7 +186,7 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={2094.2502,-7.8858643,5705.4438};
+			position[]={1931.5216,5.5,5800.4771};
 			name="sec_base_stratis_air_barracks";
 			text="Stratis airfield barracks";
 			type="Empty";
@@ -213,7 +213,7 @@ class Mission
 		class Item4
 		{
 			dataType="Marker";
-			position[]={2056.6772,2.9116445,2752.6563};
+			position[]={2091.5288,11.746338,2694.3584};
 			name="sec_town_girna";
 			text="Girna";
 			type="Empty";
@@ -231,7 +231,7 @@ class Mission
 		class Item6
 		{
 			dataType="Marker";
-			position[]={3124.2734,166.27882,2194.2207};
+			position[]={3113.8059,154.69086,2220.6387};
 			name="sec_base_agios_loannis";
 			text="Agios Loannis";
 			type="Empty";
@@ -240,7 +240,7 @@ class Mission
 		class Item7
 		{
 			dataType="Marker";
-			position[]={2941.9504,160.01868,1782.396};
+			position[]={2899.4946,160.01868,1810.9111};
 			name="sec_base_lz_connor";
 			text="LZ Connor";
 			type="Empty";
@@ -249,7 +249,7 @@ class Mission
 		class Item8
 		{
 			dataType="Marker";
-			position[]={2783.5503,65.856079,923.72412};
+			position[]={2799.2952,55.203003,993.72559};
 			name="sec_town_south_lighthouse";
 			text="South lighthouse";
 			type="Empty";
@@ -267,7 +267,7 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={2475.9934,3.6343822,1177.0039};
+			position[]={2441.9021,4.8690643,1175.9414};
 			name="sec_town_jay_cove";
 			text="Jay cove";
 			type="Empty";
@@ -294,7 +294,7 @@ class Mission
 		class Item13
 		{
 			dataType="Marker";
-			position[]={5293.7085,18.23493,3831.5303};
+			position[]={5284.042,10.839233,3770.3086};
 			name="sec_town_limeri_bay";
 			text="Limeri bay";
 			type="Empty";
@@ -303,7 +303,7 @@ class Mission
 		class Item14
 		{
 			dataType="Marker";
-			position[]={5915.9355,47.067593,4399.2002};
+			position[]={5869.7505,63.475098,4365.7158};
 			name="sec_town_jkeiros_bay";
 			text="Keiros bay";
 			type="Empty";
@@ -312,7 +312,7 @@ class Mission
 		class Item15
 		{
 			dataType="Marker";
-			position[]={5618.1519,105.65491,5355.0928};
+			position[]={5597.3687,106.94141,5388.5771};
 			name="sec_town_kamino_forest";
 			text="Kamino forest";
 			type="Empty";
@@ -321,7 +321,7 @@ class Mission
 		class Item16
 		{
 			dataType="Marker";
-			position[]={6547.208,11.64978,5364.0752};
+			position[]={6356.2002,47.38229,5038.8184};
 			name="sec_base_kamino_firing_range";
 			text="Kamino firing range";
 			type="Empty";
@@ -840,7 +840,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58795;
+			angle=225.58794;
 			id=103;
 		};
 		class Item39

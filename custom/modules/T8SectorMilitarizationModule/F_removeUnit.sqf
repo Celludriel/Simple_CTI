@@ -1,4 +1,6 @@
-private["_unit"];
+params["_unit"];
+
+diag_log format ["Removing: %1", _unit];
 
 if(vehicle _unit != _unit)then {
 	_veh = vehicle _unit;

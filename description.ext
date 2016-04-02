@@ -16,6 +16,7 @@ class Params
 	#include "custom\modules\DynamicWeatherModule\params.hpp"
 	#include "custom\modules\FatigueModule\params.hpp"
 	#include "custom\modules\TawdModule\params.hpp"
+	#include "custom\modules\TacticalIconModule\params.hpp"
 };
 
 // functions

@@ -355,7 +355,7 @@ AuxSling_fnc_AddAction = {
 			_unit setVariable ["AuxSling_unLoad_Action",AuxSling_unLoad_Action,true];
 			_unit setVariable ["AuxSling_Added",true,true];
 		};
-	}
+	};
 };
 
 [player] spawn AuxSling_fnc_AddAction;

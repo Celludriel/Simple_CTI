@@ -24,6 +24,7 @@ waitUntil {isNull _handle};
 
 //autosave init
 ["core\server\persistence\saveManager.sqf"] call CTISRV_fnc_addFiveMinuteHearthbeatScript;
+["core\server\persistence\saveManager.sqf"] call CTISRV_fnc_addSectorControlChangeScript;
 
 //hearthbeat startup
 [["Start hearthbeats startup"]] call CTISHR_fnc_ctiLog;

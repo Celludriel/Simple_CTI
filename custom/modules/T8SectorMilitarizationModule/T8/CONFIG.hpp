@@ -37,10 +37,10 @@
 
 // DEBUG Settings
 
-T8U_var_DEBUG			= true;
-T8U_var_DEBUG_hints		= true;
-T8U_var_DEBUG_marker	= true;
-T8U_var_DEBUG_useCon	= true;
+T8U_var_DEBUG			= false;
+T8U_var_DEBUG_hints		= false;
+T8U_var_DEBUG_marker	= false;
+T8U_var_DEBUG_useCon	= false;
 
 /*
 	T8U_var_DEBUG					= false;		// general Debug
