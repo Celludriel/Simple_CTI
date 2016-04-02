@@ -3,8 +3,8 @@
 
 if(!isDedicated) exitWith {};
 
-// Radius when a sector gets activated in meters (default=500)
-// ACTIVATION_RANGE = 500;
+// Radius added to sector radius deciding a sector gets activated in meters (default=200)
+// ACTIVATION_RANGE = 200;
 
 // Radius of a sector in meters (default=300)
 // SECTOR_RANGE = 300;

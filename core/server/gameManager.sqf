@@ -1,12 +1,12 @@
 if (!isDedicated or PRESENCE_MANAGER_RUNNING) exitWith {};
 
 PRESENCE_MANAGER_RUNNING = true;
-diag_log format ["Before loop %1", time];
+//diag_log format ["Before loop %1", time];
 
 _sectorCountBlUFOR = 0;
 _sectorCountOPFOR = 0;
 {
-	_activationBLUFORcount = [_x, ACTIVATION_RANGE, WEST] call CTISHR_fnc_getUnitCount;
+	_activationBLUFORcount = [_x, (SECTOR_RANGE + ACTIVATION_RANGE), WEST] call CTISHR_fnc_getUnitCount;
 	_sectorBLUFORcount = [_x, SECTOR_RANGE, WEST] call CTISHR_fnc_getUnitCount;
 	_sectorOPFORcount = [_x, SECTOR_RANGE, EAST] call CTISHR_fnc_getUnitCount;
 
@@ -45,5 +45,5 @@ if([_sectorCountBLUFOR, _sectorCountOPFOR, count CTI_SECTOR_OBJECTS] call gameEn
 	"end1" call BIS_fnc_endMissionServer;
 };
 
-diag_log format ["After loop %1", time];
+//diag_log format ["After loop %1", time];
 PRESENCE_MANAGER_RUNNING = false;
