@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=136;
+		nextID=144;
 	};
 	class MarkerIDProvider
 	{
-		nextID=40;
+		nextID=49;
 	};
 	class Camera
 	{
-		pos[]={6987.9351,628.90533,5516.7974};
-		dir[]={-0.057645723,-0.83353198,0.54945916};
-		up[]={-0.086976722,0.55239195,0.82903379};
-		aside[]={0.99454176,-1.0857912e-007,0.10434087};
+		pos[]={3688.1377,202.26575,5431.6675};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -55,6 +55,25 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -101,25 +120,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -173,7 +173,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=43;
+		items=37;
 		class Item0
 		{
 			dataType="Marker";
@@ -186,40 +186,31 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={1931.5216,5.5,5800.4771};
-			name="sec_base_stratis_air_barracks";
-			text="Stratis airfield barracks";
+			position[]={2001.5537,5.7288332,5680.2334};
+			name="sec_base_stratis_air";
+			text="Stratis airfield";
 			type="Empty";
 			id=18;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={2656.2517,8.3266535,5758.4795};
-			name="sec_fuel_agia_fuel";
-			text="Agia Fuel Depot";
-			type="Empty";
-			id=19;
-		};
-		class Item3
-		{
-			dataType="Marker";
-			position[]={2080.5164,18.122639,3487.123};
+			position[]={2109.0815,8.6428814,3602.4419};
 			name="sec_base_camp_tempest";
 			text="Camp tempest";
 			type="Empty";
 			id=37;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Marker";
-			position[]={2091.5288,11.746338,2694.3584};
+			position[]={2125.571,11.757813,2755.896};
 			name="sec_town_girna";
 			text="Girna";
 			type="Empty";
 			id=38;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Marker";
 			position[]={3353.729,229.0417,2953.1973};
@@ -228,106 +219,88 @@ class Mission
 			type="Empty";
 			id=39;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
-			position[]={3113.8059,154.69086,2220.6387};
+			position[]={3121.8665,155.55981,2219.8662};
 			name="sec_base_agios_loannis";
 			text="Agios Loannis";
 			type="Empty";
 			id=40;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
-			position[]={2899.4946,160.01868,1810.9111};
-			name="sec_base_lz_connor";
-			text="LZ Connor";
+			position[]={2730.0315,78.735847,1502.9194};
+			name="sec_base_agios_cephas";
+			text="Agios Cephas";
 			type="Empty";
 			id=41;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Marker";
-			position[]={2799.2952,55.203003,993.72559};
-			name="sec_town_south_lighthouse";
-			text="South lighthouse";
-			type="Empty";
-			id=42;
-		};
-		class Item9
-		{
-			dataType="Marker";
-			position[]={2618.2852,60.664093,536.52148};
+			position[]={2677.9063,73.103752,693.02588};
 			name="sec_base_the_spartan";
 			text="The spartan";
 			type="Empty";
 			id=43;
 		};
-		class Item10
+		class Item8
 		{
 			dataType="Marker";
-			position[]={2441.9021,4.8690643,1175.9414};
-			name="sec_town_jay_cove";
-			text="Jay cove";
-			type="Empty";
-			id=56;
-		};
-		class Item11
-		{
-			dataType="Marker";
-			position[]={2251.1707,2.197506,1926.3057};
+			position[]={2138.5706,52.88744,2063.3027};
 			name="sec_town_strogos_bay";
 			text="Strogos Bay";
 			type="Empty";
 			id=57;
 		};
-		class Item12
+		class Item9
 		{
 			dataType="Marker";
-			position[]={4256.0688,23.303413,2773.3604};
+			position[]={4222.8818,1.6593018,2852.3911};
 			name="sec_town_tsoukalia_bay";
 			text="Tsoukalia bay";
 			type="Empty";
 			id=58;
 		};
-		class Item13
+		class Item10
 		{
 			dataType="Marker";
-			position[]={5284.042,10.839233,3770.3086};
+			position[]={5341.1992,12.907471,3840.3716};
 			name="sec_town_limeri_bay";
 			text="Limeri bay";
 			type="Empty";
 			id=59;
 		};
-		class Item14
+		class Item11
 		{
 			dataType="Marker";
-			position[]={5869.7505,63.475098,4365.7158};
+			position[]={5924.6748,12.801147,4477.458};
 			name="sec_town_jkeiros_bay";
 			text="Keiros bay";
 			type="Empty";
 			id=60;
 		};
-		class Item15
+		class Item12
 		{
 			dataType="Marker";
-			position[]={5597.3687,106.94141,5388.5771};
+			position[]={5414.8779,200.0244,5194.6006};
 			name="sec_town_kamino_forest";
 			text="Kamino forest";
 			type="Empty";
 			id=61;
 		};
-		class Item16
+		class Item13
 		{
 			dataType="Marker";
-			position[]={6356.2002,47.38229,5038.8184};
+			position[]={6257.0928,12.74439,5230.312};
 			name="sec_base_kamino_firing_range";
 			text="Kamino firing range";
 			type="Empty";
 			id=62;
 		};
-		class Item17
+		class Item14
 		{
 			dataType="Marker";
 			position[]={3603.4451,33.050415,6782.8184};
@@ -336,25 +309,25 @@ class Mission
 			type="Empty";
 			id=63;
 		};
-		class Item18
+		class Item15
 		{
 			dataType="Marker";
-			position[]={4722.2871,126.8362,5290.8291};
+			position[]={4538.6421,98.075188,5226.7671};
 			name="sec_base_lz_baldy";
 			text="LZ Baldy";
 			type="Empty";
 			id=64;
 		};
-		class Item19
+		class Item16
 		{
 			dataType="Marker";
-			position[]={5023.3877,208.78296,5919.8838};
+			position[]={4994.4453,208.20584,5906.3774};
 			name="sec_base_camp_rogain";
 			text="Camp rogain";
 			type="Empty";
 			id=65;
 		};
-		class Item20
+		class Item17
 		{
 			dataType="Marker";
 			position[]={4500.8242,107.3793,6784.96};
@@ -363,52 +336,34 @@ class Mission
 			type="Empty";
 			id=66;
 		};
-		class Item21
+		class Item18
 		{
 			dataType="Marker";
-			position[]={3769.4294,13.945041,7936.3325};
-			name="sec_base_xiros";
-			text="Xiros";
-			type="Empty";
-			id=67;
-		};
-		class Item22
-		{
-			dataType="Marker";
-			position[]={5637.1118,34.198174,6139.5703};
-			name="sec_town_kamino_coast";
-			text="Kamino coast";
-			type="Empty";
-			id=68;
-		};
-		class Item23
-		{
-			dataType="Marker";
-			position[]={4374.1606,186.86807,4396.207};
+			position[]={4373.2388,179.08826,4580.583};
 			name="sec_base_old_outpost";
 			text="Old outpost";
 			type="Empty";
 			id=69;
 		};
-		class Item24
+		class Item19
 		{
 			dataType="Marker";
-			position[]={4274.9604,210.97395,3703.8945};
+			position[]={4439.7329,204.55092,3781.5459};
 			name="sec_base_air_station_mike_26";
 			text="Air station mike 26";
 			type="Empty";
 			id=70;
 		};
-		class Item25
+		class Item20
 		{
 			dataType="Marker";
-			position[]={3362.6118,99.492714,3933.6367};
+			position[]={3610.6606,153.2926,3843.48};
 			name="sec_town_south_forest";
 			text="South forest";
 			type="Empty";
 			id=71;
 		};
-		class Item26
+		class Item21
 		{
 			dataType="Marker";
 			position[]={3327.4958,81.09124,4612.2451};
@@ -417,16 +372,16 @@ class Mission
 			type="Empty";
 			id=72;
 		};
-		class Item27
+		class Item22
 		{
 			dataType="Marker";
-			position[]={2108.3276,4.2212634,4164.6162};
+			position[]={2132.761,31.041901,4433.043};
 			name="sec_town_nisi_bay";
 			text="Nisi bay";
 			type="Empty";
 			id=73;
 		};
-		class Item28
+		class Item23
 		{
 			dataType="Group";
 			side="West";
@@ -525,7 +480,7 @@ class Mission
 			};
 			id=74;
 		};
-		class Item29
+		class Item24
 		{
 			dataType="Marker";
 			position[]={7077.5088,9.8372431,5947.6157};
@@ -535,7 +490,7 @@ class Mission
 			angle=71.857613;
 			id=78;
 		};
-		class Item30
+		class Item25
 		{
 			dataType="Marker";
 			position[]={7076.9141,9.7054443,5928.6006};
@@ -545,7 +500,7 @@ class Mission
 			angle=168.64381;
 			id=79;
 		};
-		class Item31
+		class Item26
 		{
 			dataType="Marker";
 			position[]={7098.8623,6.9572997,5961.4707};
@@ -555,25 +510,7 @@ class Mission
 			angle=184.34981;
 			id=80;
 		};
-		class Item32
-		{
-			dataType="Marker";
-			position[]={1704.7405,5.5,5115.0469};
-			name="sec_base_stratis_air_hangars";
-			text="Stratis airfield hangars";
-			type="Empty";
-			id=82;
-		};
-		class Item33
-		{
-			dataType="Marker";
-			position[]={3915.8342,39.794922,5412.1909};
-			name="sec_base_closed_tunnels";
-			text="Closed tunnels";
-			type="Empty";
-			id=83;
-		};
-		class Item34
+		class Item27
 		{
 			dataType="Object";
 			class PositionInfo
@@ -588,7 +525,7 @@ class Mission
 			id=85;
 			type="B_Heli_Transport_03_F";
 		};
-		class Item35
+		class Item28
 		{
 			dataType="Object";
 			class PositionInfo
@@ -664,7 +601,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item36
+		class Item29
 		{
 			dataType="Object";
 			class PositionInfo
@@ -740,7 +677,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item37
+		class Item30
 		{
 			dataType="Group";
 			side="West";
@@ -833,17 +770,17 @@ class Mission
 			};
 			id=97;
 		};
-		class Item38
+		class Item31
 		{
 			dataType="Marker";
 			position[]={7090.4868,7.730093,5928.6636};
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58794;
+			angle=225.58792;
 			id=103;
 		};
-		class Item39
+		class Item32
 		{
 			dataType="Object";
 			class PositionInfo
@@ -920,7 +857,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item40
+		class Item33
 		{
 			dataType="Object";
 			class PositionInfo
@@ -935,7 +872,7 @@ class Mission
 			id=113;
 			type="B_Boat_Armed_01_minigun_F";
 		};
-		class Item41
+		class Item34
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1140,7 +1077,7 @@ class Mission
 				nAttributes=10;
 			};
 		};
-		class Item42
+		class Item35
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1235,6 +1172,15 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={3761.6941,34.006439,5627.9385};
+			name="sec_base_military_range";
+			text="Military range";
+			type="Empty";
+			id=143;
 		};
 	};
 	class Connections

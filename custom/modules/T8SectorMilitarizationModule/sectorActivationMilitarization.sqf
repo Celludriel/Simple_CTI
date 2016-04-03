@@ -19,7 +19,7 @@ for "_i" from 1 to 6 do {
 	waitUntil { !isNil("_spawnMarker") };
 
 	_formation = ["WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker, true, T8U_var_PatAroundRange, _formation], [ "PATROL_AROUND" ] ];
+	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker], [ "PATROL_AROUND", T8U_var_PatAroundRange, _formation ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 
@@ -33,7 +33,7 @@ for "_i" from 1 to 6 do {
 	waitUntil { !isNil("_spawnMarker") };
 
 	_formation = ["WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "DIAMOND"] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker, true, T8U_var_PatAroundRange, _formation], [ "PATROL_AROUND" ] ];
+	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker ], [ "PATROL_AROUND", T8U_var_PatAroundRange, _formation ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 

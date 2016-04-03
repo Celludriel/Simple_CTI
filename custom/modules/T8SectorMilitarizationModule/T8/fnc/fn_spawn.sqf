@@ -206,9 +206,10 @@ _return = [];
 		case "PATROL_AROUND":
 		{
 			_PatrolAroundDis = _taskArray param [ 1, T8U_var_PatAroundRange, [123]];
+			_formation = _taskArray param [ 2, "RANDOM", [""]];
 			_group = [ _spawnPos, _groupSide, _vehicleArray, _relPos ] call BIS_fnc_spawnGroup;
 			_group setVariable ["NEWLY_CREATED", true];
-			[ _group, _markerArray, _infGroup, _PatrolAroundDis ] spawn T8U_tsk_fnc_patrolAround;
+			[ _group, _markerArray, _infGroup, _PatrolAroundDis, _formation ] spawn T8U_tsk_fnc_patrolAround;
 		};
 
 		case "PATROL_GARRISON":

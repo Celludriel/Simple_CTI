@@ -15,6 +15,7 @@
 	_this select 1: the position on which to base the patrol (Markername / String)
 	_this select 2: (optional) is infantry group (Bool) Will force group to leave vehicle on waypoints!
 	_this select 3: (optional) distance between patrole points and marker zone (Integer)
+	_this select 4: (optional) formation of group (String)
 
 	Returns:
 	Boolean - success flag
