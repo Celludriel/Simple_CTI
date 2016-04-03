@@ -15,6 +15,10 @@
         [_x, AIR_TYPE] call createMhqVehicle;
     };
 
+    if ( toString _mhqCheck == "mhq_sea" ) then {
+        [_x, SEA_TYPE] call createMhqVehicle;
+    };
+
     if ( _x == "respawn_west_1" ) then {
         [REDEPLOY_FLAG] call createRedeployFlag;
     };
