@@ -3,7 +3,6 @@ params ["_servicePointMarker"];
 private ["_servicePoint", "_position", "_cannotBeServicedYetTimer", "_nextServiceTime"];
 
 _position = getMarkerPos _servicePointMarker;
-diag_log format ["_position %1", _position];
 
 _servicePoint = createVehicle [SERVICE_POINT_REPRESENTATION, _position, [], 0, "can_collide"];
 _servicePoint setDir (markerDir _servicePointMarker);
