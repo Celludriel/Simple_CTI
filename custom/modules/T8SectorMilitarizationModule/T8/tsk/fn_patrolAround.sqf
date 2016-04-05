@@ -105,15 +105,8 @@ if (( typeName _marker ) isEqualTo ( typeName [] )) then
 // Cycle in case we reach the end
 [ _group, _cycle, "CYCLE", "SAFE", "", 100 ] call T8U_fnc_CreateWaypoint;
 
-_group setCurrentWaypoint [ _group, ceil ( random ( count ( waypoints _group ) ) ) ];
-
-if(_group getVariable ["NEWLY_CREATED", false]) then {
-	_currentWP = currentWaypoint _group;
-	{
-		_x setPos (getWPPos [_group, _currentWP]);
-	} foreach units _group;
-	_group setVariable ["NEWLY_CREATED", false];
-};
+// Teleport the group to the current waypoint so they can start their loop only if the group is first created
+[_group] call T8U_fnc_teleportGroupToCurrentWaypoint;
 
 if ( T8U_var_DEBUG ) then { [ "fn_patrolAround.sqf", "Successfully Initialized", [ _group ] ] spawn T8U_fnc_DebugLog; };
 

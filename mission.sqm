@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=144;
+		nextID=153;
 	};
 	class MarkerIDProvider
 	{
-		nextID=49;
+		nextID=57;
 	};
 	class Camera
 	{
-		pos[]={3688.1377,202.26575,5431.6675};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={7090.5107,30.444944,5958.8267};
+		dir[]={0.24559665,-0.7050193,0.66531903};
+		up[]={0.24414921,0.70918334,0.66139787};
+		aside[]={0.93812978,-1.9319123e-007,-0.34630153};
 	};
 };
 binarizationWanted=0;
@@ -30,7 +30,6 @@ addons[]=
 	"A3_Air_F_Heli_Heli_Transport_03",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Mil_Cargo",
-	"A3_Boat_F_Boat_Armed_01",
 	"A3_Modules_F_Multiplayer",
 	"A3_Weapons_F_Ammoboxes"
 };
@@ -173,7 +172,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=37;
+		items=42;
 		class Item0
 		{
 			dataType="Marker";
@@ -777,7 +776,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58792;
+			angle=225.58786;
 			id=103;
 		};
 		class Item32
@@ -858,21 +857,6 @@ class Mission
 			};
 		};
 		class Item33
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7155.0522,2.5578008,5964.4214};
-				angles[]={0,3.3759084,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=113;
-			type="B_Boat_Armed_01_minigun_F";
-		};
-		class Item34
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1077,7 +1061,7 @@ class Mission
 				nAttributes=10;
 			};
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1173,7 +1157,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Marker";
 			position[]={3761.6941,34.006439,5627.9385};
@@ -1182,29 +1166,79 @@ class Mission
 			type="Empty";
 			id=143;
 		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={6410.0737,7.9712267,5391.8364};
+			name="service_point_1";
+			text="Service";
+			type="Empty";
+			angle=41.721001;
+			id=144;
+		};
+		class Item37
+		{
+			dataType="Marker";
+			position[]={4385.8892,227.17798,3819.7583};
+			name="service_point_2";
+			text="Service";
+			type="Empty";
+			angle=267.63293;
+			id=146;
+		};
+		class Item38
+		{
+			dataType="Marker";
+			position[]={2095.2947,6.2286162,5711.2188};
+			name="service_point_3";
+			text="Service";
+			type="Empty";
+			angle=99.605133;
+			id=147;
+		};
+		class Item39
+		{
+			dataType="Marker";
+			position[]={2967.9905,171.39999,1868.7925};
+			name="service_point_4";
+			text="Service";
+			type="Empty";
+			angle=48.782413;
+			id=148;
+		};
+		class Item40
+		{
+			dataType="Marker";
+			position[]={7154.8896,-1.2875854,5964.4351};
+			name="mhq_sea_4";
+			text="Mobile Hq Four";
+			type="Empty";
+			angle=188.83394;
+			id=150;
+		};
+		class Item41
+		{
+			dataType="Marker";
+			position[]={7101.7734,6.3554554,5978.9888};
+			name="service_point_5";
+			text="Service";
+			type="Empty";
+			angle=192.82301;
+			id=151;
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=2;
+			nextID=1;
 		};
 		class Links
 		{
-			items=2;
+			items=1;
 			class Item0
 			{
 				linkID=0;
-				item0=114;
-				item1=113;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item1
-			{
-				linkID=1;
 				item0=114;
 				item1=85;
 				class CustomData

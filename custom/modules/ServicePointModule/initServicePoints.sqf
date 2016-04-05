@@ -7,6 +7,6 @@
     [["_servicePointCheck: %1", _servicePointCheck]] call CTISHR_fnc_ctiLog;
 
     if ( toString _servicePointCheck == "service_point_" ) then {
-        [_x] call createServicePoint;
+        [_x] spawn createServicePoint;
     };
 } forEach allMapMarkers;

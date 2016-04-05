@@ -7,7 +7,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	Open < T8\CONFIG.hpp > to change basic variables !
+	Open < custom\modules\T8SectorMilitarizationModule\T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
 */
@@ -87,6 +87,7 @@
 			addFunction(zone);
 			addFunction(zoneCreate);
 			addFunction(zoneNotAktiv);
+			addFunction(teleportGroupToCurrentWaypoint);
 
 			// polygon stuff
 			addFunction(getPolygon);

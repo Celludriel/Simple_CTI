@@ -14,7 +14,7 @@
 	_this select 2: (optional) range to search for manable vehicle / static guns (integer)
 
 	Breakout Conditions:
-	- all units have left the group
+	- all units have left the group 
 
 	Example(s):
 	null = [ group this, "MY_MARKER" ] execVM "fn_defend.sqf"
@@ -57,18 +57,17 @@ waitUntil { sleep 1; ( _group ) getVariable "defend_CanMan" };
 _units = ( units _group ) - [ leader _group ];
 [ _units, _marker, _range, "LandVehicle" ] call T8U_fnc_GetInGunner;
 
-
 if ( T8U_var_DEBUG ) then { [ "fn_defend.sqf", "Successfully Initialized", [ _group ] ] spawn T8U_fnc_DebugLog; };
 
 waitUntil { sleep 5; !( count ( units _group ) > 0 ) };
 
-// for the new fn_groupRegroup.sqf ...
+// for the new fn_groupRegroup.sqf ...		
 // waitUntil { sleep 5; [ _group ] call T8U_fnc_ReleaseGroup };
 
 if ( T8U_var_DEBUG ) then { [ "fn_defend.sqf", "TERMINATING", [ _group ] ] spawn T8U_fnc_DebugLog; };
 
 {
-	if ( alive _x ) then
+	if ( alive _x ) then 
 	{
 		[ _x, false ] call T8U_fnc_MoveOut;
 	};
