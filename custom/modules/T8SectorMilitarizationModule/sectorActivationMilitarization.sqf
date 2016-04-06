@@ -6,6 +6,7 @@ _markerName = _sector getVariable "markerName";
 _pos = getMarkerPos _markerName;
 
 _groupArrayFullTeam = [ "O_Soldier_SL_F", "O_Soldier_AR_F", "O_Soldier_AAR_F", "O_medic_F", "O_Soldier_AT_F", "O_Soldier_AAT_F", "O_Soldier_GL_F", "O_Soldier_GL_F" ];
+_groupArrayVehicleTest = [ "O_Heli_Attack_02_black_F", "O_APC_Tracked_02_cannon_F" ];
 
 _spawnThisUnits = [];
 
@@ -20,6 +21,19 @@ for "_i" from 1 to 6 do {
 
 	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
 	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker], [ "PATROL_AROUND", T8U_var_PatAroundRange, _formation ] ];
+	_spawnThisUnits pushBack _groupToSpawn;
+};
+
+for "_i" from 1 to 3 do {
+	_spawnMarker = createMarker [format["%1_outer_veh_%2", _markerName, _i], _pos];
+	_spawnMarker setMarkerShape "ELLIPSE";
+	_spawnMarker setMarkerAlphaLocal 0;
+	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
+	_spawnMarker setMarkerSize [_outerCircleRange, _outerCircleRange];
+
+	waitUntil { !isNil("_spawnMarker") };
+
+	_groupToSpawn = [ [ _groupArrayVehicleTest, _spawnMarker, false], [ "PATROL_AROUND", T8U_var_PatAroundRange ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 

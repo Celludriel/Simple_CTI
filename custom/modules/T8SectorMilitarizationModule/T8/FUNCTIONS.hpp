@@ -7,7 +7,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	Open < custom\modules\T8SectorMilitarizationModule\T8\CONFIG.hpp > to change basic variables !
+	Open < T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
 */
@@ -67,6 +67,7 @@
 			addFunction(groupRegroup);
 			addFunction(hitEvent);
 			addFunction(inBuilding);
+			addFunction(introduce);
 			addFunction(killedEvent);
 			addFunction(moveOut);
 			addFunction(moveTo);
@@ -88,6 +89,8 @@
 			addFunction(zoneCreate);
 			addFunction(zoneNotAktiv);
 			addFunction(teleportGroupToCurrentWaypoint);
+			addFunction(createRandomSpawnContainer);
+			addFunction(fillRandomSpawnContainer);
 
 			// polygon stuff
 			addFunction(getPolygon);

@@ -53,10 +53,17 @@ _return = [];
 
 	_cacheArray			= _x param [ 3, [], [[]]];
 	_cachePos			= _cacheArray param [ 0, [], [[],""]];
+<<<<<<< HEAD
 
-	_vehicleArray		= _groupArray param [ 0, [], [[],configFile]];
+	_vehicleArray		= _groupArray param [ 0, [], [[]]];
 	_markerArray		= _groupArray param [ 1, false, ["",[]]];
 
+=======
+	
+	_vehicleArray		= _groupArray param [ 0, [], [[],configFile]];
+	_markerArray		= _groupArray param [ 1, false, ["",[]]];	
+	
+>>>>>>> 5b77a142bc3a703a3c9283f809fed86e6c4d295e
 	_infGroup	= true;
 	_groupSide	= T8U_var_EnemySide;
 	_customFNC	= "NO-FUNC-GIVEN";
@@ -103,10 +110,19 @@ _return = [];
 		};
 	};
 
+<<<<<<< HEAD
 	if (
 		!( count _vehicleArray > 0 )
 		OR { _posMkr == "NO-POS-GIVEN" }
 		OR { _type == "NO-TASK-GIVEN" }
+		OR { ( getMarkerPos _posMkr ) isEqualTo [0,0,0] }
+	) exitWith { [ ( format [ "Something went seriously wrong! Error in Unit's spawning definition!<br /><br />Marker: %1<br />Task: %2", _posMkr, _type ] ) ] call T8U_fnc_BroadcastHint; _error = true; };
+
+
+=======
+	if ( 
+		_posMkr == "NO-POS-GIVEN"
+		OR { _type == "NO-TASK-GIVEN" } 
 		OR { ( getMarkerPos _posMkr ) isEqualTo [0,0,0] }) exitWith
 	{
 		[( format [ "Something went seriously wrong! Error in Unit's spawning definition!<br /><br />Marker: %1<br />Task: %2", _posMkr, _type ])] call T8U_fnc_BroadcastHint;
@@ -118,7 +134,8 @@ _return = [];
 		[( format [ "Something went seriously wrong! Error in Unit's spawning definition!<br /><br />Marker: %1<br />Task: %2", _posMkr, _type ])] call T8U_fnc_BroadcastHint;
 		_error = true;
 	};
-
+	
+>>>>>>> 5b77a142bc3a703a3c9283f809fed86e6c4d295e
 	if (( typeName _cachePos ) isEqualTo ( typeName "STR" )) then { _cachePos = getMarkerPos _cachePos; };
 	if ( _cachePos isEqualTo [0,0,0]) then { _cachePos = _posMkr; };
 	if ( count _cachePos > 1 ) then
@@ -129,6 +146,27 @@ _return = [];
 	};
 
 	_relPos = [];
+<<<<<<< HEAD
+	if ( ! _infGroup ) then
+	{
+		private [ "_tempRelPos" ];
+		_tempRelPos = [ [0,0], [0,9], [0,-9], [9,0], [9,9], [9,-9], [-9,0], [-9,9], [-9,-9], [18,0], [18,9], [18,-9], [-18,0], [-18,9], [-18,-9], [0,18], [9,18], [-9,18], [0,-18], [9,-18], [-9,-18], [18,18], [18,-18], [-18,18], [-18,-18] ];
+
+		{
+			if (( count _tempRelPos  ) > 0 ) then
+			{
+				private [ "_p" ];
+				_p = [ _tempRelPos ] call BIS_fnc_arrayShift;
+				_relPos pushBack _p;
+			} else {
+				_relPos pushBack [0,4];
+			};
+
+			false
+		} count _vehicleArray;
+
+		// if ( count _vehicleArray < 2 ) then { _tempRelPos = []; };
+=======
 	
 	if (( typeName _vehicleArray ) isEqualTo "ARRAY" ) then 
 	{
@@ -152,6 +190,7 @@ _return = [];
 			
 			// if ( count _vehicleArray < 2 ) then { _tempRelPos = []; };
 		};
+>>>>>>> 5b77a142bc3a703a3c9283f809fed86e6c4d295e
 	};
 	
 // ------------------ TASK SWITCH --- UNITS WILL BE SPAWNED NOW --------------------------------------------------------------
