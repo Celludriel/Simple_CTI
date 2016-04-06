@@ -1,3 +1,6 @@
+/*
+	USAGE: [<group>] call T8U_fnc_teleportGroupToCurrentWaypoint;
+*/
 params ["_group"];
 
 private ["_waypointPosition"];
