@@ -11,43 +11,22 @@ _groupArrayVehicleTest = [ "O_Heli_Attack_02_black_F", "O_APC_Tracked_02_cannon_
 _spawnThisUnits = [];
 
 for "_i" from 1 to 6 do {
-	_spawnMarker = createMarker [format["%1_outer_%2", _markerName, _i], _pos];
-	_spawnMarker setMarkerShape "ELLIPSE";
-	_spawnMarker setMarkerAlphaLocal 0;
 	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
-	_spawnMarker setMarkerSize [_outerCircleRange, _outerCircleRange];
-
-	waitUntil { !isNil("_spawnMarker") };
-
 	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker], [ "PATROL_AROUND", T8U_var_PatAroundRange, _formation ] ];
+	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 
-for "_i" from 1 to 3 do {
-	_spawnMarker = createMarker [format["%1_outer_veh_%2", _markerName, _i], _pos];
-	_spawnMarker setMarkerShape "ELLIPSE";
-	_spawnMarker setMarkerAlphaLocal 0;
-	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
-	_spawnMarker setMarkerSize [_outerCircleRange, _outerCircleRange];
-
-	waitUntil { !isNil("_spawnMarker") };
-
-	_groupToSpawn = [ [ _groupArrayVehicleTest, _spawnMarker, false], [ "PATROL_AROUND", T8U_var_PatAroundRange ] ];
+for "_i" from 1 to 2 do {
+	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 50;
+	_groupToSpawn = [ [ _groupArrayVehicleTest, _markerName, false], [ "PATROL_AROUND", _outerCircleRange ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 
-for "_i" from 1 to 6 do {
-	_spawnMarker = createMarker [format["%1_inner_%2", _markerName, _i], _pos];
-	_spawnMarker setMarkerShape "ELLIPSE";
-	_spawnMarker setMarkerAlphaLocal 0;
+for "_i" from 1 to 4 do {
 	_innerCircleRange = (SECTOR_RANGE / 2) - T8U_var_PatAroundRange - 25;
-	_spawnMarker setMarkerSize [_innerCircleRange, _innerCircleRange];
-
-	waitUntil { !isNil("_spawnMarker") };
-
 	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _spawnMarker ], [ "PATROL_AROUND", T8U_var_PatAroundRange, _formation ] ];
+	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName ], [ "PATROL_AROUND", _innerCircleRange, _formation, "AWARE" ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 

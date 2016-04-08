@@ -311,8 +311,6 @@ AuxSling_fnc_Conditions1 = {
 	_obj = _returnofthedead select 0;
 	_list = _returnofthedead select 1;
 
-
-
 	if !(isNull _obj) then {
 		_vehname = format ["<t color='#FF0000'>Sling Load %1</t>",getText (configfile >> "CfgVehicles" >> typeOf _obj >> "displayName")];
 		_unit setUserActionText [(_unit getVariable "AuxSling_Load_Action"),_vehname];

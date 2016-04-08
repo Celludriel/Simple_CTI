@@ -42,9 +42,6 @@ class Params
 // ============
 private ["_currentWeather","_initialWeatherParam","_weatherTemplates","_weatherUpdateArray","_weatherUpdateForecasts","_nextWeather"];
 
-_justPlayers = allPlayers - entities "HeadlessClient_F";
-waitUntil { (count _justPlayers) > 0 };
-
 // Setup Weather Types Array [Weather Name, Possible Weather Forecasts, Weather Settings] - Suggested that they are left as is.
 _weatherTemplates = [
         ["Clear",[0,1,0,5,0],[0.30,0,0,1,1]],

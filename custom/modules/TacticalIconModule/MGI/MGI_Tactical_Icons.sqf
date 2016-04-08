@@ -19,7 +19,10 @@ _totalEntitiesInRange = (getPosATL player) nearEntities [["CAManBase", "Air", "C
 {
   if(_total_entities >= 30) exitWith { true };
 
-  if ((side _x != playerSide ) and (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && !(terrainIntersect [[getPosATL player select 0, getPosATL player select 1, (getPosATL player select 2)+0.5], [getPosATL _x select 0, getPosATL _x select 1, (getPosATL _x select 2)+1]]) )) then {
+/*if ((side _x != playerSide ) and (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && !(terrainIntersect [[getPosATL player select 0, getPosATL player select 1, (getPosATL player select 2)+0.5], [getPosATL _x select 0, getPosATL _x select 1, (getPosATL _x select 2)+1]]) )) then {
+*/
+
+  if ((side _x != playerSide ) && ([objNull, "VIEW"] checkVisibility [eyePos player, eyePos _x] > 0.5)) then {
 
       if ( !(_x isKindOf "animal")
             && {_x != vehicle player}

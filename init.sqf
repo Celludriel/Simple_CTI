@@ -14,6 +14,8 @@ waitUntil { isNull _handle };
 _handle = [] execVM "core\client\initClient.sqf";
 waitUntil { isNull _handle };
 
+waitUntil { getClientState == "BRIEFING READ" };
+
 // init modules
 [] execVM "custom\modules\TimeAccelerationModule\initModule.sqf";
 //[] execVM "custom\modules\LVSectorMilitarizationModule\initModule.sqf";
