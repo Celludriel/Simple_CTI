@@ -50,5 +50,5 @@ if(!_isDeployed)then{
     _mhq remoteExec ["removeAllActions", 0, true];
     [_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT]] remoteExec ["addAction", 0, true];
     [_mhq, [(localize "STR_MHQ_REDEPLOY"), "[] call mhqOpenDialog;"]] remoteExec ["addAction", 0, true];
-    [_mhq, [(localize "STR_MHQ_UNDEPLOY"), "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
+    [_mhq, ["<t color='#ff1111'>" + (localize "STR_MHQ_UNDEPLOY") + "</t>", "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
 };

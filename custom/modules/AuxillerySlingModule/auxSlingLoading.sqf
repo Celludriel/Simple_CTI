@@ -1,8 +1,8 @@
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// Aux SlingLoading Script (modified as module)
-// Version 1.0 based on (1.14)
-// Date: 2016.03.25
-// Authors: Lala14 (original)
+// Aux SlingLoading Script
+// Version 1.16
+// Date: 2016.02.04
+// Authors: Lala14
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 
 // init line:
@@ -29,6 +29,14 @@ if (isNil "AuxSling_allowDeadCarry") then {
 	AuxSling_allowDeadCarry = "AuxLoadAllowDeathCarry" call BIS_fnc_getParamValue; //if AuxSling_allowDeadCarry = 1, Allowed to sling dead vehicles
 };
 
+if (isNil "AuxSling_kindOfClasses") then {
+	AuxSling_kindOfClasses = ["Ship","LandVehicle","Air","thingX"]; //An array that contains all the classnames of possible vehicles that will be detected by this script! note this will not always allow them to be picked up!
+};
+
+if (isNil "AuxSling_detectRadius") then {
+	AuxSling_detectRadius = 11; //the radius at which vehicles will be detected from the helicopter, note the larger the distance the more fps drop/lag
+};
+
 /*Don't touch unless you know what your doing*/
 AuxSling_Loaded = false;
 
@@ -44,7 +52,7 @@ if (isDedicated) exitWith {
 			if (isNil "_isspawn") then { _isspawn = false; };
 			if (typeName _stuff isEqualTo "STRING") then { _stuff = call compile _stuff; };
 			if (_isspawn) then { _array spawn _stuff } else { _array call _stuff };*/
-			[] spawn AuxSling_fnc_localGlobalExec;
+			(_this select 1) call AuxSling_fnc_localGlobalExec;
 		};
 	};
 };
@@ -57,15 +65,22 @@ if (isNil "AuxSling_globalVar") then {
 	if (isNil "AuxSling_globalVar") then {
 		AuxSling_globalVar = 'init';
 		"AuxSling_globalVar" addPublicVariableEventHandler {
-			[] spawn AuxSling_fnc_localGlobalExec;
+			(_this select 1) call AuxSling_fnc_localGlobalExec;
 		};
 	};
 };
 
 // config [["kindOf classnames"] ]]
 if (isNil "AuxSling_light_config") then { AuxSling_light_config = [] };
+if (isNil "AuxSling_light_Helicopter_config") then { AuxSling_light_Helicopter_config = [] };
 if (isNil "AuxSling_medium_config") then { AuxSling_medium_config = [] };
+if (isNil "AuxSling_medium_Helicopter_config") then { AuxSling_medium_Helicopter_config = [] };
 if (isNil "AuxSling_heavy_config") then { AuxSling_heavy_config = [] };
+if (isNil "AuxSling_heavy_Helicopter_config") then { AuxSling_heavy_Helicopter_config = [] };
+
+AuxSling_light_Helicopter_config = AuxSling_light_Helicopter_config + [];
+AuxSling_medium_Helicopter_config = AuxSling_light_Helicopter_config + AuxSling_medium_Helicopter_config + [];
+AuxSling_heavy_Helicopter_config = AuxSling_medium_Helicopter_config + AuxSling_heavy_Helicopter_config + [];
 
 AuxSling_light_config = AuxSling_light_config + ["Offroad_01_base_F","Hatchback_01_base_F","SUV_01_base_F"]; //lift = 500 e.g. Littlebird
 AuxSling_medium_config = AuxSling_light_config + AuxSling_medium_config + ["APC_Wheeled_01_base_F","APC_Wheeled_02_base_F","APC_Wheeled_03_base_F","Cha_LAV25_base"]; //lift = 4000 e.g GhostHawk
@@ -75,8 +90,7 @@ AuxSling_fnc_InList = {
 	_found = false;
 	_object = objNull;
 	_list = "AuxSling_light_config";
-	_objectsfound = _this select 0;
-	_vehweight = [_this, 1, 10000] call bis_fnc_param;
+	_this params ["_objectsfound",["_vehweight",10000]];
 
 	{
 		_obj = _x;
@@ -86,42 +100,45 @@ AuxSling_fnc_InList = {
 				if (_obj isKindOf _x) exitWith {_found = true; _list = "AuxSling_light_config";};
 			}forEach AuxSling_light_config;
 		};
-
 		if (_vehweight > 600 && !_found) then {
 			{
 				if (_obj isKindOf _x) exitWith {_found = true; _list = "AuxSling_medium_config";};
 			}forEach AuxSling_medium_config;
 		};
-
 		if (_vehweight > 4000 && !_found) then {
 			{
 				if (_obj isKindOf _x) exitWith {_found = true; _list = "AuxSling_heavy_config";};
 			}forEach AuxSling_heavy_config;
 		};
-
 		if (_found) exitWith {_object = _x;};
-
 	}forEach _objectsfound;
-
 	if ((AuxSling_Weight == 0) && (AuxSling_EveryVehicles == 1)) then {_object = _objectsfound select 0};
-
 	[_object,_list];
+};
+
+AuxSling_fnc_inListv2 = {
+	_this params [["_veh",objNull]];
+	if (isNull _veh) exitWith { hint 'error occurred when getting weight'; 0};
+
+	_count1 = { _veh isKindOf _x } count AuxSling_light_Helicopter_config;
+	if (_count1 > 0) exitWith { 500 };
+	_count2 = { _veh isKindOf _x } count AuxSling_medium_Helicopter_config;
+	if (_count2 > 0) exitWith { 4000 };
+	_count3 = { _veh isKindOf _x } count AuxSling_heavy_Helicopter_config;
+	if (_count3 > 0) exitWith { 10000 };
+	getNumber (configfile >> "CfgVehicles" >> typeOf _veh >> "slingLoadMaxCargoMass");
 };
 
 AuxSling_fnc_DoAttaching = {
 	_unit = _this select 0;
 	_veh = vehicle _unit;
-	_vehweight = getNumber (configfile >> "CfgVehicles" >> typeOf _veh >> "slingLoadMaxCargoMass");
+	_vehweight = ([_veh] call AuxSling_fnc_inListv2);
 
 	if (AuxSling_Weight == 0) then {_vehweight = 10000;};
-
 	if (!isNil {_veh getVariable "AuxSling_AttachedObject"}) exitWith {hint "There is still something attached"};
-
-	_nearUnits = nearestObjects [_veh, ["Ship","LandVehicle","Air"],11];
+	_nearUnits = nearestObjects [_veh, AuxSling_kindOfClasses, AuxSling_detectRadius];
 	_nearUnits = _nearUnits - [_veh];
-
 	if (count _nearUnits == 0) exitWith {hint "no near vehicles"};
-
 	_obj = objNull;
 	_ropecount = [];
 
@@ -129,34 +146,26 @@ AuxSling_fnc_DoAttaching = {
 	_obj = _returnofthedead select 0;
 	_list = _returnofthedead select 1;
 	if ((isNull _obj) && (AuxSling_EveryVehicles == 0)) exitWith {hint "no valid sling targets"};
-
 	if ((AuxSling_allowDeadCarry == 0) && !(alive _obj)) exitWith {hint "can't carry dead objects"};
 
 	if (count getArray (configfile >> "CfgVehicles" >> typeof _obj >> "slingLoadCargoMemoryPoints") > 0) then {
 		_ropecount = getArray (configfile >> "CfgVehicles" >> typeof _obj >> "slingLoadCargoMemoryPoints");
 	};
 
-	if ((AuxSling_Weight == 0) && (AuxSling_EveryVehicles == 1)) exitWith { [_unit,_obj,_ropecount,"I_Quadbike_01_F"] spawn AuxSling_fnc_TheAttaching; };
-
-	if (AuxSling_Weight == 0) exitWith { [_unit,_obj,_ropecount,"I_Quadbike_01_F"] spawn AuxSling_fnc_TheAttaching; };
-
-	if (_list isEqualTo "AuxSling_heavy_config") then {
-		[_unit,_obj,_ropecount,"B_MRAP_01_F"] spawn AuxSling_fnc_TheAttaching;
-	};
-
-	if (_list isEqualTo "AuxSling_medium_config") then {
-		[_unit,_obj,_ropecount,"C_Hatchback_01_F"] spawn AuxSling_fnc_TheAttaching;
-	};
-
-	if (_list isEqualTo "AuxSling_light_config") then {
-		[_unit,_obj,_ropecount,"I_Quadbike_01_F"] spawn AuxSling_fnc_TheAttaching;
-	};
+	[_unit, _obj, _ropecount] spawn AuxSling_fnc_TheAttaching;
 };
 
 AuxSling_fnc_TheAttaching = {
 	_unit = _this select 0;
 	_veh = vehicle _unit;
 	_obj = _this select 1;
+	//_vehweight = getNumber(configfile >> "CfgVehicles" >> typeOf _veh >> "slingLoadMaxCargoMass");
+	_vehweight = ([_veh] call AuxSling_fnc_inListv2);
+
+	_obj setVariable ["AuxSling_Original_Weight", getMass _obj, true];
+	if ((getMass _obj) > (_vehweight*0.8)) then {
+		[_obj, (_vehweight*0.8)] remoteExec ["setMass", 0, false];
+	};
 
 	if (AuxSling_indestructibleLoad == 1) then {
 		_theowner = owner _obj;
@@ -166,50 +175,34 @@ AuxSling_fnc_TheAttaching = {
 			_obj allowDamage false;
 		};
 	};
-
 	_ropecount = _this select 2;
-	_oneropeveh = _this select 3;
+	_veh setVariable ["AuxSling_AttachedObject",_obj,true];
+	_veh setVariable ["AuxSling_Ropes",[],true];
 	if (count _ropecount > 0) then {
-		_veh setVariable ["AuxSling_Ropes",[],true];
-		_veh setVariable ["AuxSling_AttachedToPoints",[],true];
-
-		_ball = createVehicle [_oneropeveh, getposatl _obj, [], 0, "CAN_COLLIDE"];
-		_ball allowDamage false;
-		_ball setDir (getDir _obj);
-		_ball setVariable ["BIS_enableRandomization",false,true];
-		_obj attachto [_ball];
-		///{_ball setObjectTextureGlobal [_forEachIndex,''];}forEach (getArray (configFile >> 'cfgVehicles' >> typeOf _ball >> "hiddenSelections"));
-		_ball hideObjectGlobal true;
-		_ball enableSimulationGlobal true;
-		_initialRope = ropeCreate [_veh, "slingload0", _ball, [0,0,0], 10];
-		_veh setVariable ["AuxSling_Ropes",(_veh getVariable "AuxSling_Ropes") + [_initialRope],true];
-		_veh setVariable ["AuxSling_AttachedToPoints",(_veh getVariable "AuxSling_AttachedToPoints") + [_ball],true];
-
 		{
-			//_ropename = ropeCreate [_veh, "slingload0", _obj, _x, 10];
-			_test = "Sign_Sphere10cm_F" createVehicle getPos _obj;
-			_test attachto [_obj,[0,0,0],_x];
-			_ropename = ropeCreate [_veh, "slingload0", _test, [0,0,0], 10];
-			{_test setObjectTextureGlobal [_forEachIndex,''];}forEach (getArray (configFile >> 'cfgVehicles' >> typeOf _test >> "hiddenSelections"));
+			_ropename = ropeCreate [_veh, getText (configFile >> 'cfgVehicles' >> typeOf _veh >> "slingLoadMemoryPoint"), _obj, (_obj selectionPosition _x), if (_obj distance _veh <= 10) then { 10 } else { ((_obj distance _veh) + 2) }];
 			_veh setVariable ["AuxSling_Ropes",(_veh getVariable "AuxSling_Ropes") + [_ropename],true];
 		}forEach _ropecount;
-
-		_veh setVariable ["AuxSling_AttachedObject",_obj,true];
 	} else {
-			_ball = createVehicle [_oneropeveh, getposatl _obj, [], 0, "CAN_COLLIDE"];
-			_ball allowDamage false;
-			_ball setDir (getDir _obj);
-			_ball setVariable ["BIS_enableRandomization",false,true];
-			_obj attachTo [_ball];
-
-			for "_i" from 0 to count (getArray (configfile >> "CfgVehicles" >> _oneropeveh >> "hiddenSelections")) do {
-				_ball setObjectTextureGlobal [_i,""];
+		//_ropename = ropeCreate [_veh, getText (configFile >> 'cfgVehicles' >> typeOf _veh >> "slingLoadMemoryPoint"), _obj, [0,0,0], 10];
+		_bbxreal = boundingBoxReal _obj select 1;
+		for "_i" from 1 to 4 do {
+			_xvar = if (_i in [1,4]) then { (_bbxreal select 0) } else { (_bbxreal select 0) * -1 };
+			_yvar = if (_i in [1,3]) then { (_bbxreal select 1) } else { (_bbxreal select 1) * -1 };
+			if (_obj isKindOf "Air") then {
+				switch (_i) do
+				{
+					case 1 : {_xvar = ((_bbxreal select 0)/2); _yvar = 0;};
+					case 2 : {_xvar = 0; _yvar = ((_bbxreal select 1)/2)*-1;};
+					case 3 : {_xvar = ((_bbxreal select 0)/2)*-1; _yvar = 0;};
+					case 4 : {_xvar = 0; _yvar = ((_bbxreal select 1)/2);};
+				};
 			};
-
-			_ropename = ropeCreate [_veh, "slingload0", _ball, [0,0,0], 10];
-			_veh setVariable ["AuxSling_AttachedObject",_obj,true];
-			_veh setVariable ["AuxSling_Ropes",[_ropename],true];
-			_veh setVariable ["AuxSling_AttachedToPoints",[_ball],true];
+			_zvar = ((_bbxreal select 2)/2);
+			systemChat str([_xvar,_yvar,_zvar]);
+			_ropename = ropeCreate [_veh, getText (configFile >> 'cfgVehicles' >> typeOf _veh >> "slingLoadMemoryPoint"), _obj, [_xvar,_yvar,_zvar], if (_obj distance _veh <= 10) then { 10 } else { ((_obj distance _veh) + 2) }];
+			_veh setVariable ["AuxSling_Ropes",(_veh getVariable "AuxSling_Ropes") + [_ropename],true];
+		};
 	};
 
 	_veh enableRopeAttach false;
@@ -220,36 +213,27 @@ AuxSling_fnc_DoDetaching = {
 	_unit = _this select 0;
 	_veh = vehicle _unit;
 	_obj = _this select 1;
-
 	if (isNil "_obj") then { _obj = (_veh getVariable "AuxSling_AttachedObject"); } else { if (!(_obj in (attachedObjects _veh)) && (alive _veh)) then { _obj = nil; }; };
-
 	if (isNil "_obj") exitWith {};
-
 	_attachedropes = _veh getVariable "AuxSling_Ropes";
-	_attachedpoints = _veh getVariable "AuxSling_AttachedToPoints";
 	_curvel = velocity (_veh getVariable "AuxSling_AttachedObject");
-
 	if (isNil "_curvel") then { _curvel = [0,0,0]; };
 
-	{
-		deleteVehicle _x;
-	}forEach _attachedpoints;
-
-	_veh setVariable ["AuxSling_AttachedToPoints",nil,true];
+	if ((_obj getVariable ["AuxSling_Original_Weight",0]) != getMass _obj) then {
+		[_obj, (_obj getVariable ["AuxSling_Original_Weight",0])] remoteExec ["setMass", 0, false];
+		_obj setVariable ["AuxSling_Original_Weight",nil,true];
+	};
 
 	{
 		ropeDestroy _x;
 	}forEach _attachedropes;
-
 	_veh setVariable ["AuxSling_Ropes",nil,true];
 	_theowner = owner _obj;
-
 	if ((isMultiplayer) && (_theowner isEqualTo 0) && !(local _obj)) then {
 		[[_obj],{(_this select 0) allowDamage true;},true] spawn AuxSling_fnc_execGlobal;
 	} else {
 		_obj allowDamage false;
 	};
-
 	(_veh getVariable "AuxSling_AttachedObject") setVelocity _curvel;
 	_veh setVariable ["AuxSling_AttachedObject",nil,true];
 	_veh enableRopeAttach true;
@@ -259,25 +243,12 @@ AuxSling_fnc_DetectParentDestroyed = {
 	_unit = _this select 0;
 	_veh = vehicle _unit;
 	_obj = _this select 1;
-
-	waitUntil {
-		if (!alive _veh) then {
-			[_unit,_obj] spawn AuxSling_fnc_DoDetaching;
-			_veh setVariable ["AuxSling_AttachedObject",nil,true];
-		};
-
-		if (!(alive _obj) && (AuxSling_allowDeadCarry == 0)) then {
-			[_unit,_obj] spawn AuxSling_fnc_DoDetaching;
-			_veh setVariable ["AuxSling_AttachedObject",nil,true];
-		};
-
-		(isNull (_veh getVariable ["AuxSling_AttachedObject",objNull]))
-	};
+	waitUntil { if (!alive _veh) then { [_unit,_obj] spawn AuxSling_fnc_DoDetaching; _veh setVariable ["AuxSling_AttachedObject",nil,true]; }; if (!(alive _obj) && (AuxSling_allowDeadCarry == 0)) then { [_unit,_obj] spawn AuxSling_fnc_DoDetaching; _veh setVariable ["AuxSling_AttachedObject",nil,true]; }; (isNull (_veh getVariable ["AuxSling_AttachedObject",objNull])) };
 };
 
 AuxSling_fnc_execGlobal = {
 	AuxSling_globalVar = _this;
-	[] spawn AuxSling_fnc_localGlobalExec;
+	_this call AuxSling_fnc_localGlobalExec;
 	publicVariable "AuxSling_globalVar";
 };
 
@@ -290,9 +261,7 @@ AuxSling_fnc_localGlobalExec = {
 	_stuff = ((_mainarr select 1) select 1);
 	_isspawn = ((_mainarr select 1) select 2);
 	if (isNil "_isspawn") then { _isspawn = false; };
-
 	if (typeName _stuff isEqualTo "STRING") then { _stuff = call compile _stuff; };
-
 	if (_isspawn) then { _array spawn _stuff } else { _array call _stuff };
 };
 
@@ -300,14 +269,12 @@ AuxSling_fnc_Conditions1 = {
 	_unit = _this select 0;
 	_veh = _this select 1;
 
-	_nearUnits = nearestObjects [_veh, ["Car","Motorcycle","Tank","Ship","Autonomous","Air"],11];
+	_nearUnits = nearestObjects [_veh, AuxSling_kindOfClasses, AuxSling_detectRadius];
 	_nearUnits = _nearUnits - [_veh];
 
 	_vehweight = getNumber (configfile >> "CfgVehicles" >> typeOf _veh >> "slingLoadMaxCargoMass");
-
 	if (AuxSling_Weight == 0) then {_vehweight = 10000;};
-
-	_returnofthedead = [_nearUnits, _vehweight] call AuxSling_fnc_InList;
+	_returnofthedead = [_nearUnits,_vehweight] call AuxSling_fnc_InList;
 	_obj = _returnofthedead select 0;
 	_list = _returnofthedead select 1;
 
@@ -317,11 +284,8 @@ AuxSling_fnc_Conditions1 = {
 	} else {
 		_unit setUserActionText [(_unit getVariable "AuxSling_Load_Action"),"<t color='#FF0000'>Unable to Sling</t>"];
 	};
-
-	_return = (alive _veh) && ((isNil {_veh getVariable "AuxSling_AttachedObject"}) && (count _nearUnits > 0) && (_veh isKindOf "Helicopter"));
-
+	_return = (alive _veh) && ((isNil {_veh getVariable "AuxSling_AttachedObject"}) && (count _nearUnits > 0) && ((_veh isKindOf "Helicopter") OR (([_veh] call AuxSling_fnc_inListv2) > 0) OR ((getNumber(configFile >> 'cfgVehicles' >> typeof _veh >> 'slingLoadMaxCargoMass')) > 0)));
 	if (AuxSling_slingSlingableVehicles == 0) then { _return = _return && !(_veh canSlingLoad _obj); };
-
 	if ((AuxSling_allowDeadCarry == 0) && (!alive _obj) ) then {
 		_unit setUserActionText [(_unit getVariable "AuxSling_Load_Action"),"<t color='#FF0000'>Unable to Sling</t>"];
 	};
@@ -330,6 +294,7 @@ AuxSling_fnc_Conditions1 = {
 
 	_return;
 };
+
 
 AuxSling_fnc_Conditions2 = {
 	_unit = _this select 0;
@@ -340,24 +305,23 @@ AuxSling_fnc_Conditions2 = {
 
 	_return = (!(isNil {_veh getVariable "AuxSling_AttachedObject"}));
 
+	if (!((_veh getVariable ["AuxSling_AttachedObject","hopefullythiswillneverbefound_lala"]) in (ropeAttachedObjects _veh)) && _return) then { [_unit,_obj] spawn AuxSling_fnc_DoDetaching; };
+
 	_return;
 };
 
 AuxSling_fnc_AddAction = {
 	_unit = _this select 0;
-	if(player == driver _unit) then {
-		if (isNil {_unit getVariable "AuxSling_Added"}) then {
-			AuxSling_Load_Action = _unit addAction ["<t color='#FF0000'>Sling Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoAttaching},"",-99,true,true,"",'[_this,_target] call AuxSling_fnc_Conditions1'];
-			_unit setVariable ["AuxSling_Load_Action",AuxSling_Load_Action,true];
-			AuxSling_unLoad_Action = _unit addAction ["<t color='#FF0000'>Detach Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoDetaching},"",-99,false,true,"",'[_this,_target] call AuxSling_fnc_Conditions2'];
-			_unit setVariable ["AuxSling_unLoad_Action",AuxSling_unLoad_Action,true];
-			_unit setVariable ["AuxSling_Added",true,true];
-		};
+	if (isNil {_unit getVariable "AuxSling_Added"}) then {
+		AuxSling_Load_Action = _unit addAction ["<t color='#FF0000'>Sling Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoAttaching},"",-99,true,true,"",'[_this,_target] call AuxSling_fnc_Conditions1'];
+		_unit setVariable ["AuxSling_Load_Action",AuxSling_Load_Action,true];
+		AuxSling_unLoad_Action = _unit addAction ["<t color='#FF0000'>Detach Load</t>",{[(_this select 0)] spawn AuxSling_fnc_DoDetaching},"",-99,false,true,"",'[_this,_target] call AuxSling_fnc_Conditions2'];
+		_unit setVariable ["AuxSling_unLoad_Action",AuxSling_unLoad_Action,true];
+		_unit setVariable ["AuxSling_Added",true,true];
 	};
 };
 
 [player] spawn AuxSling_fnc_AddAction;
-
 player addEventHandler ["Respawn",{
 	(_this select 0) setVariable ["AuxSling_Added",nil,true];
 	[(_this select 0)] spawn AuxSling_fnc_AddAction;

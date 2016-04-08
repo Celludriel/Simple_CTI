@@ -12,7 +12,7 @@ _mhq setVariable ["MhqDeployed", false, true];
 
 [_mhq, "custom\modules\SimpleMhqModule\mhqPositionMarker.sqf"] remoteExec ["execVM", -2, true];
 
-[_mhq, [(localize "STR_MHQ_DEPLOY"), "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
+[_mhq, ["<t color='#11ff11'>" + (localize "STR_MHQ_DEPLOY") + "</t>", "custom\modules\SimpleMhqModule\mhqDeployAction.sqf", [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
 
 [_mhq] execVM "custom\modules\SimpleMhqModule\mhqAliveMonitor.sqf";
 
