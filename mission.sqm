@@ -41,7 +41,7 @@ randomSeed=9028453;
 class ScenarioData
 {
 	author="Celludriel";
-	overviewText="Simple CTI experience";
+	overviewText="CSAT has taken over all of Stratis.  We managed to sneak in and night and set up a base of operations.  All that is left is to take back the island region by region !";
 	disabledAI=1;
 	respawn=3;
 	respawnDelay=5;
@@ -145,7 +145,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Simple CTI";
+		briefingName="Stratis CTI";
 		startWeather=0.30000001;
 		startWind=0.1;
 		startWaves=0.1;

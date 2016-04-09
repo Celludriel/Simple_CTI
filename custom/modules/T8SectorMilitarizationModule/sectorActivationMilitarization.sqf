@@ -10,7 +10,7 @@ _groupArrayVehicleTest = [ "O_Heli_Attack_02_black_F", "O_APC_Tracked_02_cannon_
 
 _spawnThisUnits = [];
 
-for "_i" from 1 to 6 do {
+for "_i" from 1 to 3 do {
 	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
 	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
 	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ] ];
@@ -26,7 +26,7 @@ for "_i" from 1 to 2 do {
 for "_i" from 1 to 4 do {
 	_innerCircleRange = (SECTOR_RANGE / 2) - T8U_var_PatAroundRange - 25;
 	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName ], [ "PATROL_AROUND", _innerCircleRange, _formation, "AWARE" ] ];
+	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName ], [ "PATROL", _formation, "AWARE" ] ];
 	_spawnThisUnits pushBack _groupToSpawn;
 };
 
