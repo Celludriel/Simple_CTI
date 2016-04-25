@@ -26,6 +26,24 @@
                 <German>Nein</German>
                 <Spanish>No</Spanish>
             </Key>
+            <Key ID="STR_ONE_MINUTE">
+                <Original>One minute</Original>
+                <French>Une minute</French>
+                <German>Eine Minute</German>
+                <Spanish>Un minuto</Spanish>
+            </Key>
+            <Key ID="STR_FIVE_MINUTES">
+                <Original>Five minutes</Original>
+                <French>Cinq minutes</French>
+                <German>Fünf Minuten</German>
+                <Spanish>Cinco minutos</Spanish>
+            </Key>
+            <Key ID="STR_TEN_MINUTES">
+                <Original>Ten minutes</Original>
+                <French>Dix minutes</French>
+                <German>Zehn Minuten</German>
+                <Spanish>Diez minutos</Spanish>
+            </Key>
         </Container>
         <Container name="FAR Revive">
             <Key ID="STR_FAR_Need_Medic1">
@@ -131,6 +149,18 @@
                 <French>Ouvrir arsenal</French>
                 <German>Offene Arsenal</German>
                 <Spanish>Arsenal abierto</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_SIMPLE_MHQ_TITLE">
+                <Original>Simple mhq options</Original>
+                <French>Options de MHQ simples</French>
+                <German>Einfache mhq Optionen</German>
+                <Spanish>Opciones simples mhq</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_MHQ_RESPAWN_DELAY">
+                <Original>Respawn delay</Original>
+                <French>Retard respawn</French>
+                <German>Respawn verzögerung</German>
+                <Spanish>Retardo de reaparición</Spanish>
             </Key>
         </Container>
         <Container name="Auxillery sling loading">

@@ -21,6 +21,18 @@
                 <Original>Open arsenal</Original>
                 <French>Ouvrir arsenal</French>
                 <German>Offene Arsenal</German>
-				<Spanish>Arsenal abierto</Spanish>
+                <Spanish>Arsenal abierto</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_SIMPLE_MHQ_TITLE">
+                <Original>Simple mhq options</Original>
+                <French>Options de MHQ simples</French>
+                <German>Einfache mhq Optionen</German>
+                <Spanish>Opciones simples mhq</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_MHQ_RESPAWN_DELAY">
+                <Original>Respawn delay</Original>
+                <French>Retard respawn</French>
+                <German>Respawn verzögerung</German>
+                <Spanish>Retardo de reaparición</Spanish>
             </Key>
 		</Container>

@@ -7,13 +7,14 @@ mhqOpenDialog = {
 
 		_respawnPositions = missionnamespace getVariable ["BIS_fnc_getRespawnPositions_listwest", []];
 		diag_log format ["RespawnPositions: %1", _respawnPositions];
-		_respawnPositionTextArray = _respawnPositions select 3;
-		if(count _respawnPositionTextArray > 0) then {
-
-			for "_i" from 0 to ((count _respawnPositionTextArray)-1) do {
-				_spawnPositionText = _respawnPositionTextArray select _i;
-				_index = lbAdd [1500, _spawnPositionText];
-				lbSetValue [1500, _index, _i];
+		if(count _respawnPositions > 0) then {
+			_respawnPositionTextArray = _respawnPositions select 3;
+			if(count _respawnPositionTextArray > 0) then {
+				for "_i" from 0 to ((count _respawnPositionTextArray)-1) do {
+					_spawnPositionText = _respawnPositionTextArray select _i;
+					_index = lbAdd [1500, _spawnPositionText];
+					lbSetValue [1500, _index, _i];
+				};
 			};
 		};
 	};
@@ -31,10 +32,12 @@ mhqDeployAction = {
 		player setPos (getMarkerPos "respawn_west_1");
 	} else {
 		_respawnPositions = missionnamespace getVariable ["BIS_fnc_getRespawnPositions_listwest", []];
-		_respawnPositionPositionArray = _respawnPositions select 2;
+		if(count _respawnPositions > 0) then {
+			_respawnPositionPositionArray = _respawnPositions select 2;
 
-		_deployPosition = _respawnPositionPositionArray	select _selectionData;
-		player setPos _deployPosition;
+			_deployPosition = _respawnPositionPositionArray	select _selectionData;
+			player setPos _deployPosition;
+		};
 	};
 
 	closeDialog 1;

@@ -16,5 +16,6 @@ if(!isNil("_respawnId")) then {
 
 _vehType = _mhq getVariable "type";
 
+sleep ["SimpleMhqRespawnTime", 60] call BIS_fnc_getParamValue;
 [["Creating %1 at %2", _vehType, _marker]] call CTISHR_fnc_ctiLog;
 [_marker, _vehType] call createMhqVehicle;

@@ -1,11 +1,10 @@
 if(!hasInterface) exitWith {};
 
-params ["_unit"];
+params ["_unit", "_markerName"];
 
 waitUntil { !isNil("_unit") };
 
-_deployMarkerName = _unit getVariable "markerName";
-_flagMarkerName = _deployMarkerName + "_pos";
+_flagMarkerName = _markerName + "_pos";
 if(!isNil("_flagMarkerName")) then { deleteMarkerLocal (_flagMarkerName); };
 _marker = createMarkerLocal [_flagMarkerName, getPos _unit];
 _marker setMarkerShapeLocal "ICON";
