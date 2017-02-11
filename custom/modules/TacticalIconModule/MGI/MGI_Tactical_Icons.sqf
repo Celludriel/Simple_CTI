@@ -16,26 +16,25 @@ if (!isNull _parentObject) then {
 
 _totalEntitiesInRange = (getPosATL player) nearEntities [["CAManBase", "Air", "Car", "Motorcycle", "Tank"], _range];
 
-{
+{	
   if(_total_entities >= 30) exitWith { true };
 
-/*if ((side _x != playerSide ) and (!(lineIntersects [eyePos player, eyePos _x, player, _x]) && !(terrainIntersect [[getPosATL player select 0, getPosATL player select 1, (getPosATL player select 2)+0.5], [getPosATL _x select 0, getPosATL _x select 1, (getPosATL _x select 2)+1]]) )) then {
-*/
+	_true_side = getNumber (configfile >> "CfgVehicles" >> typeOf (crew _x select 0) >> "side");
+	_visibility = [objNull, "VIEW"] checkVisibility [eyePos player, eyePos (crew _x select 0)];
 
-  if ((side _x != playerSide ) && ([objNull, "VIEW"] checkVisibility [eyePos player, eyePos _x] > 0.5)) then {
-
-      if ( !(_x isKindOf "animal")
+	if ((_true_side != _player_side ) && (_visibility > 0.5)) then {
+  
+	  if ( !(_x isKindOf "animal")
             && {_x != vehicle player}
             && {((worldToScreen (visiblePosition _x)) select 0 > (0 * safezoneW + safezoneX))
             && ((worldToScreen (visiblePosition _x)) select 0 <(1 * safezoneW + safezoneX))} ) then {
-
-        _dist_x = round(player distance _x);
+       
+		_dist_x = round(player distance _x);
         [_x] call MGI_Stance;
         d = _stance_coef + (0.006 * _dist_x / coef_zoom);
         d_gr = _stance_coef + (0.025*_dist_x / coef_zoom);
 
-        _uispace = 0.6 * coef_uiSpace;
-        _true_side = getNumber (configfile >> "CfgVehicles" >> typeOf (crew _x select 0) >> "side");
+        _uispace = 0.6 * coef_uiSpace;        
 
         if(_true_side != _player_side) then {
             call {
@@ -49,7 +48,7 @@ _totalEntitiesInRange = (getPosATL player) nearEntities [["CAManBase", "Air", "C
                 if (_x isKindOf "air") exitWith {icontype = "air"};
                 if (_x isKindOf "ship") exitWith {icontype = "naval"};
             };
-
+						
             call {
                 if(_true_side != 2) exitWith {
                     drawIcon3D [tostring (toarray("A3\ui_f\data\map\Markers\NATO\o_")) + icontype + ".paa", [1,0.3,0.3,0.1+brit*(0.2+_dist_x*0.012)], [visiblePosition _x select 0, visiblePosition _x select 1, (getPosATL _x select 2 )+ d],_uispace*coef_ratio,_uispace,360,"",1, 0.03,"EtelkaMonospacePro"];
