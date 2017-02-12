@@ -15,6 +15,7 @@ class CTITemplateServerFunctions {
 		class addSectorControlChangeScript {};
 		class addSectorLoadedScript {};
 		class addSectorType {};
+		class updateMissionDifficulty {};
 
 		class createOrUpdateIndicationMarker {};
 		class createSectorIndicatorName {};
