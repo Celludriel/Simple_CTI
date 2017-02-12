@@ -5,29 +5,83 @@ params ["_sector", "_activationBLUFORcount", "_sectorBLUFORcount"];
 _markerName = _sector getVariable "markerName";
 _pos = getMarkerPos _markerName;
 
-_groupArrayFullTeam = [ "O_Soldier_SL_F", "O_Soldier_AR_F", "O_Soldier_AAR_F", "O_medic_F", "O_Soldier_AT_F", "O_Soldier_AAT_F", "O_Soldier_GL_F", "O_Soldier_GL_F" ];
-_groupArrayVehicleTest = [ "O_Heli_Attack_02_black_F", "O_APC_Tracked_02_cannon_F" ];
+_groupDefinitions = missionNamespace getVariable "T8_GROUP_DEFINITION";
+_missionDifficulty = missionNamespace getVariable "MISSION_DIFFICULTY";
+
+_spawnSelection = [];
+{
+	_bottomDifficultyCheck = _x select 0;
+	_topDifficultyCheck = _x select 1;
+	if(_missionDifficulty > _bottomDifficultyCheck && _missionDifficulty <= _topDifficultyCheck) exitWith {
+		_spawnSelection = _x;
+	}
+
+} forEach _groupDefinitions;
+
+_outerPatrolGroups = _spawnSelection select 2;
+_innerPatrolGroups = _spawnSelection select 3;
+_sniperPatrolGroups = _spawnSelection select 4;
+_armoredPatrolGroups = _spawnSelection select 5;
+_airPatrolGroups = _spawnSelection select 6;
 
 _spawnThisUnits = [];
 
-for "_i" from 1 to 3 do {
-	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
-	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ] ];
-	_spawnThisUnits pushBack _groupToSpawn;
+if(count _outerPatrolGroups > 0) then {
+	_amount = _outerPatrolGroups select 0;
+	_patrolGroup = _outerPatrolGroups select 1;
+
+	for "_i" from 1 to _amount do {
+		_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
+		_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
+		_groupToSpawn = [ [_patrolGroup, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ] ];
+		_spawnThisUnits pushBack _groupToSpawn;
+	};
 };
 
-for "_i" from 1 to 2 do {
-	_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 50;
-	_groupToSpawn = [ [ _groupArrayVehicleTest, _markerName, false], [ "PATROL_AROUND", _outerCircleRange ] ];
-	_spawnThisUnits pushBack _groupToSpawn;
+if(count _sniperPatrolGroups > 0) then {
+	_amount = _sniperPatrolGroups select 0;
+	_patrolGroup = _sniperPatrolGroups select 1;
+
+	for "_i" from 1 to _amount do {
+		_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
+		_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
+		_groupToSpawn = [ [_patrolGroup, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ] ];
+		_spawnThisUnits pushBack _groupToSpawn;
+	};
 };
 
-for "_i" from 1 to 4 do {
-	_innerCircleRange = (SECTOR_RANGE / 2) - T8U_var_PatAroundRange - 25;
-	_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-	_groupToSpawn = [ [ _groupArrayFullTeam, _markerName ], [ "PATROL", _formation, "AWARE" ] ];
-	_spawnThisUnits pushBack _groupToSpawn;
+if(count _innerPatrolGroups > 0) then {
+	_amount = _innerPatrolGroups select 0;
+	_patrolGroup = _innerPatrolGroups select 1;
+
+	for "_i" from 1 to _amount do {
+		_innerCircleRange = (SECTOR_RANGE / 2) - T8U_var_PatAroundRange - 25;
+		_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
+		_groupToSpawn = [ [ _patrolGroup, _markerName ], [ "PATROL", _formation, "AWARE" ] ];
+		_spawnThisUnits pushBack _groupToSpawn;
+	};
+};
+
+if(count _armoredPatrolGroups > 0) then {
+	_amount = _armoredPatrolGroups select 0;
+	_patrolGroup = _armoredPatrolGroups select 1;
+
+	for "_i" from 1 to _amount do {
+		_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 50;
+		_groupToSpawn = [ [ _patrolGroup, _markerName, false], [ "PATROL_AROUND", _outerCircleRange ] ];
+		_spawnThisUnits pushBack _groupToSpawn;
+	};
+};
+
+if(count _airPatrolGroups > 0) then {
+	_amount = _airPatrolGroups select 0;
+	_patrolGroup = _airPatrolGroups select 1;
+
+	for "_i" from 1 to _amount do {
+		_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 50;
+		_groupToSpawn = [ [ _patrolGroup, _markerName, false], [ "PATROL_AROUND", _outerCircleRange ] ];
+		_spawnThisUnits pushBack _groupToSpawn;
+	};
 };
 
 _retValue = [ _spawnThisUnits ] call T8U_fnc_Spawn;
