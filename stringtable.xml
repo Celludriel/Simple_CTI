@@ -307,5 +307,25 @@
                 <Spanish>Permitir icono de táctica</Spanish>
             </Key>
         </Container>
+        <Container name="Supplydrop module">
+            <Key ID="STR_PARAMS_SUPPLYDROP_OPTIONS">
+                <Original>Supplydrop Options</Original>
+                <French>Options de goutte d'approvisionnement</French>
+                <German>Optionen für den Lieferungsausfall</German>
+                <Spanish>Opciones de oferta</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_MAX_SUPPLY_DROPS">
+                <Original>Maximum simultanious drops</Original>
+                <French>Gouttes simultanées maximales</French>
+                <German>Maximale gleichzeitige Tropfen</German>
+                <Spanish>Gotas simultáneas máximas</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_DURATION_BETWEEN_DROPS">
+                <Original>Duration between drops</Original>
+                <French>Durée entre les gouttes</French>
+                <German>Dauer zwischen Tropfen</German>
+                <Spanish>Duración entre gotas</Spanish>
+            </Key>
+        </Container>
 	</Package>
 </Project>
