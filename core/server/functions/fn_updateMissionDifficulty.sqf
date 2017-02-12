@@ -14,4 +14,6 @@ if(_sectorCountBlUFOR != 0) then {
 	_difficulty = (_sectorCountBlUFOR / _totalSectors) * 100;
 };
 
+[["New mission difficulty %1", _difficulty]] call CTISHR_fnc_ctiLog;
+
 missionNamespace setVariable ["MISSION_DIFFICULTY", _difficulty];

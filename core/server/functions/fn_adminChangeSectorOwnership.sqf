@@ -4,7 +4,7 @@ params ["_sectorTag", "_newSide"];
 
 _sector = nil;
 {
-	_sectorName = _x getVAriable ["markerName"];
+	_sectorName = _x getVariable "markerName";
 	if(_sectorName == _sectorTag) exitWith {
 		_sector = _x;
 	};
@@ -18,7 +18,7 @@ if (_newSide == west) then {
 	_sectorTag setMarkerColor "ColorBLUFOR";
 } else {
 	_sectorTag setMarkerColor "ColorOPFOR";
-}
+};
 
 // Remove indication marker
 [_sector] call CTISRV_fnc_deleteIndicatorMarker;

@@ -1,5 +1,5 @@
 _rookiePatrolGroup = ["O_G_Soldier_lite_F","O_G_Soldier_lite_F","O_G_Soldier_lite_F","O_G_Soldier_SL_F"];
-_veteranPatrolGroup = ["O_G_Soldier_F","O_G_Soldier_F","O_G_Soldier_AR_F","	O_G_Soldier_GL_F","O_G_medic_F","O_G_Soldier_SL_F"];
+_veteranPatrolGroup = ["O_G_Soldier_F","O_G_Soldier_F","O_G_Soldier_AR_F","O_G_Soldier_GL_F","O_G_medic_F","O_G_Soldier_SL_F"];
 _sniperTeam = ["O_sniper_F","O_spotter_F"];
 _armoredCarGroup = ["O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F"];
 _tankGroup = ["O_APC_Tracked_02_cannon_F","O_MBT_02_cannon_F"];

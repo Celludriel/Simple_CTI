@@ -8,6 +8,8 @@ _pos = getMarkerPos _markerName;
 _groupDefinitions = missionNamespace getVariable "T8_GROUP_DEFINITION";
 _missionDifficulty = missionNamespace getVariable "MISSION_DIFFICULTY";
 
+[["Current mission difficulty %1", _missionDifficulty]] call CTISHR_fnc_ctiLog;
+
 _spawnSelection = [];
 {
 	_bottomDifficultyCheck = _x select 0;
@@ -17,6 +19,8 @@ _spawnSelection = [];
 	}
 
 } forEach _groupDefinitions;
+
+[["Chosen spawn selection %1", _spawnSelection]] call CTISHR_fnc_ctiLog;
 
 _outerPatrolGroups = _spawnSelection select 2;
 _innerPatrolGroups = _spawnSelection select 3;
