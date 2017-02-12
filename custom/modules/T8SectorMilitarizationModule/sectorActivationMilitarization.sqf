@@ -12,7 +12,7 @@ _spawnSelection = [];
 {
 	_bottomDifficultyCheck = _x select 0;
 	_topDifficultyCheck = _x select 1;
-	if(_missionDifficulty > _bottomDifficultyCheck && _missionDifficulty <= _topDifficultyCheck) exitWith {
+	if(_missionDifficulty >= _bottomDifficultyCheck && _missionDifficulty <= _topDifficultyCheck) exitWith {
 		_spawnSelection = _x;
 	}
 
@@ -85,6 +85,5 @@ if(count _airPatrolGroups > 0) then {
 };
 
 _retValue = [ _spawnThisUnits ] call T8U_fnc_Spawn;
-diag_log format ["enemiesArray: %1", _retValue];
 
 _sector setVariable ["T8_units", _retValue];

@@ -9,7 +9,7 @@ _groupDefinitions = [
 	[0, 32, [1, _rookiePatrolGroup], [2, _rookiePatrolGroup], [], [], []],
 	[33, 65, [2, _veteranPatrolGroup], [4, _veteranPatrolGroup], [], [], []],
 	[66, 75, [2, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _armoredCarGroup], []],
-	[75, 100, [4, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _tankGroup], [1, _airGroup]],
+	[75, 100, [4, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _tankGroup], [1, _airGroup]]
 ];
 
 missionNamespace setVariable ["T8_GROUP_DEFINITION", _groupDefinitions];
