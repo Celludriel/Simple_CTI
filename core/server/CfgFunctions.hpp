@@ -26,5 +26,8 @@ class CTITemplateServerFunctions {
 
 		class loadDataBlockInSaveContainer {};
 		class storeDataBlockInSaveContainer {};
+
+		class adminChangeSectorOwnership {};
+		class adminListSectors {};
 	};
 };
