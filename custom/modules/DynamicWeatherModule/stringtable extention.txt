@@ -1,0 +1,44 @@
+		<Container name="Dynamic weather module">
+            <Key ID="STR_PARAMS_DYNAMIC_WEATHER_OPTIONS">
+                <Original>Dynamic weather options</Original>
+                <French>Options météo dynamiques</French>
+                <German>Dynamische Wetteroptionen</German>
+				<Spanish>Opciones de tiempo dinámicos</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_STARTING_WEATHER">
+                <Original>Starting weather</Original>
+            	<French>Météo partir</French>
+                <German>Ab Wetter</German>
+				<Spanish>A partir del tiempo</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_CLEAR">
+                <Original>Clear</Original>
+                <French>Clair</French>
+                <German>Klar</German>
+				<Spanish>Claro</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_OVERCAST">
+            	<Original>Overcast</Original>
+                <French>Couvert</French>
+            	<German>Bedeckt</German>
+				<Spanish>Nublado</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_RAIN">
+                <Original>Rain</Original>
+                <French>Pluie</French>
+                <German>Regen</German>
+				<Spanish>Lluvia</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_FOG">
+                <Original>Fog</Original>
+                <French>Brouillard</French>
+                <German>Nebel</German>
+                <Spanish>Niebla</Spanish>
+            </Key>
+            <Key ID="STR_OPTION_RANDOM">
+                <Original>Random</Original>
+                <French>Aléatoiree</French>
+                <German>Zufällig</German>
+                <Spanish>Aleatorio</Spanish>
+            </Key>
+		</Container>

@@ -1,0 +1,45 @@
+enableDebugConsole = 1;
+
+// gui
+#include "interface.hpp"
+#include "custom\modules\TawdModule\taw_vd\GUI.h"
+#include "custom\modules\FarReviveModule\FarRevive\FAR_interface.hpp"
+#include "custom\modules\SimpleMhqModule\gui\deployDialog.hpp"
+
+// params
+class Params
+{
+	#include "core\server\coreParams.hpp"
+	#include "custom\modules\SimpleMhqModule\params.hpp"
+	#include "custom\modules\FarReviveModule\params.hpp"
+	#include "custom\modules\AuxillerySlingModule\params.hpp"
+	#include "custom\modules\TimeAccelerationModule\params.hpp"
+	#include "custom\modules\DynamicWeatherModule\params.hpp"
+	#include "custom\modules\FatigueModule\params.hpp"
+	#include "custom\modules\TawdModule\params.hpp"
+	#include "custom\modules\TacticalIconModule\params.hpp"
+};
+
+// functions
+class CfgFunctions
+{
+	#include "core\server\CfgFunctions.hpp"
+	#include "core\shared\CfgFunctions.hpp"
+	#include "core\client\CfgFunctions.hpp"
+	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
+	#include "custom\modules\T8SectorMilitarizationModule\T8\FUNCTIONS.hpp"
+};
+
+// debrief
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "You captured all sectors";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};

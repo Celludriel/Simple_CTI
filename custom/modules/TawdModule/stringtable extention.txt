@@ -1,0 +1,14 @@
+		<Container name="Tawd module">
+            <Key ID="STR_PARAMS_TAWD_MODULE_OPTIONS">
+                <Original>Tawd module</Original>
+                <French>Tawd module</French>
+                <German>Tawd modul</German>
+                <Spanish>Módulo Tawd</Spanish>
+            </Key>
+            <Key ID="STR_CAN_DISABLE_GRASS">
+                <Original>Can disable grass</Original>
+                <French>Peut désactiver l'herbe</French>
+                <German>Kann Gras deaktivieren</German>
+                <Spanish>Puede desactivar la hierba</Spanish>
+            </Key>
+		</Container>
