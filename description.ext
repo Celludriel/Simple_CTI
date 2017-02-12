@@ -18,6 +18,7 @@ class Params
 	#include "custom\modules\FatigueModule\params.hpp"
 	#include "custom\modules\TawdModule\params.hpp"
 	#include "custom\modules\TacticalIconModule\params.hpp"
+	#include "custom\modules\SupplyDropModule\params.hpp"
 };
 
 // functions
@@ -29,6 +30,7 @@ class CfgFunctions
 	#include "core\client\CfgFunctions.hpp"
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
 	#include "custom\modules\T8SectorMilitarizationModule\T8\FUNCTIONS.hpp"
+	#include "custom\modules\SupplyDropModule\CfgFunctions.hpp"
 };
 
 // debrief
