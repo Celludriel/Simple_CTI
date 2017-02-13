@@ -6,5 +6,6 @@ class SupplyDropFunctions {
 
 		class callSupplyDrop {};
 		class createSupplyContainer {};
+		class containerOpened {};
 	};
 };
