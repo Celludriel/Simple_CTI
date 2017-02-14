@@ -326,6 +326,12 @@
                 <German>Dauer zwischen Tropfen</German>
                 <Spanish>Duración entre gotas</Spanish>
             </Key>
+            <Key ID="STR_PARAMS_USE_MARKSMAN_RIFLES">
+                <Original>Use marksman rifles</Original>
+                <French>Utiliser des fusils de tir</French>
+                <German>Verwenden Sie Schützengewehre</German>
+                <Spanish>Utilizar rifles de tirador</Spanish>
+            </Key>
         </Container>
 	</Package>
 </Project>

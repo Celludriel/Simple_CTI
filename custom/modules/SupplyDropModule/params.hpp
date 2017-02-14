@@ -25,3 +25,10 @@ class SupplyDropDurationBetweenDrops{
 	texts[] = { "1m", "5m", "10m", "30m", "1h" };
 	default = 300;
 };
+
+class SupplyDropUseMarksmanRifles{
+	title = $STR_PARAMS_USE_MARKSMAN_RIFLES;
+	values[] = { 1, 0 };
+	texts[] = { $STR_OPTION_YES, $STR_OPTION_NO };
+	default = 0;
+};
