@@ -76,13 +76,13 @@ _obj attachTo [_para, _attachTo];
 
 	if (!isNull _para) then {deleteVehicle _para};
 
-	if(underwater  _obj) then {
+	if(underwater _obj) then {
 		"A supply drop drifted out to water and has been lost" remoteExec ["systemChat", 0, false];
 		deleteVehicle _obj;
-	};
-
-	(format ["A supply drop has touched down, grid %1.", mapGridPosition getPosATL _obj]) remoteExec ["systemChat", 0, false];
-	[_obj] call _postDropProcessing;
+	} else {
+		(format ["A supply drop has touched down, grid %1.", mapGridPosition getPosATL _obj]) remoteExec ["systemChat", 0, false];
+		[_obj] call _postDropProcessing;
+	}
 };
 
 _obj
