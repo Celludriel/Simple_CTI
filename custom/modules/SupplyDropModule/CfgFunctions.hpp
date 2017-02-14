@@ -8,5 +8,6 @@ class SupplyDropFunctions {
 		class createSupplyContainer {};
 		class supplyDropOpened {};
 		class handleSupplyDropEventHandler {};
+		class spawnProtectionDetail {};
 	};
 };

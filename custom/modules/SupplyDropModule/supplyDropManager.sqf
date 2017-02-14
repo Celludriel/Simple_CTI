@@ -13,12 +13,13 @@ while { true } do {
 
 	_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
 	[["Current supply drops %1", _currentSupplyDrops]] call CTISHR_fnc_ctiLog;
-	
+
 	if(_currentSupplyDrops < _maxSupplyDrops) then {
 		// start a new drop
 		_justPlayers = allPlayers - entities "HeadlessClient_F";
-		_pos = position (_justPlayers select 0);
-				
+		_randomPlayerPosition = position (selectRandom _justPlayers);
+		_pos = [_randomPlayerPosition, 350, random 360, 0, 0, "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
+
 		_postDropProcessing = {
 			params ["_drop"];
 			// create a marker
@@ -32,17 +33,18 @@ while { true } do {
 			_markerText = (markerText "Supply");
 			_marker setMarkerText _markerText;
 
-			// create hostile protection detail around the drop		
-			
+			// create hostile protection detail around the drop
+			[_drop] call SD_fnc_spawnProtectionDetail;
+
 			// add event handling
 			[["Sending event handler to clients"]] call CTISHR_fnc_ctiLog;
-			[ "ADD", _drop ] remoteExec [ "SD_fnc_handleSupplyDropEventHandler", 0, format[ "supplyDrop_%1", _drop call BIS_fnc_netId ] ];			
-			
+			[ "ADD", _drop ] remoteExec [ "SD_fnc_handleSupplyDropEventHandler", 0, format[ "supplyDrop_%1", _netId ] ];
+
 			// set the current supply drops
 			_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
-			missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops + 1)];						
+			missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops + 1)];
 		};
-		
+
 		["CargoNet_01_box_F", _pos, 100, [0,0,-1.2], _postDropProcessing] call SD_fnc_callSupplyDrop;
 	};
 };
