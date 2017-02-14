@@ -13,3 +13,4 @@ _currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DRO
 missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops - 1)];
 _markerName = _container getVariable "supplydropMarkerName";
 deleteMarker _markerName;
+_container setVariable ["opened", true];

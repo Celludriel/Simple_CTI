@@ -47,6 +47,10 @@ while { true } do {
 		// set the current supply drops
 		_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
 		missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops + 1)];
+
+		// set opened status
+		_drop setVariable ["opened", false];
+		[_drop] execVM "custom\modules\SupplyDropModule\supplyDropMonitor.sqf";
 	};
 
 	["CargoNet_01_box_F", _pos, 100, [0,0,-1.2], _postDropProcessing] call SD_fnc_callSupplyDrop;
