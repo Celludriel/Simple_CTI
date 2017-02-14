@@ -49,8 +49,8 @@ _supplyDropStart = _centre vectorAdd [0, 0, _height];
 
 [["Supply drop dropping from %1", _supplyDropStart]] call CTISHR_fnc_ctiLog;
 
-private _obj = createVehicle [_objectType, _supplyDropStart, [], 0, "NONE"];
-private _para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "FLY"];
+_obj = createVehicle [_objectType, _supplyDropStart, [], 0, "NONE"];
+_para = createVehicle ["B_parachute_02_F", [0,0,0], [], 0, "FLY"];
 
 _para setDir getDir _obj;
 _para setPos getPos _obj;
