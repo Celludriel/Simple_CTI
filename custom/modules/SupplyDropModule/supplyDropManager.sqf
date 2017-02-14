@@ -26,6 +26,11 @@ while { true } do {
 
 	_postDropProcessing = {
 		params ["_drop"];
+
+		// fill supply drop with contents
+		_contents = [] call SD_fnc_createSupplyContents;
+		[_drop, _contents] call SD_fnc_fillSupplyDrop;
+
 		// create a marker
 		_netId = _drop call BIS_fnc_netId;
 		_dropMarkerName = format ["supplydrop_marker_%1", _netId];

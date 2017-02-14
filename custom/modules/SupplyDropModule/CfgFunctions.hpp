@@ -5,7 +5,7 @@ class SupplyDropFunctions {
 		file = "custom\modules\SupplyDropModule\functions";
 
 		class callSupplyDrop {};
-		class createSupplyContainer {};
+		class createSupplyContents {};
 		class supplyDropOpened {};
 		class handleSupplyDropEventHandler {};
 		class spawnProtectionDetail {};
