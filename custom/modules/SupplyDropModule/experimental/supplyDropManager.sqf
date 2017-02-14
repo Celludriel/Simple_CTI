@@ -22,7 +22,7 @@ while { true } do {
 		_postDropProcessing = {
 			params ["_drop"];
 			// create a marker
-			_netId = netId _drop;
+			_netId = _drop call BIS_fnc_netId;
 			_dropMarkerName = format ["supplydrop_marker_%1", _netId];
 			_drop setVariable ["supplydropMarkerName", _dropMarkerName];
 
@@ -34,11 +34,11 @@ while { true } do {
 
 			// create hostile protection detail around the drop		
 			
-			// create monitor on the drop for when it expires or is found by a player
-			[_drop] execVM "custom\modules\SupplyDropModule\supplyDropMonitor.sqf";
+			// add event handling
+			[ "ADD", _drop ] remoteExec [ "SD_fnc_handleContainerEH", 0, format[ "supplyDrop_%1", _drop call BIS_fnc_netId ] ];			
 			
 			// set the current supply drops
-			missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops + 1)];			
+			missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops + 1)];						
 		};
 		
 		["CargoNet_01_box_F", _pos, 100, [0,0,-1.2], _postDropProcessing] call SD_fnc_callSupplyDrop;
