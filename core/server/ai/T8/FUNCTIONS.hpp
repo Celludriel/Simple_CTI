@@ -7,7 +7,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	Open < custom\modules\T8SectorMilitarizationModule\T8\CONFIG.hpp > to change basic variables !
+	Open < core\server\ai\T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
 */
@@ -24,7 +24,7 @@
 	{
 		class client
 		{
-			file = "custom\modules\T8SectorMilitarizationModule\T8\fnc";
+			file = "core\server\ai\T8\fnc";
 
 			addFunction(hint);
 			addFunction(broadcastHint);
@@ -32,7 +32,7 @@
 
 		class server
 		{
-			file = "custom\modules\T8SectorMilitarizationModule\T8\fnc";
+			file = "core\server\ai\T8\fnc";
 
 			addFunctionPost(INIT);
 
@@ -103,7 +103,7 @@
 	{
 		class task
 		{
-			file = "custom\modules\T8SectorMilitarizationModule\T8\tsk";
+			file = "core\server\ai\T8\tsk";
 
 			// basic tasks
 			addFunction(attack);
@@ -128,7 +128,7 @@
 	{
 		class support
 		{
-			file = "custom\modules\T8SectorMilitarizationModule\T8\sup";
+			file = "core\server\ai\T8\sup";
 
 			addFunction(HALO);
 		};
