@@ -1,4 +1,4 @@
-#include "T8\MACRO.hpp"
+#include "core\server\ai\T8\MACRO.hpp"
 
 // wait until everything is initalized correctly
 waitUntil { !isNil "T8U_var_useHC" };

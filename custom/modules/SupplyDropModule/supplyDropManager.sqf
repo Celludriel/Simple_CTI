@@ -2,6 +2,7 @@ if(!isDedicated) exitWith {};
 
 [["Supply drop monitor loading"]] call CTISHR_fnc_ctiLog;
 
+_blockOffset = 5;
 _durationBetweenDrops = ["SupplyDropDurationBetweenDrops", 300] call BIS_fnc_getParamValue;
 _maxSupplyDrops = ["SupplyDropMaxSupplyDrops", 3] call BIS_fnc_getParamValue;
 
@@ -9,11 +10,11 @@ _maxSupplyDrops = ["SupplyDropMaxSupplyDrops", 3] call BIS_fnc_getParamValue;
 [["Maximum supply drops %1", _maxSupplyDrops]] call CTISHR_fnc_ctiLog;
 
 while { true } do {
-	sleep _durationBetweenDrops;
+	sleep (_durationBetweenDrops - _blockOffset);
 
 	_currentSupplyDrops = 999;
 	waitUntil {
-		sleep 5;
+		sleep _blockOffset;
 		_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
 		[["Current supply drops %1", _currentSupplyDrops]] call CTISHR_fnc_ctiLog;
 		_currentSupplyDrops < _maxSupplyDrops

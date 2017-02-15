@@ -25,11 +25,11 @@ class Params
 class CfgFunctions
 {
 	#include "core\server\CfgFunctions.hpp"
+	#include "core\server\ai\T8\FUNCTIONS.hpp"
 	#include "core\shared\CfgFunctions.hpp"
 	#include "core\shared\shk_pos\CfgFunctions.hpp"
 	#include "core\client\CfgFunctions.hpp"
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
-	#include "custom\modules\T8SectorMilitarizationModule\T8\FUNCTIONS.hpp"
 	#include "custom\modules\SupplyDropModule\CfgFunctions.hpp"
 };
 
