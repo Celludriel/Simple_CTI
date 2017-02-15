@@ -9,6 +9,5 @@ class SupplyDropFunctions {
 		class supplyDropOpened {};
 		class handleSupplyDropEventHandler {};
 		class spawnProtectionDetail {};
-		class fillSupplyDrop {};
 	};
 };
