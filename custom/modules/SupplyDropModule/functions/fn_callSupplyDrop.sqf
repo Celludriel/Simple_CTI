@@ -76,7 +76,7 @@ _obj attachTo [_para, _attachTo];
 
 	if (!isNull _para) then {deleteVehicle _para};
 
-	if(underwater _obj) then {
+	if(surfaceIsWater position _obj) then {
 		"A supply drop drifted out to water and has been lost" remoteExec ["systemChat", 0, false];
 		deleteVehicle _obj;
 	} else {

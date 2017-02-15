@@ -14,7 +14,7 @@ missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", 0];
 [] execVm "custom\modules\SupplyDropModule\configurations\antiAir.sqf";
 [] execVm "custom\modules\SupplyDropModule\configurations\rocketLaunchers.sqf";
 
-if(_useMarksmanRifles) then {
+if(_useMarksmanRifles == 1) then {
 	[] execVm "custom\modules\SupplyDropModule\configurations\marksmanRifles.sqf";
 };
 

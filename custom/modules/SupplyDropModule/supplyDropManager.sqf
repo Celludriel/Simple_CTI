@@ -20,9 +20,10 @@ while { true } do {
 	};
 
 	// start a new drop
+	(format ["New supply drop being dropped!"]) remoteExec ["systemChat", 0, false];
 	_justPlayers = allPlayers - entities "HeadlessClient_F";
 	_randomPlayerPosition = position (selectRandom _justPlayers);
-	_pos = [_randomPlayerPosition, 350, random 360, 0, 0, "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
+	_pos = [_randomPlayerPosition, 4000, random 360, 0, [0,200], "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
 
 	_postDropProcessing = {
 		params ["_drop"];

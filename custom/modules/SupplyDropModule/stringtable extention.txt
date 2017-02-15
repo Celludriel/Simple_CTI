@@ -22,5 +22,11 @@
                 <French>Utiliser des fusils de tir</French>
                 <German>Verwenden Sie Schützengewehre</German>
 				<Spanish>Utilizar rifles de tirador</Spanish>
+            </Key>            
+			<Key ID="STR_PARAMS_SUPPLYDROP_EXPIRATION">
+                <Original>Supply drop expiration time</Original>
+                <French>Délai d'expiration de la goutte d'approvisionnement</French>
+                <German>Zeit für die Ausfallzeit des Tropfen</German>
+				<Spanish>Tiempo de caducidad de la gota de suministro</Spanish>
             </Key>
 		</Container>
