@@ -29,5 +29,6 @@ waitUntil { getClientState == "BRIEFING READ" };
 [] execVM "custom\modules\ServicePointModule\initModule.sqf";
 [] execVM "custom\modules\DynamicWeatherModule\initModule.sqf";
 [] execVM "custom\modules\SupplyDropModule\initModule.sqf";
+[] execVM "custom\modules\SlingableArmoryModule\initModule.sqf";
 
 //init overrides
