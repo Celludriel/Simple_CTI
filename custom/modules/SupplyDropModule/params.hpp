@@ -32,3 +32,10 @@ class SupplyDropUseMarksmanRifles{
 	texts[] = { $STR_OPTION_YES, $STR_OPTION_NO };
 	default = 0;
 };
+
+class SupplyDropExpirationTime{
+	title = $STR_PARAMS_SUPPLYDROP_EXPIRATION;
+	values[] = { 3600, 10800, 18000};
+	texts[] = { "1h", "3h", "5h" };
+	default = 3600;
+};

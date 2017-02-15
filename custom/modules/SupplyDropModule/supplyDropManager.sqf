@@ -2,6 +2,7 @@ if(!isDedicated) exitWith {};
 
 [["Supply drop monitor loading"]] call CTISHR_fnc_ctiLog;
 
+_blockOffset = 5;
 _durationBetweenDrops = ["SupplyDropDurationBetweenDrops", 300] call BIS_fnc_getParamValue;
 _maxSupplyDrops = ["SupplyDropMaxSupplyDrops", 3] call BIS_fnc_getParamValue;
 
@@ -9,20 +10,21 @@ _maxSupplyDrops = ["SupplyDropMaxSupplyDrops", 3] call BIS_fnc_getParamValue;
 [["Maximum supply drops %1", _maxSupplyDrops]] call CTISHR_fnc_ctiLog;
 
 while { true } do {
-	sleep _durationBetweenDrops;
+	sleep (_durationBetweenDrops - _blockOffset);
 
 	_currentSupplyDrops = 999;
 	waitUntil {
-		sleep 5;
+		sleep _blockOffset;
 		_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
 		[["Current supply drops %1", _currentSupplyDrops]] call CTISHR_fnc_ctiLog;
 		_currentSupplyDrops < _maxSupplyDrops
 	};
 
 	// start a new drop
+	(format ["New supply drop being dropped!"]) remoteExec ["systemChat", 0, false];
 	_justPlayers = allPlayers - entities "HeadlessClient_F";
 	_randomPlayerPosition = position (selectRandom _justPlayers);
-	_pos = [_randomPlayerPosition, 350, random 360, 0, 0, "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
+	_pos = [_randomPlayerPosition, 2000, random 360, 0, [0,200], "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
 
 	_postDropProcessing = {
 		params ["_drop"];
