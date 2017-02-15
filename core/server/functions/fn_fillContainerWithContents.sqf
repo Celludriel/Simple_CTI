@@ -9,6 +9,7 @@ params ["_container", "_content"];
 clearWeaponCargoGlobal _container;
 clearMagazineCargoGlobal _container;
 clearItemCargoGlobal _container;
+clearBackpackCargoGlobal _container;
 
 _weapons = _content select 0;
 {

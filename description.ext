@@ -31,6 +31,7 @@ class CfgFunctions
 	#include "core\client\CfgFunctions.hpp"
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
 	#include "custom\modules\SupplyDropModule\CfgFunctions.hpp"
+	#include "custom\modules\SlingableArmoryModule\CfgFunctions.hpp"
 };
 
 // debrief
