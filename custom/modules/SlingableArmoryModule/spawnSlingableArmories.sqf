@@ -14,6 +14,7 @@ _contents = missionNamespace getVariable "SLA_STARTING_ARMORY";
 		_direction = markerDir _x;
         _armory = [markerPos _x, _direction] call SLA_fnc_spawnSlingableArmory;
 		[_armory, _contents] call CTISRV_fnc_fillContainerWithContents;
+		_armory setVariable ["markerTag", _x];
     };
 
 } forEach allMapMarkers;
