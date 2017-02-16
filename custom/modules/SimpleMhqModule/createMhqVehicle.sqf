@@ -5,6 +5,12 @@ _mhq = createVehicle [_type, _coord, [], 0, "can_collide"];
 
 waitUntil { !isNil("_mhq") };
 
+// Clear all cargo from the vehicle
+clearMagazineCargoGlobal _mhq;
+clearWeaponCargoGlobal _mhq;
+clearItemCargoGlobal _mhq;
+clearBackpackCargoGlobal _mhq;
+
 _mhq setDir (markerDir _marker);
 _mhq setVariable ["markerName", _marker, true];
 _mhq setVariable ["type", _type, true];
