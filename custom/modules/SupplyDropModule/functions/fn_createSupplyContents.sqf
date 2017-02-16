@@ -13,6 +13,8 @@ _contents = [
 */
 if(!isDedicated) exitWith {};
 
+private ["_assaultRiflePool", "_antiAirPool", "_rocketLauncherPool", "_sniperRiflePool", "_lightMachineGunPool", "_marksmanRiflePool", "_submachineGunPool", "_medMachineGunPool", "_contents", "_weapons", "_ammo", "_items", "_missionDifficulty", "_randomElement"];
+
 // initialisation of pools and content arrays
 _assaultRiflePool = missionNamespace getVariable ["SD_ASSAULT_RIFLE_POOL",[]];
 _antiAirPool = missionNamespace getVariable ["SD_ANTI_AIR_POOL",[]];

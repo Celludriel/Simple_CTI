@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_player"];
+private ["_sectorTags", "_sectorTag", "_output"];
 
 diag_log format ["Calling adminListSectors with %1", _player];
 

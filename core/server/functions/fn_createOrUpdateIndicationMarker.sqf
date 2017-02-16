@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_sector", "_color", "_range"];
+private ["_sectorLocation", "_marker", "_indicatorName"];
 
 _sectorLocation = getpos _sector;
 _marker = nil;

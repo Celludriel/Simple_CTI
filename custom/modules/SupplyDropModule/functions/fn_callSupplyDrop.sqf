@@ -29,6 +29,8 @@ params [
 	["_postDropProcessing", {}]
 ];
 
+private ["_supplyDropStart", "_obj", "_para"];
+
 [["Calling supply drop with %1, %2, %3, %4", _objectType, _centre, _height, _attachTo]] call CTISHR_fnc_ctiLog;
 
 _centre = _centre call {

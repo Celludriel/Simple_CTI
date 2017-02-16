@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_spawnMarker"];
+private ["_spawnPosition", "_spawnDirection", "_armory"];
 
 _spawnPosition = markerPos _spawnMarker;
 _spawnDirection = markerDir _spawnMarker;

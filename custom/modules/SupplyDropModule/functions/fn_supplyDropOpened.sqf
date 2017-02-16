@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params[ "_container" ];
+private ["_currentSupplyDrops", "_markerName"];
 
 //Remove function call for container from JIP queue
 remoteExec [ "", format[ "supplyDrop_%1", _container call BIS_fnc_netId ] ];

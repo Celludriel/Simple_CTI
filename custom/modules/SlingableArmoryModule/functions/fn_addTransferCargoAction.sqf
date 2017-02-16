@@ -1,6 +1,7 @@
 if(!hasInterface) exitWith {};
 
 params ["_armory"];
+private ["_actionFunction"];
 
 _actionFunction = {
 	params ["_target", "_caller", "_id", "_arguments"];

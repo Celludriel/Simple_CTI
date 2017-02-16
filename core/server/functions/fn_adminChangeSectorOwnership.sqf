@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_sectorTag", "_newSide"];
+private ["_sector", "_sectorName"];
 
 _sector = nil;
 {
@@ -27,4 +28,4 @@ if (_newSide == west) then {
 [] call CTISRV_fnc_updateMissionDifficulty;
 
 // Run all scripts pertaining sector control change
-[SECTOR_CONTROL_CHANGE_SCRIPTS, [_sector, _sectorBLUFORcount, _sectorOPFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
+[SECTOR_CONTROL_CHANGE_SCRIPTS, [_sector, 0, 0]] call CTISHR_fnc_runArrayOfScriptsUnsynced;

@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params[ "_drop" ];
+private ["_grp", "_unit"];
 
 [["Spawning protection detail around %1", _drop]] call CTISHR_fnc_ctiLog;
 
