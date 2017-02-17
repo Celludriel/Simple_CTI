@@ -4,13 +4,15 @@ params ["_armory"];
 private ["_actionFunction"];
 
 _actionFunction = {
+	[["Executing Transfer Cargo function"]] call CTISHR_fnc_ctiLog;
 	params ["_target", "_caller", "_id", "_arguments"];
 
 	{
 		if([_x] call CTISHR_fnc_hasInventory  && !(_x isKindOf "CAManBase")) then {
-			[_x, _target] call CTISRV_fnc_moveInventory;
+			[["Remote calling: %1 with %2, %3", "CTISRV_fnc_moveInventory", _x, _target]] call CTISHR_fnc_ctiLog;
+			[_x, _target] remoteExecCall ["CTISRV_fnc_moveInventory", 0];
 		};
-	} forEach (_target nearEntities 5);
+	} forEach ((_target nearEntities 5) - [_target]);
 
 };
 
