@@ -10,6 +10,7 @@ enableDebugConsole = 1;
 class Params
 {
 	#include "core\server\coreParams.hpp"
+	#include "custom\modules\ModuleConfiguration\Params.hpp"
 	#include "custom\modules\SimpleMhqModule\params.hpp"
 	#include "custom\modules\FarReviveModule\params.hpp"
 	#include "custom\modules\AuxillerySlingModule\params.hpp"
@@ -32,6 +33,7 @@ class CfgFunctions
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
 	#include "custom\modules\SupplyDropModule\CfgFunctions.hpp"
 	#include "custom\modules\SlingableArmoryModule\CfgFunctions.hpp"
+	#include "custom\modules\ArsenalModule\CfgFunctions.hpp"
 };
 
 // debrief

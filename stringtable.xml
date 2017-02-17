@@ -337,7 +337,33 @@
                 <French>Délai d'expiration de la goutte d'approvisionnement</French>
                 <German>Zeit für die Ausfallzeit des Tropfen</German>
 				<Spanish>Tiempo de caducidad de la gota de suministro</Spanish>
-            </Key>			
+            </Key>
+        </Container>
+        <Container name="Module Configuration">
+            <Key ID="STR_PARAMS_MODULE_CONFIGURATION">
+                <Original>Module Configuration</Original>
+                <French>Configuration du modules</French>
+                <German>Modulkonfiguration</German>
+                <Spanish>Configuración del módulo</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_WEAPON_SUPPLY">
+                <Original>Weapon Supply</Original>
+                <French>Fourniture d'armes</French>
+                <German>Waffenlieferung</German>
+                <Spanish>Suministro de armas</Spanish>
+            </Key>
+            <Key ID="STR_SCAVENGE">
+                <Original>Scavenge</Original>
+                <French>Récupérer</French>
+                <German>Fressen</German>
+                <Spanish>Limpiar</Spanish>
+            </Key>
+            <Key ID="STR_ARSENAL">
+                <Original>Arsenal</Original>
+                <French>Arsenal</French>
+                <German>Arsenal</German>
+                <Spanish>Arsenal</Spanish>
+            </Key>
         </Container>
 	</Package>
 </Project>
