@@ -8,5 +8,7 @@ class CTITemplateSharedFunctions {
 		class globalHint {};
 		class ctiLog {};
 		class runArrayOfScriptsUnsynced {};
+
+		class hasInventory {};
 	};
 };

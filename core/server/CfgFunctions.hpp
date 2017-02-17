@@ -30,7 +30,8 @@ class CTITemplateServerFunctions {
 		class adminChangeSectorOwnership {};
 		class adminChangeSectorsOwnership {};
 		class adminListSectors {};
-		
+
 		class fillContainerWithContents {};
+		class moveInventory {};
 	};
 };
