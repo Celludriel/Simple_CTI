@@ -11,8 +11,7 @@ _contents = missionNamespace getVariable "SLA_STARTING_ARMORY";
     [["_armoryCheck: %1", _armoryCheck]] call CTISHR_fnc_ctiLog;
 
     if ( toString _armoryCheck == "sla_" ) then {
-		_direction = markerDir _x;
-        _armory = [markerPos _x, _direction, [_x, "mil_start", "ColorOrange"]] call SLA_fnc_spawnSlingableArmory;
+        _armory = [_x, ["mil_start", "ColorOrange"]] call SLA_fnc_spawnSlingableArmory;
 		[_armory, _contents] call CTISRV_fnc_fillContainerWithContents;
 		_armory setVariable ["markerTag", _x];
     };

@@ -1,10 +1,10 @@
 /*
-	_trackingInfo = ["marker", "iconType", "iconColor"]
+	_trackingInfo = ["iconType", "iconColor"]
 */
 if(!isDedicated) exitWith {};
 
-params ["_spawnMarker"];
-private ["_spawnPosition", "_spawnDirection", ["_trackingInfo", []]];
+params ["_spawnMarker", ["_trackingInfo", []]];
+private ["_spawnPosition", "_spawnDirection", "_armory"];
 
 _spawnPosition = markerPos _spawnMarker;
 _spawnDirection = markerDir _spawnMarker;
@@ -16,8 +16,9 @@ _armory setVariable ["markerTag", _spawnMarker];
 
 [_armory] remoteExecCall ["SLA_fnc_addTransferCargoAction", -2, true];
 
-if(count _trackingInfo == 3) then {
-	[_armory, _trackingInfo select 0, _trackingInfo select 1, _trackingInfo select 2] execVm "core\client\scripts\trackObjectWithIconOnMap.sqf";
+if(count _trackingInfo == 2) then {
+	[["Remote calling: %1", "CTICLN_fnc_trackObjectWithIconOnMap"]] call CTISHR_fnc_ctiLog;
+	[_armory, _spawnMarker, _trackingInfo select 0, _trackingInfo select 1] remoteExecCall ["CTICLN_fnc_trackObjectWithIconOnMap", -2, true];
 };
 
 [_armory] execVm "custom\modules\SlingableArmoryModule\slingableArmoryMonitor.sqf";
