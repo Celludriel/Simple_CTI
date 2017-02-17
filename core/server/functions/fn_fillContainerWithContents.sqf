@@ -5,6 +5,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_container", "_content"];
+private ["_weapons", "_magazines", "_items"];
 
 clearWeaponCargoGlobal _container;
 clearMagazineCargoGlobal _container;

@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_key", "_data"];
+private ["_ctiSaveGame"];
 
 _ctiSaveGame = profileNamespace getVariable SAVEGAME_NAME;
 if ( isNil "_ctiSaveGame" ) then {

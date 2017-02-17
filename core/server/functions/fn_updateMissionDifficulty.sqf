@@ -1,5 +1,7 @@
 if(!isDedicated) exitWith {};
 
+private ["_difficulty", "_totalSectors", "_sectorCountBlUFOR"];
+
 _difficulty = 0;
 _totalSectors = count CTI_SECTOR_OBJECTS;
 _sectorCountBlUFOR = 0;
