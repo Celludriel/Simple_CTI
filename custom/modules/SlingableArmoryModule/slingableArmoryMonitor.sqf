@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_armory"];
+private ["_marker", "_originPosition", "_direction"];
 
 _marker = _armory getVariable "markerTag";
 _originPosition = markerPos _marker;
