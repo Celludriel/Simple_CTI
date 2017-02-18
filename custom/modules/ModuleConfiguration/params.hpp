@@ -14,7 +14,7 @@ class ModuleConfiguration{
 
 class WeaponSupply {
 	title = $STR_PARAMS_WEAPON_SUPPLY;
-	values[] = {"SCAVENGE","ARSENAL"};
+	values[] = {0, 1};
 	texts[] = { $STR_SCAVENGE, $STR_ARSENAL };
-	default = "SCAVENGE";
+	default = 0;
 };

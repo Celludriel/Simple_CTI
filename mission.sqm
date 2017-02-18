@@ -8,18 +8,18 @@ class EditorData
 	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=177;
+		nextID=179;
 	};
 	class MarkerIDProvider
 	{
-		nextID=58;
+		nextID=59;
 	};
 	class Camera
 	{
-		pos[]={7127.8521,69.082489,5989.8643};
-		dir[]={-0.13368219,-0.7214458,-0.67948782};
-		up[]={-0.13928309,0.69237709,-0.70795649};
-		aside[]={-0.98121595,3.760797e-007,0.19304356};
+		pos[]={7076.9741,10.690249,5929.686};
+		dir[]={-0.70055497,-0.68452042,-0.20168971};
+		up[]={-0.65785992,0.72893304,-0.18939734};
+		aside[]={-0.27666482,-1.0826625e-007,0.960976};
 	};
 };
 binarizationWanted=0;
@@ -120,25 +120,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -170,6 +151,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -223,7 +223,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=48;
 		class Item0
 		{
 			dataType="Marker";
@@ -813,7 +813,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58777;
+			angle=225.58775;
 			id=103;
 		};
 		class Item32
@@ -1116,7 +1116,7 @@ class Mission
 			name="service_point_3";
 			text="Service";
 			type="Empty";
-			angle=192.79369;
+			angle=192.79367;
 			id=147;
 		};
 		class Item38
@@ -1432,17 +1432,24 @@ class Mission
 		class Item46
 		{
 			dataType="Marker";
-			position[]=
-			{
-				7095.7881,
-				1.#QNAN,
-				5946.9678
-			};
+			position[]={7095.7881,56443952,5946.9678};
 			name="sla_1";
+			text="Slingable Armory 1";
 			type="Empty";
 			angle=136.412;
 			id=173;
-			atlOffset=1.#QNAN;
+			atlOffset=56443944;
+		};
+		class Item47
+		{
+			dataType="Marker";
+			position[]={7072.2271,57476400,5928.708};
+			name="ars_1";
+			text="Arsenal 1";
+			type="Empty";
+			angle=75.991989;
+			id=178;
+			atlOffset=57476392;
 		};
 	};
 	class Connections

@@ -11,6 +11,8 @@ _handle = [] execVM "core\server\initServer.sqf";
 waitUntil { isNull _handle };
 
 // init client scripts
+_handle = [] execVM "custom\modules\RespawnEquipmentModule\initModule.sqf";
+waitUntil { isNull _handle };
 _handle = [] execVM "core\client\initClient.sqf";
 waitUntil { isNull _handle };
 
@@ -29,12 +31,11 @@ waitUntil { getClientState == "BRIEFING READ" };
 [] execVM "custom\modules\ServicePointModule\initModule.sqf";
 [] execVM "custom\modules\DynamicWeatherModule\initModule.sqf";
 
-_weaponSupply = ["WeaponSupply", "SCAVENGE"] call BIS_fnc_getParamValue;
-if(_weaponSupply == "SCAVENGE") then {
+_weaponSupply = ["WeaponSupply", 0] call BIS_fnc_getParamValue;
+[["_weaponSupply: %1", _weaponSupply]] call CTISHR_fnc_ctiLog;
+if ( _weaponSupply == 0 ) then {
 	[] execVM "custom\modules\SupplyDropModule\initModule.sqf";
 	[] execVM "custom\modules\SlingableArmoryModule\initModule.sqf";
 } else {
 	[] execVM "custom\modules\ArsenalModule\initModule.sqf";
-}
-
-//init overrides
+};

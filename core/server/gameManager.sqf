@@ -1,7 +1,6 @@
 if (!isDedicated or PRESENCE_MANAGER_RUNNING) exitWith {};
 
 PRESENCE_MANAGER_RUNNING = true;
-//diag_log format ["Before loop %1", time];
 
 _sectorCountBlUFOR = 0;
 _sectorCountOPFOR = 0;
