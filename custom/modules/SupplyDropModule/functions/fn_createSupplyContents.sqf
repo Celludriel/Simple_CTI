@@ -94,6 +94,10 @@ if(_missionDifficulty >= 75) then {
 	};
 };
 
+_items pushBack ["Medikit", 5];
+_items pushBack ["ToolKit", 5];
+_items pushBack ["FirstAidKit", 20];
+
 // building and returning of contents array
 _contents pushBack _weapons;
 _contents pushBack _ammo;
