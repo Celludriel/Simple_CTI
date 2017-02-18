@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7076.9741,10.690249,5929.686};
-		dir[]={-0.70055497,-0.68452042,-0.20168971};
-		up[]={-0.65785992,0.72893304,-0.18939734};
-		aside[]={-0.27666482,-1.0826625e-007,0.960976};
+		pos[]={7117.0918,29.210253,5978.813};
+		dir[]={-0.25771987,-0.72639346,0.63715273};
+		up[]={-0.27240056,0.68721145,0.67344874};
+		aside[]={0.92704785,2.3748726e-008,0.37497902};
 	};
 };
 binarizationWanted=0;
@@ -120,6 +120,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -151,25 +170,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -813,7 +813,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58775;
+			angle=225.58774;
 			id=103;
 		};
 		class Item32
@@ -881,7 +881,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7132.7632,4.6586289,5975.478};
-				angles[]={0.09719272,1.6696517,5.4854422};
+				angles[]={0.097197384,0,5.4854474};
 			};
 			id=114;
 			type="ModuleRespawnVehicle_F";
@@ -940,7 +940,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -978,7 +978,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="0";
+							value="2";
 						};
 					};
 				};
@@ -1035,7 +1035,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="2";
+							value="1";
 						};
 					};
 				};
@@ -1054,7 +1054,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="";
+							value="300";
 						};
 					};
 				};
@@ -1073,7 +1073,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="1";
+							value="0";
 						};
 					};
 				};
@@ -1116,7 +1116,7 @@ class Mission
 			name="service_point_3";
 			text="Service";
 			type="Empty";
-			angle=192.79367;
+			angle=192.79366;
 			id=147;
 		};
 		class Item38
@@ -1447,7 +1447,7 @@ class Mission
 			name="ars_1";
 			text="Arsenal 1";
 			type="Empty";
-			angle=75.991989;
+			angle=75.991982;
 			id=178;
 			atlOffset=57476392;
 		};
