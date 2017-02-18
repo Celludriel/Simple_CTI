@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["launch_B_Titan_F","Titan_AA"],
 	["launch_I_Titan_F","Titan_AA"],

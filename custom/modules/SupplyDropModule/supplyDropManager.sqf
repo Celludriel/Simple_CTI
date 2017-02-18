@@ -1,5 +1,9 @@
 if(!isDedicated) exitWith {};
 
+private ["_blockOffset", "_durationBetweenDrops", "_maxSupplyDrops", "_currentSupplyDrops", "_justPlayers",
+	"_randomPlayerPosition", "_pos", "_postDropProcessing"
+];
+
 [["Supply drop monitor loading"]] call CTISHR_fnc_ctiLog;
 
 _blockOffset = 5;
@@ -28,6 +32,7 @@ while { true } do {
 
 	_postDropProcessing = {
 		params ["_drop"];
+		private ["_contents", "_netId", "_dropMarkerName", "_marker", "_markerText", "_currentSupplyDrops"];
 
 		// fill supply drop with contents
 		_contents = [] call SD_fnc_createSupplyContents;

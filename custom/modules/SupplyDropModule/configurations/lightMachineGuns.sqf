@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["LMG_Mk200_F","200Rnd_65x39_cased_Box"],
 	["LMG_Mk200_MRCO_F","200Rnd_65x39_cased_Box"],

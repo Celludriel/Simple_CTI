@@ -1,6 +1,7 @@
 if(!isDedicated) exitWith {};
 
 params ["_drop"];
+private ["_supplyDropExpirationTime", "_hearthBeat", "_lifeSpan", "_isOpened", "_markerName", "_group"];
 
 _supplyDropExpirationTime = ["SupplyDropExpirationTime", 3600] call BIS_fnc_getParamValue;
 _hearthBeat = 5;
@@ -16,7 +17,7 @@ while { true } do {
 _isOpened = _drop getVariable "opened";
 if(!_isOpened) then {
 	[["Supply drop expired"]] call CTISHR_fnc_ctiLog;
-	_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";	
+	_currentSupplyDrops = missionNamespace getVariable "CURRENT_AMOUNT_OF_SUPPLY_DROPS";
 	missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyDrops - 1)];
 	_markerName = _drop getVariable "supplydropMarkerName";
 	deleteMarker _markerName;

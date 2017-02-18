@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["MMG_01_hex_F","150Rnd_93x64_Mag"],
 	["MMG_01_tan_F","150Rnd_93x64_Mag"],

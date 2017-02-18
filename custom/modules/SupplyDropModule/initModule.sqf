@@ -1,5 +1,7 @@
 if(!isDedicated) exitWith {};
 
+private ["_useMarksmanRifles"];
+
 [["Init supply drop module"]] call CTISHR_fnc_ctiLog;
 
 _useMarksmanRifles = ["SupplyDropUseMarksmanRifles", false] call BIS_fnc_getParamValue;

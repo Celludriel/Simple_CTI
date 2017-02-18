@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["arifle_MXM_F","30Rnd_65x39_caseless_mag"],
 	["arifle_MXM_Hamr_pointer_F","30Rnd_65x39_caseless_mag"],

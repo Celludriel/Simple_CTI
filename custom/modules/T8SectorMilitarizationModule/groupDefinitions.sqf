@@ -1,3 +1,5 @@
+private ["_rookiePatrolGroup", "_veteranPatrolGroup", "_sniperTeam", "_armoredCarGroup", "_tankGroup", "_airGroup", "_groupDefinitions"];
+
 _rookiePatrolGroup = ["O_G_Soldier_lite_F","O_G_Soldier_lite_F","O_G_Soldier_lite_F","O_G_Soldier_SL_F"];
 _veteranPatrolGroup = ["O_G_Soldier_F","O_G_Soldier_F","O_G_Soldier_AR_F","O_G_Soldier_GL_F","O_G_medic_F","O_G_Soldier_SL_F"];
 _sniperTeam = ["O_sniper_F","O_spotter_F"];

@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["hgun_PDW2000_F","30Rnd_9x21_Mag"],
 	["hgun_PDW2000_snds_F","30Rnd_9x21_Mag"],

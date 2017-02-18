@@ -1,6 +1,7 @@
-params["_unit"];
+params ["_unit"];
+private ["_veh"];
 
-diag_log format ["Removing: %1", _unit];
+[["Removing: %1", _unit]] call CTISHR_fnc_ctiLog;
 
 if(vehicle _unit != _unit)then {
 	_veh = vehicle _unit;

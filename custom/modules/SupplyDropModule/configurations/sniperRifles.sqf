@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["srifle_GM6_F","5Rnd_127x108_APDS_Mag"],
 	["srifle_GM6_SOS_F","5Rnd_127x108_APDS_Mag"],

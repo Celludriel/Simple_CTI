@@ -1,5 +1,7 @@
 if(!isDedicated) exitWith {};
 
+private ["_handle"];
+
 _handle = [] execVM "custom\modules\SlingableArmoryModule\configurations\slingableArmoryConfiguration.sqf";
 waitUntil {isNull _handle};
 

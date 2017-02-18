@@ -1,4 +1,5 @@
 params [ "_accelerationFactor", "_shorterNights" ];
+private ["_accelerated_time"];
 
 while { true } do {
 	if ( _shorterNights == 1 && ( daytime > 21 || daytime < 3 ) ) then {

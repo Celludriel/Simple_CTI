@@ -1,5 +1,7 @@
 if(!isDedicated) exitWith {};
 
+private ["_contents", "_weapons", "_ammo", "_items"];
+
 _contents = [];
 _weapons = [];
 _ammo = [];

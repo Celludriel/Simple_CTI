@@ -1,3 +1,5 @@
+private ["_pool"];
+
 _pool = [
 	["launch_NLAW_F","NLAW_F"],
 	["launch_RPG32_F","RPG32_F"],

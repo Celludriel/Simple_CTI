@@ -1,5 +1,7 @@
 if(!isDedicated) exitWith {};
 
+private ["_contents", "_armoryCheck", "_armory"];
+
 _contents = missionNamespace getVariable "SLA_STARTING_ARMORY";
 
 {
