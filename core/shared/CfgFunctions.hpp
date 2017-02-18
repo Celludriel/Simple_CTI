@@ -10,5 +10,6 @@ class CTITemplateSharedFunctions {
 		class runArrayOfScriptsUnsynced {};
 
 		class hasInventory {};
+		class canHaveInventory {};
 	};
 };

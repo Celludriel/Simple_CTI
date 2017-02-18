@@ -58,6 +58,9 @@ while { true } do {
 		// set opened status
 		_drop setVariable ["opened", false];
 		[_drop] execVM "custom\modules\SupplyDropModule\supplyDropMonitor.sqf";
+
+		// add action on each client to empty a supply drop into a closeby inventory able unit
+		[_drop] remoteExecCall ["SD_fnc_addEmptySupplyDropAction", -2, true];
 	};
 
 	["CargoNet_01_box_F", _pos, 100, [0,0,-1.2], _postDropProcessing] call SD_fnc_callSupplyDrop;

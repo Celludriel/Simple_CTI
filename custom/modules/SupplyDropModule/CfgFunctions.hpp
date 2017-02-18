@@ -9,5 +9,7 @@ class SupplyDropFunctions {
 		class supplyDropOpened {};
 		class handleSupplyDropEventHandler {};
 		class spawnProtectionDetail {};
+		class addEmptySupplyDropAction {};
+		class vehicleCloseCanHaveCargo {};
 	};
 };
