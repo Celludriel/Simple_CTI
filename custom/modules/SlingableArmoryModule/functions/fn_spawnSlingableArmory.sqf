@@ -10,6 +10,11 @@ _spawnPosition = markerPos _spawnMarker;
 _spawnDirection = markerDir _spawnMarker;
 _armory = "B_Slingload_01_Cargo_F" createVehicle _spawnPosition;
 
+// place armory in missionnamespace for save and load logic
+_slingableArmories = missionNamespace getVariable ["slingableArmories", []];
+_slingableArmories = _slingableArmories pushBack _armory;
+missionNamespace setVariable ["slingableArmories", _slingableArmories];
+
 _armory allowDamage false;
 _armory setDir _spawnDirection;
 _armory setVariable ["markerTag", _spawnMarker];
@@ -22,5 +27,6 @@ if(count _trackingInfo == 2) then {
 };
 
 [_armory] execVm "custom\modules\SlingableArmoryModule\slingableArmoryMonitor.sqf";
+[_armory] execVm "custom\modules\SlingableArmoryModule\loadSlingableArmoryContents.sqf";
 
 _armory
