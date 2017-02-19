@@ -17,6 +17,12 @@
                 <German>Unstationieren</German>
                 <Spanish>No desplegar</Spanish>
             </Key>
+            <Key ID="STR_MHQ_SELFDESTRUCT">
+                <Original>Self destruct</Original>
+                <French>auto-destruction</French>
+                <German>Selbstzerstörung</German>
+                <Spanish>auto destrucción</Spanish>
+            </Key>
             <Key ID="STR_MHQ_OPEN_ARSENAL">
                 <Original>Open arsenal</Original>
                 <French>Ouvrir arsenal</French>
