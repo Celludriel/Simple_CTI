@@ -9,7 +9,7 @@ _protectionDetailGroup = ["O_G_Soldier_SL_F","O_G_Soldier_F","O_G_Soldier_F","O_
 
 _grp = createGroup east;
 {
-	_unit = _grp createUnit [_x, _drop, [], 100, "FORM"];
+	_unit = _grp createUnit [_x, _drop, [], 100, "NONE"];
 	[_unit] join _grp;
 } forEach _protectionDetailGroup;
 

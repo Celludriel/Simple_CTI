@@ -1,8 +1,11 @@
 if(!isDedicated) exitWith {};
 
+[["Saving Slignable Armories"]] call CTISHR_fnc_ctiLog;
+
 private ["_contents", "_markerTag", "_saveKey", "_slingableArmories"];
 
 _slingableArmories = missionNamespace getVariable ["slingableArmories", []];
+[["_slingableArmories: %1", _slingableArmories]] call CTISHR_fnc_ctiLog;
 {
 	_contents = [_x] call CTISRV_fnc_fetchContentOfInventory;
 	_markerTag = _x getVariable "markerTag";

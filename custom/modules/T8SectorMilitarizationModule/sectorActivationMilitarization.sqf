@@ -4,7 +4,7 @@ params ["_sector", "_activationBLUFORcount", "_sectorBLUFORcount"];
 private [
 	"_markerName", "_pos", "_groupDefinitions", "_missionDifficulty", "_playersOnServer", "_spawnSelection",
 	"_outerPatrolGroups", "_innerPatrolGroups", "_sniperPatrolGroups", "_armoredPatrolGroups", "_airPatrolGroups",
-	"_spawnThisUnits", "_retValue", "_normalGroupOffset", "_specialGroupOffset";
+	"_spawnThisUnits", "_retValue", "_normalGroupOffset", "_specialGroupOffset"
 ];
 
 // spawn setup
@@ -17,18 +17,18 @@ _missionDifficulty = missionNamespace getVariable "MISSION_DIFFICULTY";
 _playersOnServer = count allPlayers;
 _normalGroupOffset = 0;
 switch(_playersOnServer) do {
-	case 2 : {_normalGroupOffset = 1;};break;
-	case 4 : {_normalGroupOffset = 2;};break;
-	case 6 : {_normalGroupOffset = 4;};break;
-	case 8 : {_normalGroupOffset = 5;};break;
-	case 10 : {_normalGroupOffset = 6;};break;
+	case 2 : {_normalGroupOffset = 1;};
+	case 4 : {_normalGroupOffset = 2;};
+	case 6 : {_normalGroupOffset = 4;};
+	case 8 : {_normalGroupOffset = 5;};
+	case 10 : {_normalGroupOffset = 6;};
 };
 
 _specialGroupOffset = 0;
 switch(_playersOnServer) do {
-	case 4 : {_specialGroupOffset = 1;};break;
-	case 8 : {_specialGroupOffset = 3;};break;
-	case 10 : {_specialGroupOffset = 5;};break;
+	case 4 : {_specialGroupOffset = 1;};
+	case 8 : {_specialGroupOffset = 3;};
+	case 10 : {_specialGroupOffset = 5;};
 };
 
 
@@ -57,7 +57,7 @@ _airPatrolGroups = _spawnSelection select 6;
 _spawnThisUnits = [];
 
 if(count _outerPatrolGroups > 0) then {
-	_amount = (_outerPatrolGroups select 0) + _amountOffset;
+	_amount = (_outerPatrolGroups select 0) + _normalGroupOffset;
 	_patrolGroup = _outerPatrolGroups select 1;
 
 	for "_i" from 1 to _amount do {
@@ -81,7 +81,7 @@ if(count _sniperPatrolGroups > 0) then {
 };
 
 if(count _innerPatrolGroups > 0) then {
-	_amount = (_innerPatrolGroups select 0) + _amountOffset;
+	_amount = (_innerPatrolGroups select 0) + _normalGroupOffset;
 	_patrolGroup = _innerPatrolGroups select 1;
 
 	for "_i" from 1 to _amount do {

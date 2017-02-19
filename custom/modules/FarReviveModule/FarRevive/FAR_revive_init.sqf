@@ -64,6 +64,52 @@ if (isDedicated) exitWith {};
 	];
 };
 
+FAR_filterArray = {
+	params ["_itemArray","_types"];
+
+	{
+		_type = _x;
+		{
+		   if (_x == _type) then {
+			   _itemArray = _itemArray - [_x]; 
+		   };
+		} forEach _itemArray;
+	} forEach _types;
+
+	_itemArray
+};
+
+FAR_dropBackpack =
+{
+	params ["_origin"];		
+
+	_WEAPS = weapons _origin; 
+	_PWITEMS = primaryWeaponItems _origin;
+	_SWITEMS = secondaryWeaponItems _origin;
+	_HGITEMS  = handgunItems _origin;
+	_MAGS = magazines _origin;
+	_PITEMS = items _origin;
+	
+	//filter stuff that shouldn't be in the arrays
+	_WEAPS = [_WEAPS, ["Binocular","MineDetector","Rangefinder","Laserdesignator"]] call FAR_filterArray;
+	
+	diag_log format ["_WEAPS: %1", _WEAPS];
+	diag_log format ["_PWITEMS: %1", _PWITEMS];
+	diag_log format ["_SWITEMS: %1", _SWITEMS];
+	diag_log format ["_HGITEMS: %1", _HGITEMS];
+	diag_log format ["_MAGS: %1", _MAGS];
+	diag_log format ["_PITEMS: %1", _PITEMS];
+	
+	_target = "B_Carryall_khk" createVehicle position _origin;
+
+	{ if(_x != "") then { _target addWeaponCargoGlobal [_x, 1] }; } forEach _WEAPS;
+	{ if(_x != "") then { _target addWeaponCargoGlobal [_x, 1] }; } forEach _HGITEMS;
+	{ if(_x != "") then { _target addMagazineCargoGlobal [_x, 1] }; } forEach _MAGS;
+	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PWITEMS;
+	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _SWITEMS;
+	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
+};
+
 FAR_Player_Init =
 {
 	// Cache player's side
@@ -77,15 +123,14 @@ FAR_Player_Init =
 	[
 		"Killed",
 		{
-			// Remove dead body of player (for missions with respawn enabled)
 			_body = _this select 0;
+			[_body] call FAR_dropBackpack;				
 
+			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn
-			{
-
-				waitUntil { alive player };
-				sleep 600;
+			{	
 				_body = _this select 0;
+				waitUntil { alive player };										
 				deleteVehicle _body;
 			}
 		}

@@ -1,5 +1,5 @@
 params ["_obj"];
-private ["_return", "_className", _"tb", "_tm", "_tw"];
+private ["_return", "_className", "_tb", "_tm", "_tw"];
 
 _return = false;
 
