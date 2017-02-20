@@ -24,7 +24,7 @@
 	{
 		class client
 		{
-			file = "T8\fnc";
+			file = "core\server\ai\T8\fnc";
 
 			addFunction(hint);
 			addFunction(broadcastHint);
@@ -32,7 +32,7 @@
 
 		class server
 		{
-			file = "T8\fnc";
+			file = "core\server\ai\T8\fnc";
 
 			addFunctionPost(INIT);
 
@@ -109,7 +109,7 @@
 	{
 		class task
 		{
-			file = "T8\tsk";
+			file = "core\server\ai\T8\tsk";
 
 			// basic tasks
 			addFunction(attack);
@@ -134,7 +134,7 @@
 	{
 		class support
 		{
-			file = "T8\sup";
+			file = "core\server\ai\T8\sup";
 
 			addFunction(HALO);
 		};

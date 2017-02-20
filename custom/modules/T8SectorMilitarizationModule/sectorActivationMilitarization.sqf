@@ -63,7 +63,7 @@ if(count _outerPatrolGroups > 0) then {
 	for "_i" from 1 to _amount do {
 		_outerCircleRange = SECTOR_RANGE - T8U_var_PatAroundRange - 25;
 		_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-		_groupToSpawn = [ [_patrolGroup, _markerName], [ "PATROL_AROUND", _outerCircleRange, _formation, "AWARE" ], [true, true, true], [true]];
+		_groupToSpawn = [ [_patrolGroup, _markerName], [ "PATROL_AROUND", _outerCircleRange, 0, _formation, "AWARE" ], [true, true, true], [true]];
 		_spawnThisUnits pushBack _groupToSpawn;
 	};
 };
@@ -87,7 +87,7 @@ if(count _innerPatrolGroups > 0) then {
 	for "_i" from 1 to _amount do {
 		_innerCircleRange = (SECTOR_RANGE / 2) - T8U_var_PatAroundRange - 25;
 		_formation = [ "WEDGE", "VEE" ] call BIS_fnc_selectRandom;
-		_groupToSpawn = [ [ _patrolGroup, _markerName ], [ "PATROL_AROUND", _formation, "AWARE" ], [true, true, true], [true]];
+		_groupToSpawn = [ [ _patrolGroup, _markerName ], [ "PATROL_AROUND", _innerCircleRange, 0, _formation, "AWARE" ], [true, true, true], [true]];
 		_spawnThisUnits pushBack _groupToSpawn;
 	};
 };
