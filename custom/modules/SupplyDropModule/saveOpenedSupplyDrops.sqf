@@ -13,6 +13,6 @@ _contents = [];
 		_supplyDropData pushBack _supplyDropContents;
 		_contents pushBack _supplyDropData;
 	};
-} entities [["CargoNet_01_box_F"], [], true, true];
+} forEach (entities [["CargoNet_01_box_F"], [], true, true]);
 
 ["OpenedSupplyDrops", _contents] call CTISRV_fnc_storeDataBlockInSaveContainer;
