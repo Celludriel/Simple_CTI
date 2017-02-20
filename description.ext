@@ -1,5 +1,8 @@
 enableDebugConsole = 1;
 
+// config
+#include "core\server\ai\T8\CONFIG.hpp"
+
 // gui
 #include "interface.hpp"
 #include "custom\modules\TawdModule\taw_vd\GUI.h"

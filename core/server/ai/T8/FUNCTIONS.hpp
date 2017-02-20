@@ -7,7 +7,7 @@
 	Author:		T-800a
 	E-Mail:		t-800a@gmx.net
 
-	Open < core\server\ai\T8\CONFIG.hpp > to change basic variables !
+	Open < T8\CONFIG.hpp > to change basic variables !
 
  =======================================================================================================================
 */
@@ -24,7 +24,7 @@
 	{
 		class client
 		{
-			file = "core\server\ai\T8\fnc";
+			file = "T8\fnc";
 
 			addFunction(hint);
 			addFunction(broadcastHint);
@@ -32,7 +32,7 @@
 
 		class server
 		{
-			file = "core\server\ai\T8\fnc";
+			file = "T8\fnc";
 
 			addFunctionPost(INIT);
 
@@ -42,6 +42,7 @@
 			addFunction(combatBehaviorMod);
 			addFunction(createFlankingPos);
 			addFunction(createSpawnPos);
+			addFunction(createUnitContainer);
 			addFunction(createWaypoint);
 			addFunction(createWaypointPositions);
 			addFunction(debugLog);
@@ -61,13 +62,16 @@
 			addFunction(getOutCover);
 			addFunction(getOutVehicle);
 			addFunction(getSupport);
-			addFunction(groupClearEmpty);
+		//	addFunction(groupClearEmpty);		// no longer needed
 			addFunction(groupClearWaypoints);
 			addFunction(groupCopyVars);
 			addFunction(groupRegroup);
+			addFunction(handleGroups);
 			addFunction(hitEvent);
 			addFunction(inBuilding);
-			addFunction(killedEvent);
+			addFunction(introduce);
+		//	addFunction(killedEvent);			// no longer needed
+			addFunction(loadConfig);
 			addFunction(moveOut);
 			addFunction(moveTo);
 			addFunction(moveToPos);
@@ -79,6 +83,7 @@
 			addFunction(releaseGroup);
 			addFunction(resetCalled);
 			addFunction(restartFiredEvent);
+			addFunction(selectConfigFile);
 			addFunction(smokeScreen);
 			addFunction(spawn);
 			addFunction(track);
@@ -88,6 +93,7 @@
 			addFunction(zoneCreate);
 			addFunction(zoneNotAktiv);
 			addFunction(teleportGroupToCurrentWaypoint);
+			
 
 			// polygon stuff
 			addFunction(getPolygon);
@@ -103,7 +109,7 @@
 	{
 		class task
 		{
-			file = "core\server\ai\T8\tsk";
+			file = "T8\tsk";
 
 			// basic tasks
 			addFunction(attack);
@@ -128,7 +134,7 @@
 	{
 		class support
 		{
-			file = "core\server\ai\T8\sup";
+			file = "T8\sup";
 
 			addFunction(HALO);
 		};
