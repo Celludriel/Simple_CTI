@@ -15,3 +15,4 @@ missionNamespace setVariable ["CURRENT_AMOUNT_OF_SUPPLY_DROPS", (_currentSupplyD
 _markerName = _container getVariable "supplydropMarkerName";
 deleteMarker _markerName;
 _container setVariable ["opened", true];
+[] execVM "custom\modules\SupplyDropModule\saveOpenedSupplyDrops.sqf";

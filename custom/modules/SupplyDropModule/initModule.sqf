@@ -21,3 +21,5 @@ if(_useMarksmanRifles == 1) then {
 };
 
 [] execVm "custom\modules\SupplyDropModule\supplyDropManager.sqf";
+[] execVm "custom\modules\SupplyDropModule\loadOpenedSupplyDrops.sqf";
+["custom\modules\SupplyDropModule\saveOpenedSupplyDrops.sqf"] call CTISRV_fnc_addSaveScript;
