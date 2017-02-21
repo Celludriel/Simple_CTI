@@ -18,3 +18,10 @@ class WeaponSupply {
 	texts[] = { $STR_SCAVENGE, $STR_ARSENAL };
 	default = 0;
 };
+
+class AiSystem {
+	title = $STR_PARAMS_AI_SYSTEM;
+	values[] = {0, 1};
+	texts[] = { "LV", "T8" };
+	default = 1;
+};

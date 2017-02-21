@@ -23,4 +23,10 @@
                 <German>Arsenal</German>
                 <Spanish>Arsenal</Spanish>
             </Key>
+            <Key ID="STR_PARAMS_AI_SYSTEM">
+                <Original>AI System</Original>
+                <French>Système AI</French>
+                <German>AI-System</German>
+                <Spanish>Sistema AI</Spanish>
+            </Key>
 		</Container>
