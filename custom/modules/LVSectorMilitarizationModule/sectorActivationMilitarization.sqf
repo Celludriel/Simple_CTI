@@ -2,6 +2,8 @@ if(!isDedicated) exitWith {};
 
 params ["_sector", "_activationBLUFORcount", "_sectorBLUFORcount"];
 
+[] execVM "custom\modules\LVSectorMilitarizationModule\config.sqf";
+
 _newCounter = GROUP_COUNTER + 1;
 
 _sector setVariable ["LVgroupId", _newCounter, false];

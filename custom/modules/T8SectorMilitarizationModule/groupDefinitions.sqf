@@ -11,7 +11,7 @@ _groupDefinitions = [
 	[0, 10, [1, _rookiePatrolGroup], [2, _rookiePatrolGroup], [], [], []],
 	[11, 32, [4, _rookiePatrolGroup], [2, _veteranPatrolGroup], [], [], []],
 	[33, 65, [4, _veteranPatrolGroup], [4, _veteranPatrolGroup], [], [], []],
-	[66, 75, [6, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _armoredCarGroup], []],
+	[66, 74, [6, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _armoredCarGroup], []],
 	[75, 100, [6, _veteranPatrolGroup], [4, _veteranPatrolGroup], [2, _sniperTeam], [2, _tankGroup], [1, _airGroup]]
 ];
 

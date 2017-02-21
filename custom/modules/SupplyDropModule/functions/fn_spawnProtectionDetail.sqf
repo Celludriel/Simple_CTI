@@ -11,6 +11,7 @@ _grp = createGroup east;
 {
 	_unit = _grp createUnit [_x, _drop, [], 100, "NONE"];
 	[_unit] join _grp;
+	doStop _unit;
 } forEach _protectionDetailGroup;
 
 _drop setVariable ["protection_detail", _grp];
