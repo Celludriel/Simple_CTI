@@ -83,9 +83,9 @@ _grpId = if (count _this > 21) then { _this select 21;} else {nil};
 _mp = if (count _this > 22) then { _this select 22;} else {false};
 
 //Prepare functions:
-if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_ACskills.sqf";};
-if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
-if(_mp)then{if(isNil("LV_GetPlayers"))then{LV_GetPlayers = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_getPlayers.sqf";};};
+if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_ACskills.sqf";};
+if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
+if(_mp)then{if(isNil("LV_GetPlayers"))then{LV_GetPlayers = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_getPlayers.sqf";};};
 
 //Classnames:
 _BLUmen = ["B_Soldier_A_F","B_soldier_AR_F","B_medic_F","B_engineer_F","B_soldier_exp_F","B_Soldier_GL_F","B_soldier_M_F","B_soldier_AA_F","B_soldier_AT_F","B_officer_F","B_soldier_repair_F","B_Soldier_F","B_soldier_LAT_F","B_Soldier_lite_F","B_Soldier_SL_F","B_Soldier_TL_F","B_recon_exp_F","B_recon_JTAC_F","B_recon_M_F","B_recon_medic_F","B_recon_F","B_recon_LAT_F","B_recon_TL_F","B_soldier_AAR_F","B_soldier_AAA_F","B_soldier_AAT_F"];
@@ -258,9 +258,9 @@ if(_patrol)then{
 				_x setVariable ["target0",_target,false];
 				_x setVariable ["mDis0", 1000, false];
 				if(_cycle)then{
-					nul = [_x,true] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_follow.sqf";
+					nul = [_x,true] execVM "core\server\ai\LV\LV_functions\LV_fnc_follow.sqf";
 				}else{
-					nul = [_x,false] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_follow.sqf";
+					nul = [_x,false] execVM "core\server\ai\LV\LV_functions\LV_fnc_follow.sqf";
 				};
 				sleep 2;
 			}forEach units _grp2;
@@ -272,7 +272,7 @@ if(_patrol)then{
 				{ ////TARGET is single Unit/Object
 					_x setVariable ["target0",_target,false];
 					_x setVariable ["mDis0", 1000, false];
-					nul = [_x] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_follow.sqf";
+					nul = [_x] execVM "core\server\ai\LV\LV_functions\LV_fnc_follow.sqf";
 				}forEach units _grp2;
 		};
 	};

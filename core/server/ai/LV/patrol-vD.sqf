@@ -8,8 +8,8 @@
 //*handle doors: true = units will close doors behind them
 
 private ["_buildings","_wp1","_unit","_startingPos","_pDir","_pRange","_newPos","_buildingVisits","_justDidBuilding","_i","_i2","_bPoss","_chooseBuildingOrNot","_building","_center","_radius","_buildingVisitMax","_buildingDistanceLimit"];
-if(isNil("LV_CloseDoors"))then{LV_CloseDoors = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_closeDoors.sqf";};
-if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
+if(isNil("LV_CloseDoors"))then{LV_CloseDoors = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_closeDoors.sqf";};
+if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
 _unit = _this select 0;
 _cPos = _this select 1;
 _radius = _this select 2;

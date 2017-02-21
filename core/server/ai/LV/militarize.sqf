@@ -69,12 +69,12 @@ if(_cPos in allMapMarkers)then{
 	};
 };
 
-if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_ACskills.sqf";};
-if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
+if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_ACskills.sqf";};
+if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
 
-if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_fullLandVehicle.sqf";};
-if(isNil("LV_fullAirVehicle"))then{LV_fullAirVehicle = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_fullAirVehicle.sqf";};
-if(isNil("LV_fullWaterVehicle"))then{LV_fullWaterVehicle = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_fullWaterVehicle.sqf";};
+if(isNil("LV_fullLandVehicle"))then{LV_fullLandVehicle = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_fullLandVehicle.sqf";};
+if(isNil("LV_fullAirVehicle"))then{LV_fullAirVehicle = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_fullAirVehicle.sqf";};
+if(isNil("LV_fullWaterVehicle"))then{LV_fullWaterVehicle = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_fullWaterVehicle.sqf";};
 
 if(typeName _menRatio == "ARRAY")then{
 	_menAmount = (_menRatio select 0) + (random (_menRatio select 1));

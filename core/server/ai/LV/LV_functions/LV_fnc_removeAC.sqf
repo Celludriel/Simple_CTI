@@ -1,6 +1,6 @@
 //ARMA3Alpha function LV_fnc_removeAC v0.8 - by SPUn / lostvar
 //removes ambienCombat units in various ways
-//Syntax: nul = [handle,style,syncedUnit,range/delay,flee direction] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_removeAC.sqf";
+//Syntax: nul = [handle,style,syncedUnit,range/delay,flee direction] execVM "core\server\ai\LV\LV_functions\LV_fnc_removeAC.sqf";
 //*handle = the name of ambientCombat, ex: war = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\ambientCombat.sqf"; <-war is the handle
 //*style = 0 or 1 or 2 (0 = units dissapear straight away, 1 = units forfeit and dissapear after *range, 2 = units die straight away)
 //*syncedUnit = unit/object ambientCombat is "synced" to (trigger name, or unit name etc, same as on line which calls ambientCombat.sqf)
@@ -15,8 +15,8 @@ _syncedUnit = _this select 2;
 _range = _this select 3;
 _fleeDir = _this select 4;
 
-LV_deleteOnDestination = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_deleteOnDestination.sqf";
-LV_killAfterDelay = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_killAfterDelay.sqf";
+LV_deleteOnDestination = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_deleteOnDestination.sqf";
+LV_killAfterDelay = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_killAfterDelay.sqf";
 
 if(!(isNil("ACpatrol")))then{terminate ACpatrol;};
 if(!(isNil("ACcleanUp")))then{terminate ACcleanUp;};

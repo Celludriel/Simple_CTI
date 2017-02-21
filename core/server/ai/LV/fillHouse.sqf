@@ -50,9 +50,9 @@ _milGroup = if (count _this > 7) then { _this select 7;} else {nil}; if(!isNil("
 _customInit = if (count _this > 8) then { _this select 8;} else {nil}; if(!isNil("_customInit"))then{if(_customInit == "nil0")then{_customInit = nil;};};
 _grpId = if (count _this > 9) then { _this select 9;} else {nil};
 
-if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_ACskills.sqf";};
-if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
-if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
+if(isNil("LV_ACskills"))then{LV_ACskills = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_ACskills.sqf";};
+if(isNil("LV_vehicleInit"))then{LV_vehicleInit = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_vehicleInit.sqf";};
+if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
 
 _blueMenArray = ["B_Soldier_A_F","B_soldier_AR_F","B_medic_F","B_engineer_F","B_soldier_exp_F","B_Soldier_GL_F","B_soldier_M_F","B_soldier_AA_F","B_soldier_AT_F","B_officer_F","B_soldier_repair_F","B_Soldier_F","B_soldier_LAT_F","B_Soldier_lite_F","B_Soldier_SL_F","B_Soldier_TL_F","B_soldier_AAR_F","B_soldier_AAA_F","B_soldier_AAT_F"];
 _blueMenArray2 = ["B_recon_exp_F","B_recon_JTAC_F","B_recon_M_F","B_recon_medic_F","B_recon_F","B_recon_LAT_F","B_recon_TL_F","B_soldier_AAR_F","B_soldier_AAA_F","B_soldier_AAT_F"];

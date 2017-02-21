@@ -5,7 +5,7 @@
 
 private ["_unit","_newPos","_i","_i2","_bPoss","_building"];
 
-if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
+if(isNil("LV_nearestBuilding"))then{LV_nearestBuilding = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_nearestBuilding.sqf";};
 
 _unit = _this select 0;
 _buildings = ["nearest one",_unit] call LV_nearestBuilding;

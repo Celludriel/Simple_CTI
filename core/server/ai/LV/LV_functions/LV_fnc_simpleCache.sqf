@@ -2,7 +2,7 @@
 
 		This script caches fillHouse & militarize scripts.
 
-	nul = [[ID's],[players],distance,keep count,MP] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_simpleCache.sqf";
+	nul = [[ID's],[players],distance,keep count,MP] execVM "core\server\ai\LV\LV_functions\LV_fnc_simpleCache.sqf";
 
 	ID's		=	array of script ID's
 	players 	=	array of players (doesnt matter what you set here if you use MP mode)
@@ -12,7 +12,7 @@
 
 	example:
 
-	nul = [[13,14],[playerUnit1],500,true,false] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_simpleCache.sqf";
+	nul = [[13,14],[playerUnit1],500,true,false] execVM "core\server\ai\LV\LV_functions\LV_fnc_simpleCache.sqf";
 
 */
 if (!isServer)exitWith{};
@@ -28,7 +28,7 @@ _distance = _this select 2;
 _keepCount = _this select 3;
 _mp = _this select 4;
 
-if(_mp)then{if(isNil("LV_GetPlayers"))then{LV_GetPlayers = compile preprocessFile "custom\modules\LVSectorMilitarizationModule\LV\LV_functions\LV_fnc_getPlayers.sqf";};};
+if(_mp)then{if(isNil("LV_GetPlayers"))then{LV_GetPlayers = compile preprocessFile "core\server\ai\LV\LV_functions\LV_fnc_getPlayers.sqf";};};
 
 while{true}do{
 	for[{_i=0}, {_i<(count _ids)}, {_i=_i+1}] do{
