@@ -6,7 +6,7 @@ SAVEGAME_NAME = "CTI_TEMPLATE";
 CTI_SECTOR_OBJECTS = [];
 SECTOR_COMPLETED_MESSAGE = "<t align='center' size='2.2'>AO Complete</t><br/><t size='1.5' align='center' color='#00FF80'>%1</t><br/>____________________<br/><t align='left'>Fantastic job at %1, boys! Give us a moment here at HQ and we'll line up your next target.</t>";
 
-// Expantion scripts
+// Expansion scripts
 PRE_INIT_SERVER_SCRIPTS = [];
 POST_INIT_SERVER_SCRIPTS = [];
 

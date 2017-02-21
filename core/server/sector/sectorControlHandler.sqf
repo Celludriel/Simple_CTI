@@ -17,6 +17,9 @@ if([_sector, _sectorBLUFORcount, _sectorOPFORcount] call sectorControlRule) then
 	_targetCompleteText = format [SECTOR_COMPLETED_MESSAGE, markerText _marker];
 	[_targetCompleteText] remoteExec ["CTISHR_fnc_globalHint", 0, false];
 
+	// Update the difficulty of the mission
+	[] call CTISRV_fnc_updateMissionDifficulty;
+
 	// Run all scripts pertaining sector control change
 	[SECTOR_CONTROL_CHANGE_SCRIPTS, [_sector, _sectorBLUFORcount, _sectorOPFORcount]] call CTISHR_fnc_runArrayOfScriptsUnsynced;
 };

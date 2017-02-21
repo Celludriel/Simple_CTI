@@ -83,7 +83,7 @@ AuxSling_medium_Helicopter_config = AuxSling_light_Helicopter_config + AuxSling_
 AuxSling_heavy_Helicopter_config = AuxSling_medium_Helicopter_config + AuxSling_heavy_Helicopter_config + [];
 
 AuxSling_light_config = AuxSling_light_config + ["Offroad_01_base_F","Hatchback_01_base_F","SUV_01_base_F"]; //lift = 500 e.g. Littlebird
-AuxSling_medium_config = AuxSling_light_config + AuxSling_medium_config + ["APC_Wheeled_01_base_F","APC_Wheeled_02_base_F","APC_Wheeled_03_base_F","Cha_LAV25_base"]; //lift = 4000 e.g GhostHawk
+AuxSling_medium_config = AuxSling_light_config + AuxSling_medium_config + ["APC_Wheeled_01_base_F","APC_Wheeled_02_base_F","APC_Wheeled_03_base_F","Cha_LAV25_base", "B_Slingload_01_Cargo_F"]; //lift = 4000 e.g GhostHawk
 AuxSling_heavy_config = AuxSling_medium_config + AuxSling_heavy_config + ["APC_Tracked_01_base_F","APC_Tracked_02_base_F","APC_Tracked_03_base_F","MBT_01_base_F","MBT_02_base_F","MBT_03_base_F","Truck_01_base_F","Truck_02_base_F","Truck_03_base_F","Plane_CAS_01_base_F","Plane_CAS_02_base_F","Plane_Fighter_03_base_F"]; //lift = 10000 e.g. Huron
 
 AuxSling_fnc_InList = {

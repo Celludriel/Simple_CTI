@@ -48,7 +48,13 @@ if(!_isDeployed)then{
 
     // Handle actions remove deploy add undeploy
     _mhq remoteExec ["removeAllActions", 0, true];
-    [_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT]] remoteExec ["addAction", 0, true];
+
+    _weaponSupply = ["WeaponSupply", 0] call BIS_fnc_getParamValue;
+    if ( _weaponSupply == 1 ) then {
+        [_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT]] remoteExec ["addAction", 0, true];
+    };
+
     [_mhq, [(localize "STR_MHQ_REDEPLOY"), "[] call mhqOpenDialog;"]] remoteExec ["addAction", 0, true];
     [_mhq, ["<t color='#ff1111'>" + (localize "STR_MHQ_UNDEPLOY") + "</t>", "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
+    [_mhq, ["<t color='#ff1111'>" + (localize "STR_MHQ_SELFDESTRUCT") + "</t>", "custom\modules\SimpleMhqModule\mhqSelfDestructAction.sqf"]] remoteExec ["addAction", 0, true];
 };

@@ -1,41 +1,102 @@
-version=51;
+version=52;
 class EditorData
 {
 	moveGridStep=1;
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=172;
+		nextID=179;
 	};
 	class MarkerIDProvider
 	{
-		nextID=57;
+		nextID=59;
 	};
 	class Camera
 	{
-		pos[]={1324.8296,496.58521,5886.4282};
-		dir[]={0.797813,-0.56925511,-0.19882868};
-		up[]={0.55237818,0.82214665,-0.13766111};
-		aside[]={-0.24183176,-5.9316153e-007,-0.97036487};
+		pos[]={7117.0918,29.210253,5978.813};
+		dir[]={-0.25771987,-0.72639346,0.63715273};
+		up[]={-0.27240056,0.68721145,0.67344874};
+		aside[]={0.92704785,2.3748726e-008,0.37497902};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
-	"A3_Characters_F_BLUFOR",
-	"a3_characters_f",
+	"A3_Ui_F",
+	"A3_Characters_F",
 	"A3_Air_F_Heli_Heli_Transport_03",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Modules_F_Multiplayer",
-	"A3_Weapons_F_Ammoboxes",
 	"A3_Air_F_Beta_Heli_Attack_01",
-	"A3_Armor_F_Slammer",
-	"A3_Air_F_Heli_Heli_Light_01",
-	"a3_air_f_heli_light_01"
+	"A3_Armor_F_Gamma_MBT_01",
+	"A3_Air_F_Heli_Light_01"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=8;
+		class Item0
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Air_F_Heli";
+			name="Arma 3 Helicopters - Aircrafts";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircrafts";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item6
+		{
+			className="A3_Armor_F_Gamma";
+			name="Arma 3 - Armored Land Vehicles";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item7
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircrafts";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+	};
 };
 randomSeed=9028453;
 class ScenarioData
@@ -51,8 +112,6 @@ class ScenarioData
 		minPlayers=1;
 		maxPlayers=10;
 	};
-	wreckManagerMode="AddAll";
-	corpseManagerMode="AddAll";
 };
 class CustomAttributes
 {
@@ -164,7 +223,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=48;
 		class Item0
 		{
 			dataType="Marker";
@@ -200,6 +259,7 @@ class Mission
 			text="Girna";
 			type="Empty";
 			id=38;
+			atlOffset=-2.7143602;
 		};
 		class Item4
 		{
@@ -218,6 +278,7 @@ class Mission
 			text="Agios Loannis";
 			type="Empty";
 			id=40;
+			atlOffset=-2.2683411;
 		};
 		class Item6
 		{
@@ -236,6 +297,7 @@ class Mission
 			text="The spartan";
 			type="Empty";
 			id=43;
+			atlOffset=14.864712;
 		};
 		class Item8
 		{
@@ -254,6 +316,7 @@ class Mission
 			text="Tsoukalia bay";
 			type="Empty";
 			id=58;
+			atlOffset=-43.342331;
 		};
 		class Item10
 		{
@@ -263,6 +326,7 @@ class Mission
 			text="Limeri bay";
 			type="Empty";
 			id=59;
+			atlOffset=-5.6112976;
 		};
 		class Item11
 		{
@@ -272,6 +336,7 @@ class Mission
 			text="Keiros bay";
 			type="Empty";
 			id=60;
+			atlOffset=-3.487793;
 		};
 		class Item12
 		{
@@ -281,6 +346,7 @@ class Mission
 			text="Kamino forest";
 			type="Empty";
 			id=61;
+			atlOffset=-11.758377;
 		};
 		class Item13
 		{
@@ -290,6 +356,7 @@ class Mission
 			text="Kamino firing range";
 			type="Empty";
 			id=62;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item14
 		{
@@ -299,6 +366,7 @@ class Mission
 			text="Smugglers road";
 			type="Empty";
 			id=63;
+			atlOffset=-11.256981;
 		};
 		class Item15
 		{
@@ -335,6 +403,7 @@ class Mission
 			text="Old outpost";
 			type="Empty";
 			id=69;
+			atlOffset=-5.661499;
 		};
 		class Item19
 		{
@@ -353,6 +422,7 @@ class Mission
 			text="South forest";
 			type="Empty";
 			id=71;
+			atlOffset=2.370224;
 		};
 		class Item21
 		{
@@ -371,6 +441,7 @@ class Mission
 			text="Nisi bay";
 			type="Empty";
 			id=73;
+			atlOffset=22.156458;
 		};
 		class Item23
 		{
@@ -388,7 +459,7 @@ class Mission
 						angles[]={0,1.1257373,0};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						isPlayer=1;
@@ -406,7 +477,7 @@ class Mission
 						angles[]={0,1.3681865,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -423,7 +494,7 @@ class Mission
 						angles[]={0,1.2252537,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -440,7 +511,7 @@ class Mission
 						angles[]={0,1.3567142,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -457,13 +528,14 @@ class Mission
 						angles[]={0,1.1325092,0};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
 					};
 					id=96;
 					type="B_soldier_exp_F";
+					atlOffset=-9.5367432e-007;
 				};
 			};
 			class Attributes
@@ -490,6 +562,7 @@ class Mission
 			type="Empty";
 			angle=168.64381;
 			id=79;
+			atlOffset=2.3151731;
 		};
 		class Item26
 		{
@@ -510,11 +583,13 @@ class Mission
 				angles[]={0.11449653,3.3124037,0.13909568};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=85;
 			type="B_Heli_Transport_03_F";
+			atlOffset=-0.30441141;
 		};
 		class Item28
 		{
@@ -525,8 +600,10 @@ class Mission
 				angles[]={0.26836184,3.4357853,6.2631841};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=87;
 			type="Land_HelipadCircle_F";
@@ -553,25 +630,6 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulation _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
 					property="enableStamina";
 					expression="_this enablestamina _value;";
 					class Value
@@ -589,7 +647,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=3;
+				nAttributes=2;
 			};
 		};
 		class Item29
@@ -601,11 +659,14 @@ class Mission
 				angles[]={0.049951322,3.1846325,6.1686916};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=94;
 			type="Land_HelipadCircle_F";
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -629,25 +690,6 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulation _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
 					property="enableStamina";
 					expression="_this enablestamina _value;";
 					class Value
@@ -665,7 +707,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=3;
+				nAttributes=2;
 			};
 		};
 		class Item30
@@ -683,13 +725,14 @@ class Mission
 						position[]={7100.4702,8.5188274,5935.6519};
 					};
 					side="West";
-					flags=3;
+					flags=7;
 					class Attributes
 					{
 						isPlayable=1;
 					};
 					id=98;
 					type="B_Soldier_SL_F";
+					atlOffset=-9.5367432e-007;
 				};
 				class Item1
 				{
@@ -699,13 +742,14 @@ class Mission
 						position[]={7103.6509,9.312995,5935.375};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
 					};
 					id=99;
 					type="B_medic_F";
+					atlOffset=-9.5367432e-007;
 				};
 				class Item2
 				{
@@ -715,7 +759,7 @@ class Mission
 						position[]={7097.7529,8.1604433,5933.106};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -731,7 +775,7 @@ class Mission
 						position[]={7100.7402,8.6777716,5932.9648};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -747,7 +791,7 @@ class Mission
 						position[]={7104.0342,9.7077503,5933.125};
 					};
 					side="West";
-					flags=1;
+					flags=5;
 					class Attributes
 					{
 						isPlayable=1;
@@ -760,6 +804,7 @@ class Mission
 			{
 			};
 			id=97;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item31
 		{
@@ -768,7 +813,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58783;
+			angle=225.58774;
 			id=103;
 		};
 		class Item32
@@ -780,9 +825,10 @@ class Mission
 				angles[]={0,2.8850293,0};
 			};
 			side="Empty";
-			flags=1;
+			flags=5;
 			class Attributes
 			{
+				disableSimulation=1;
 			};
 			id=105;
 			type="Land_Cargo_HQ_V1_F";
@@ -809,25 +855,6 @@ class Mission
 				};
 				class Attribute1
 				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulation _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
 					property="enableStamina";
 					expression="_this enablestamina _value;";
 					class Value
@@ -845,7 +872,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=3;
+				nAttributes=2;
 			};
 		};
 		class Item33
@@ -854,7 +881,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={7132.7632,4.6586289,5975.478};
-				angles[]={0.09719272,1.6696517,5.4854422};
+				angles[]={0.097197384,0,5.4854474};
 			};
 			id=114;
 			type="ModuleRespawnVehicle_F";
@@ -913,7 +940,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -951,7 +978,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="0";
+							value="2";
 						};
 					};
 				};
@@ -1008,7 +1035,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="2";
+							value="1";
 						};
 					};
 				};
@@ -1027,7 +1054,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="";
+							value="300";
 						};
 					};
 				};
@@ -1046,7 +1073,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="1";
+							value="0";
 						};
 					};
 				};
@@ -1055,102 +1082,6 @@ class Mission
 		};
 		class Item34
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7075.7505,10.183907,5943.0322};
-				angles[]={6.1736307,1.874885,5.8036737};
-			};
-			side="Empty";
-			class Attributes
-			{
-				init="this addAction[localize ""STR_MHQ_OPEN_ARSENAL"", ""custom\modules\SimpleMhqModule\mhqDefaultArsenal.sqf""]";
-			};
-			id=135;
-			type="B_supplyCrate_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulation _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[""launch_NLAW_F"",""arifle_MX_F"",""arifle_MX_SW_F""],[1,2,1]],[[""30Rnd_65x39_caseless_mag"",""16Rnd_9x21_Mag"",""30Rnd_45ACP_Mag_SMG_01"",""20Rnd_762x51_Mag"",""100Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""3Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareWhite_F"",""UGL_FlareGreen_F""],[24,6,6,6,6,3,1,2,2,6,3,2,6,6,2,2,2,2]],[[""Laserdesignator"",""FirstAidKit"",""acc_flashlight"",""bipod_01_F_blk""],[1,10,2,1]],[[""B_Kitbag_mcamo""],[2]]],false]";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="enableStamina";
-					expression="_this enablestamina _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item35
-		{
 			dataType="Marker";
 			position[]={3761.6941,34.006439,5627.9385};
 			name="sec_base_military_range";
@@ -1158,7 +1089,7 @@ class Mission
 			type="Empty";
 			id=143;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Marker";
 			position[]={6410.0737,7.9712267,5391.8364};
@@ -1168,7 +1099,7 @@ class Mission
 			angle=41.721001;
 			id=144;
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Marker";
 			position[]={4366.0513,226.5694,3809.7808};
@@ -1178,27 +1109,27 @@ class Mission
 			angle=84.826057;
 			id=146;
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Marker";
 			position[]={2123.4365,6.2200184,5729.1431};
 			name="service_point_3";
 			text="Service";
 			type="Empty";
-			angle=192.79375;
+			angle=192.79366;
 			id=147;
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Marker";
 			position[]={2967.9905,171.39999,1868.7925};
 			name="service_point_4";
 			text="Service";
 			type="Empty";
-			angle=48.782406;
+			angle=48.782402;
 			id=148;
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Marker";
 			position[]={7154.8896,-1.2875854,5964.4351};
@@ -1208,7 +1139,7 @@ class Mission
 			angle=188.83391;
 			id=150;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1217,13 +1148,15 @@ class Mission
 				angles[]={6.2382174,1.4801656,0.039976168};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=153;
 			type="B_Heli_Attack_01_F";
+			atlOffset=-0.010757446;
 		};
-		class Item42
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1232,13 +1165,15 @@ class Mission
 				angles[]={0.024993783,0.67890978,0.0075011365};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 			};
 			id=159;
 			type="B_MBT_01_cannon_F";
+			atlOffset=-0.31933784;
 		};
-		class Item43
+		class Item42
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1443,7 +1378,7 @@ class Mission
 				nAttributes=10;
 			};
 		};
-		class Item44
+		class Item43
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1452,6 +1387,7 @@ class Mission
 				angles[]={0,4.8519106,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				textures="wasp";
@@ -1459,7 +1395,7 @@ class Mission
 			id=165;
 			type="C_Heli_Light_01_civil_F";
 		};
-		class Item45
+		class Item44
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1468,6 +1404,7 @@ class Mission
 				angles[]={0,4.8519106,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				textures="sheriff";
@@ -1475,7 +1412,7 @@ class Mission
 			id=170;
 			type="C_Heli_Light_01_civil_F";
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1484,12 +1421,35 @@ class Mission
 				angles[]={0,4.8519106,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				textures="speedy";
 			};
 			id=171;
 			type="C_Heli_Light_01_civil_F";
+		};
+		class Item46
+		{
+			dataType="Marker";
+			position[]={7095.7881,56443952,5946.9678};
+			name="sla_1";
+			text="Slingable Armory 1";
+			type="Empty";
+			angle=136.412;
+			id=173;
+			atlOffset=56443944;
+		};
+		class Item47
+		{
+			dataType="Marker";
+			position[]={7072.2271,57476400,5928.708};
+			name="ars_1";
+			text="Arsenal 1";
+			type="Empty";
+			angle=75.991982;
+			id=178;
+			atlOffset=57476392;
 		};
 	};
 	class Connections

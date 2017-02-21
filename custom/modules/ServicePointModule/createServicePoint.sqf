@@ -1,6 +1,6 @@
 params ["_servicePointMarker"];
 
-private ["_servicePoint", "_position", "_cannotBeServicedYetTimer", "_nextServiceTime"];
+private ["_servicePoint", "_position", "_cannotBeServicedYetTimer", "_nextServiceTime", "_handle"];
 
 _position = getMarkerPos _servicePointMarker;
 

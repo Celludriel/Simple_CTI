@@ -5,5 +5,6 @@ class CTITemplateClientFunctions {
 		file = "core\client\functions";
 
 		class addRespawnScript {};
+		class trackObjectWithIconOnMap {};
 	};
 };

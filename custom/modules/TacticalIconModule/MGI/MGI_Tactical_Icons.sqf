@@ -20,7 +20,15 @@ _totalEntitiesInRange = (getPosATL player) nearEntities [["CAManBase", "Air", "C
   if(_total_entities >= 30) exitWith { true };
 
 	_true_side = getNumber (configfile >> "CfgVehicles" >> typeOf (crew _x select 0) >> "side");
-	_visibility = [objNull, "VIEW"] checkVisibility [eyePos player, eyePos (crew _x select 0)];
+	
+	_positionPlayer = eyePos player;
+	_positionTarget = eyePos _x;
+	_crew = crew _x;
+	if(count _crew > 0) then {
+		_positionTarget = eyePos (_crew select 0);
+	};
+	
+	_visibility = [objNull, "VIEW"] checkVisibility [_positionPlayer, _positionTarget];
 
 	if ((_true_side != _player_side ) && (_visibility > 0.5)) then {
   

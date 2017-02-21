@@ -14,7 +14,9 @@ class CTITemplateServerFunctions {
 		class addSectorDeActivationScript {};
 		class addSectorControlChangeScript {};
 		class addSectorLoadedScript {};
+		class addSaveScript {};
 		class addSectorType {};
+		class updateMissionDifficulty {};
 
 		class createOrUpdateIndicationMarker {};
 		class createSectorIndicatorName {};
@@ -25,5 +27,14 @@ class CTITemplateServerFunctions {
 
 		class loadDataBlockInSaveContainer {};
 		class storeDataBlockInSaveContainer {};
+		class executeSave {};
+
+		class adminChangeSectorOwnership {};
+		class adminChangeSectorsOwnership {};
+		class adminListSectors {};
+
+		class fillContainerWithContents {};
+		class fetchContentOfInventory {};
+		class moveInventory {};
 	};
 };

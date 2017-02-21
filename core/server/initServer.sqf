@@ -22,6 +22,9 @@ waitUntil {isNull _handle};
 ["core\server\gameManager.sqf"] call CTISRV_fnc_addOneSecondHearthbeatScript;
 [["End sector initiation"]] call CTISHR_fnc_ctiLog;
 
+//update difficulty of the current gamestate
+[] call CTISRV_fnc_updateMissionDifficulty;
+
 //autosave init
 ["core\server\persistence\saveManager.sqf"] call CTISRV_fnc_addFiveMinuteHearthbeatScript;
 ["core\server\persistence\saveManager.sqf"] call CTISRV_fnc_addSectorControlChangeScript;
