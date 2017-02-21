@@ -1,5 +1,5 @@
 // Run mission in debug (default=true)
-// DEBUG_ENABLED = false;
+DEBUG_ENABLED = false;
 
 if(!isDedicated) exitWith {};
 
