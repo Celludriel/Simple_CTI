@@ -16,6 +16,7 @@ _maxSupplyDrops = ["SupplyDropMaxSupplyDrops", 3] call BIS_fnc_getParamValue;
 while { true } do {
 	sleep (_durationBetweenDrops - _blockOffset);
 
+	// Block dropping until the current active supplydrops are lower then the max supply drops
 	_currentSupplyDrops = 999;
 	waitUntil {
 		sleep _blockOffset;
@@ -24,9 +25,16 @@ while { true } do {
 		_currentSupplyDrops < _maxSupplyDrops
 	};
 
+	// Supply drops can only drop if there are players on the server
+	_justPlayers = [];	
+	waitUntil { 
+		_justPlayers = allPlayers - entities "HeadlessClient_F";	
+		count _justPlayers > 0 
+	};
+	
 	// start a new drop
 	(format ["New supply drop being dropped!"]) remoteExec ["systemChat", 0, false];
-	_justPlayers = allPlayers - entities "HeadlessClient_F";
+	
 	_randomPlayerPosition = position (selectRandom _justPlayers);
 	_pos = [_randomPlayerPosition, 750, random 360, 0, [0,200], "CargoNet_01_box_F"] call ShkPos_fnc_executeFindPosition;
 
