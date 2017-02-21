@@ -6,8 +6,7 @@ private ["_isDeployed", "_handle", "_countdown"];
 // undeploy if it's deployed, self destruct means you are giving up the spawn position
 _isDeployed = _mhq getVariable "MhqDeployed";
 if (_isDeployed) then {
-	_handle = [] execVM "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf";
-	waitUntil { isNull _handle };
+	[_mhq] call MHQ_fnc_mhqUndeployAction;
 };
 
 // remove all actions no redeploying allowed

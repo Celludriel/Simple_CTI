@@ -1,4 +1,8 @@
+if(!isDedicated) exitWith {};
+
 params ["_mhq"];
+
+private ["_marker", "_respawnId", "_vehType"];
 
 waitUntil { sleep 1; !alive _mhq };
 
