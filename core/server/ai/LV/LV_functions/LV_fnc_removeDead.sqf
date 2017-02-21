@@ -1,5 +1,5 @@
 //ARMA3Alpha function LV_fnc_removeDead v1.2 - by SPUn / lostvar
-//Syntax: nul = [range,players] execVM "custom\modules\LVSectorMilitarizationModule\LV\LV_fnc_removeDead.sqf";
+//Syntax: nul = [range,players] execVM "core\server\ai\LV\LV_functions\LV_fnc_removeDead.sqf";
 //  range = min range from players where bodies dissapear, Default: 300
 //  players = array of players, Default: playableUnits
 

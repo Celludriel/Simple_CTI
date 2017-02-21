@@ -5,9 +5,9 @@
 
 		Calling the script:
 
-			default: 		nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\reinforcementChopper.sqf";
+			default: 		nul = [this] execVM "core\server\ai\LV\reinforcementChopper.sqf";
 			custom: 		nul = [spot,exact,side,type,captive,patrol,target,direction,distance,precise,
-								cycle,groupSize,skills,smoke,group,custom init,ID,MP] execVM "custom\modules\LVSectorMilitarizationModule\LV\reinforcementChopper.sqf";
+								cycle,groupSize,skills,smoke,group,custom init,ID,MP] execVM "core\server\ai\LV\reinforcementChopper.sqf";
 
 	Parameters:
 
@@ -45,7 +45,7 @@
 	ID 			= 	number (if you want to delete units this script creates, you'll need ID number for them)							DEFAULT: nil
 	MP			= 	true/false	true = 'landing spot' will automatically be one of alive non-captive players								DEFAULT: false
 
-	EXAMPLE: 	nul = [player,false,2,3,false,true,player,"random",1000,true,false,8,0.75,[false,true,false,true],nil,nil,33,false] execVM "custom\modules\LVSectorMilitarizationModule\LV\reinforcementChopper.sqf";
+	EXAMPLE: 	nul = [player,false,2,3,false,true,player,"random",1000,true,false,8,0.75,[false,true,false,true],nil,nil,33,false] execVM "core\server\ai\LV\reinforcementChopper.sqf";
 */
 if (!isServer)exitWith{};
 private ["_BLUmen3","_mp","_smoke","_INDchoppers","_BLUchoppers","_OPFchoppers","_OPFarrays","_BLUarrays","_INDgrp","_INDhq","_INDmen","_OPFmen2","_BLUmen2","_captive","_patrol","_heliT","_chopperTypes","_chopperType","_setInit2","_setInit","_c0","_customInit","_tPos","_exactPos","_skls","_skills","_grpSize","_cycle","_precise","_man2","_direction","_distance","_targetM","_i2","_heliPad","_targetPos","_side","_targetMarker","_BLUmen","_OPFmen","_men","_hq","_grp1","_grp2","_man1","_man","_dir","_range","_pos","_heli","_vehSpots","_i","_wp1"];
@@ -320,7 +320,7 @@ if(_patrol)then{
 					{
 						_cPosition = _targetMarker select 1;
 						_cRadius = _targetMarker select 2;
-						nul = [_x,_cPosition,_cRadius,_doorHandling] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vD.sqf";
+						nul = [_x,_cPosition,_cRadius,_doorHandling] execVM "core\server\ai\LV\patrol-vD.sqf";
 					}forEach units _grp2;
 				};
 			};

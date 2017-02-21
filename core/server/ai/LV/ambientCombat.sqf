@@ -5,9 +5,9 @@
 
 		Calling the script:
 
-				default: 	nul = [] execVM "custom\modules\LVSectorMilitarizationModule\LV\ambientCombat.sqf";
+				default: 	nul = [] execVM "core\server\ai\LV\ambientCombat.sqf";
 				custom: 	nul = [min range, max range, min delay, max delay, groups, side ratios, center unit, AI skills,
-								communication, dissapear distance, custom init, patrol type, MP] execVM "custom\modules\LVSectorMilitarizationModule\LV\ambientCombat.sqf";
+								communication, dissapear distance, custom init, patrol type, MP] execVM "core\server\ai\LV\ambientCombat.sqf";
 
 	Parameters:
 
@@ -38,7 +38,7 @@
 
 		Fully customized example:
 				nul = [150,600,10,30,8,[0,1,1],player,[0.2,0.3,0.1,0.55,0.25,1,1,0.25,1,1],1,800,"hint format['spawning unit: %1',this];",
-					["AWARE","SAD"],false] execVM "custom\modules\LVSectorMilitarizationModule\LV\ambientCombat.sqf";
+					["AWARE","SAD"],false] execVM "core\server\ai\LV\ambientCombat.sqf";
 
 */
 if (!isServer)exitWith{};

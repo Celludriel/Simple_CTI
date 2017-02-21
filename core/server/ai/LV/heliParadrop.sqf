@@ -5,11 +5,11 @@
 
 		Calling the script:
 
-			default: 		nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\heliParadrop.sqf";
+			default: 		nul = [this] execVM "core\server\ai\LV\heliParadrop.sqf";
 
 			custom: 		nul = [spot, side, allowDamage, captive, distance, direction, flyby, fly height, jump distance,
 								group size, jump delay, open height, smokes, flares, chems, patrol, target, cycle, skills,
-								group, custom init, ID, MP] execVM "custom\modules\LVSectorMilitarizationModule\LV\heliParadrop.sqf";
+								group, custom init, ID, MP] execVM "core\server\ai\LV\heliParadrop.sqf";
 
 	Parameters:
 
@@ -49,7 +49,7 @@ custom init = 	"init commands" (if you want something in init field of units, pu
 ID 			= 	number (if you want to delete units this script creates, you'll need ID number for them)						DEFAULT: nil
 MP			= 	true/false	true = 'drop spot' will automatically be one of alive non-captive players							DEFAULT: false
 
-EXAMPLE: 	nul = [player, 2, false, true, 1000, "random", true, 500, 200, 6, 1, 50, true, false, true, true, player, false, 0.75, nil, nil, 1,false] execVM "custom\modules\LVSectorMilitarizationModule\LV\heliParadrop.sqf";
+EXAMPLE: 	nul = [player, 2, false, true, 1000, "random", true, 500, 200, 6, 1, 50, true, false, true, true, player, false, 0.75, nil, nil, 1,false] execVM "core\server\ai\LV\heliParadrop.sqf";
 */
 if (!isServer)exitWith{};
 private ["_mp","_grp","_heliType","_men","_grp2","_center","_man1","_man2","_landingSpot","_side","_flyHeight","_openHeight","_jumpDelay","_jumperAmount","_heliDistance","_heliDirection","_flyBy","_allowDamage","_BLUmen","_OPFmen","_INDmen","_BLUchopper","_OPFchopper","_INDchopper","_landingSpotPos","_spos","_heli","_crew","_dir","_flySpot","_jumpDistanceFromTarget","_captive","_smokes","_flares","_chems","_skls","_cPosition","_cRadius","_patrol","_target","_cycle","_skills","_customInit","_grpId","_wp0","_wp1","_doorHandling"];
@@ -249,7 +249,7 @@ if(_patrol)then{
 					{
 						_cPosition = _target select 1;
 						_cRadius = _target select 2;
-						nul = [_x,_cPosition,_cRadius,_doorHandling] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vD.sqf";
+						nul = [_x,_cPosition,_cRadius,_doorHandling] execVM "core\server\ai\LV\patrol-vD.sqf";
 					}forEach units _grp2;
 				};
 			};

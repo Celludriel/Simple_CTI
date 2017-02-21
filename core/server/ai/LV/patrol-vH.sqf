@@ -1,8 +1,8 @@
 ///////Simple Patrol script vH 1.0 - SPUn / LostVar
 //
 //*simple water patrol
-//*Syntax: nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vE.sqf";
-//     or: nul = [this,center] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vE.sqf";
+//*Syntax: nul = [this] execVM "core\server\ai\LV\patrol-vE.sqf";
+//     or: nul = [this,center] execVM "core\server\ai\LV\patrol-vE.sqf";
 //*center : [position array] (center point of patrol, f.ex. (getMarkerPos "marker1")) DEFAULT: (getPos _unit) = unit's starting position
 //		  or "marker"
 //		  or unit/object

@@ -78,9 +78,9 @@ while{true}do{
 		if((isNil("LVgroup"+(str (_ids select _i))+"spawned"))&&(_inRange))then{
 			//hint format ["CREATING: LVgroup%1",_id];
 			if(_script == "militarize")then{
-				call compile format["nul = %1 execVM 'custom\modules\LVSectorMilitarizationModule\LV\militarize.sqf';",_params];
+				call compile format["nul = %1 execVM 'core\server\ai\LV\militarize.sqf';",_params];
 			}else{
-				call compile format["nul = %1 execVM 'custom\modules\LVSectorMilitarizationModule\LV\fillHouse.sqf';",_params];
+				call compile format["nul = %1 execVM 'core\server\ai\LV\fillHouse.sqf';",_params];
 			};
 			call compile format["LVgroup%1spawned = true;", (_ids select _i)];
 		}else{

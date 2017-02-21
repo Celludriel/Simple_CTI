@@ -1,7 +1,7 @@
 ///////Simple House Patrol script vF 1.2 - SPUn / LostVar
 //
 //*infantry units patrols inside nearest building
-//*Syntax: nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vF.sqf";
+//*Syntax: nul = [this] execVM "core\server\ai\LV\patrol-vF.sqf";
 
 private ["_unit","_newPos","_i","_i2","_bPoss","_building"];
 

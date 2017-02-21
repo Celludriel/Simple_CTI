@@ -1,7 +1,7 @@
 //ARMA3Alpha function LV_fnc_removeAC v0.8 - by SPUn / lostvar
 //removes ambienCombat units in various ways
 //Syntax: nul = [handle,style,syncedUnit,range/delay,flee direction] execVM "core\server\ai\LV\LV_functions\LV_fnc_removeAC.sqf";
-//*handle = the name of ambientCombat, ex: war = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\ambientCombat.sqf"; <-war is the handle
+//*handle = the name of ambientCombat, ex: war = [this] execVM "core\server\ai\LV\ambientCombat.sqf"; <-war is the handle
 //*style = 0 or 1 or 2 (0 = units dissapear straight away, 1 = units forfeit and dissapear after *range, 2 = units die straight away)
 //*syncedUnit = unit/object ambientCombat is "synced" to (trigger name, or unit name etc, same as on line which calls ambientCombat.sqf)
 //*range/delay = range in meters / max delay in secs (if used style 1, units will dissapear after moving *range from *syncedUnit) OR

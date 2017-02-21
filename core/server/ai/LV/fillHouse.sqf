@@ -5,10 +5,10 @@
 
 			Calling the script:
 
-					default: nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\fillHouse.sqf";
+					default: nul = [this] execVM "core\server\ai\LV\fillHouse.sqf";
 
 					custom:  nul = [target, side, patrol, patrol type, spawn rate, radius, skills, group,
-									custom init, ID] execVM "custom\modules\LVSectorMilitarizationModule\LV\fillHouse.sqf";
+									custom init, ID] execVM "core\server\ai\LV\fillHouse.sqf";
 
 		Parameters:
 
@@ -32,7 +32,7 @@
 				EXAMPLE: "hint 'this is hint';"
 	ID 			= 	number (if you want to delete units this script creates, you'll need ID number for them)DEFAULT: nil
 
-EXAMPLE: 	nul = [this, 2, true, 2, 50, 1, 0.75, nil, nil, 9] execVM "custom\modules\LVSectorMilitarizationModule\LV\fillHouse.sqf";
+EXAMPLE: 	nul = [this, 2, true, 2, 50, 1, 0.75, nil, nil, 9] execVM "core\server\ai\LV\fillHouse.sqf";
 			spawns in nearest building east soldiers in 50% of possible building positions with skill 0.75,
 			and makes them patrol in & outside of that building
 */
@@ -132,10 +132,10 @@ while{_i2 < _rat}do{
 	if(_patrol)then{
         	switch (_pType) do {
             		case 1: {
-                		_pFile = "custom\modules\LVSectorMilitarizationModule\LV\patrol-vF.sqf";
+                		_pFile = "core\server\ai\LV\patrol-vF.sqf";
             		};
             		case 2: {
-                		_pFile = "custom\modules\LVSectorMilitarizationModule\LV\patrol-vG.sqf";
+                		_pFile = "core\server\ai\LV\patrol-vG.sqf";
             		};
         	};
 			nul = [_unit] execVM format["%1",_pFile];

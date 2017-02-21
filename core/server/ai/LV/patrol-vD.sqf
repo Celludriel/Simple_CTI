@@ -1,8 +1,8 @@
 ///////Simple Patrol script vD 1.9 - SPUn / LostVar
 //
 //*infantry units patrols independently around starting position in defined radius and also checks randomly buildings
-//*Syntax: nul = [this] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vD.sqf";
-//     or: nul = [this,center position,radius,handle doors] execVM "custom\modules\LVSectorMilitarizationModule\LV\patrol-vD.sqf";
+//*Syntax: nul = [this] execVM "core\server\ai\LV\patrol-vD.sqf";
+//     or: nul = [this,center position,radius,handle doors] execVM "core\server\ai\LV\patrol-vD.sqf";
 //*center position: [position array] (center point of patrol, f.ex. (getMarkerPos "marker1")) DEFAULT: (getPos _unit) = unit's starting position
 //*radius: number (how far from center position will the patrol reach) DEFAULT: 150
 //*handle doors: true = units will close doors behind them
