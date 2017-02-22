@@ -46,13 +46,13 @@ if(_missionDifficulty > 33 && _missionDifficulty <= 65) then {
 if(_missionDifficulty > 66 && _missionDifficulty <= 74) then {
 	LV_MINIMUM_INFANTRY = floor (36 * _percentageOffset);
 	LV_VARIABLE_INFANTRY = 0;
-	LV_MINIMUM_VEHICLES = (4 * _percentageOffset);
+	LV_MINIMUM_VEHICLES = floor (4 * _percentageOffset);
 	LV_VARIABLE_VEHICLES = 0;
 };
 
 if(_missionDifficulty > 75 && _missionDifficulty <= 100) then {
 	LV_MINIMUM_INFANTRY = floor (45 * _percentageOffset);
 	LV_VARIABLE_INFANTRY = 0;
-	LV_MINIMUM_VEHICLES = (6 * _percentageOffset);
+	LV_MINIMUM_VEHICLES = floor (6 * _percentageOffset);
 	LV_VARIABLE_VEHICLES = 0;
 };
