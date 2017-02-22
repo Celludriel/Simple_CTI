@@ -217,7 +217,7 @@ class MhqDeployDialog {
 		y = 18.5 * GUI_GRID_H + GUI_GRID_Y;
 		w = 16 * GUI_GRID_W;
 		h = 2.5 * GUI_GRID_H;
-		action = "[] call mhqDeployAction;";
+		action = "[] call MHQ_fnc_mhqUiDeployAction;";
 	};
 
 	class MhqSpawnPointListBox: MhqRscListBox {

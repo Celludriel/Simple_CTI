@@ -1,6 +1,12 @@
+if(!hasInterface) exitWith {};
+
 [["Calling mhq_deploy_action with %1", _this]] call CTISHR_fnc_ctiLog;
 
-params ["_mhq", "_caller", "_actionId", "_arguments"];
+params ["_mhq"];
+
+private ["_isDeployed", "_originalMass", "_pos", "_deployMarkerName",
+"_marker", "_markerText", "_dist", "_dir", "_spawnPostion", "_respawnId",
+"_weaponSupply"];
 
 _isDeployed = _mhq getVariable "MhqDeployed";
 [["_isDeployed: %1", _isDeployed]] call CTISHR_fnc_ctiLog;
@@ -54,7 +60,11 @@ if(!_isDeployed)then{
         [_mhq, [(localize "STR_MHQ_OPEN_ARSENAL"), MHQ_ARSENAL_SCRIPT]] remoteExec ["addAction", 0, true];
     };
 
-    [_mhq, [(localize "STR_MHQ_REDEPLOY"), "[] call mhqOpenDialog;"]] remoteExec ["addAction", 0, true];
-    [_mhq, ["<t color='#ff1111'>" + (localize "STR_MHQ_UNDEPLOY") + "</t>", "custom\modules\SimpleMhqModule\mhqUndeployAction.sqf"]] remoteExec ["addAction", 0, true];
-    [_mhq, ["<t color='#ff1111'>" + (localize "STR_MHQ_SELFDESTRUCT") + "</t>", "custom\modules\SimpleMhqModule\mhqSelfDestructAction.sqf"]] remoteExec ["addAction", 0, true];
+    [_mhq, [(localize "STR_MHQ_REDEPLOY"), "[] call MHQ_fnc_mhqUiOpenDialog;"]] remoteExec ["addAction", 0, true];
+
+    _undeployLabel = format ["<t color='#ff1111'>%1</t>", (localize "STR_MHQ_UNDEPLOY")];
+    [_mhq, [_undeployLabel, { [_this select 0] call MHQ_fnc_mhqUndeployAction; }]] remoteExec ["addAction", 0, true];
+
+    _selfDestructLabel = format ["<t color='#ff1111'>%1</t>", (localize "STR_MHQ_SELFDESTRUCT")];
+    [_mhq, [_selfDestructLabel, { [_this select 0] call MHQ_fnc_mhqSelfDestructAction; }, [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
 };

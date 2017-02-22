@@ -1,4 +1,8 @@
+if(!isDedicated) exitWith {};
+
 params ["_mhq"];
+
+private ["_marker", "_respawnId", "_vehType"];
 
 waitUntil { sleep 1; !alive _mhq };
 
@@ -18,4 +22,4 @@ _vehType = _mhq getVariable "type";
 
 sleep (["SimpleMhqRespawnTime", 60] call BIS_fnc_getParamValue);
 [["Creating %1 at %2", _vehType, _marker]] call CTISHR_fnc_ctiLog;
-[_marker, _vehType] call createMhqVehicle;
+[_marker, _vehType] call MHQ_fnc_createMhqVehicle;
