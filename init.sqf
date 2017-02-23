@@ -11,7 +11,7 @@ _handle = [] execVM "core\server\initServer.sqf";
 waitUntil { isNull _handle };
 
 // init client scripts
-_handle = [] execVM "custom\modules\RespawnEquipmentModule\initModule.sqf";
+_handle = [] execVM "custom\modules\EquipmentModule\initModule.sqf";
 waitUntil { isNull _handle };
 _handle = [] execVM "core\client\initClient.sqf";
 waitUntil { isNull _handle };
