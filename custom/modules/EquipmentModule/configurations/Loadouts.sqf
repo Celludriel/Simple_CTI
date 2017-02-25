@@ -41,7 +41,7 @@ _sniperLoadout = [
 	]
 ];
 
-_rifleLoadOuts pushBack _riflementLoadout;
+_rifleLoadOuts pushBack _riflemenLoadout;
 _rifleLoadOuts pushBack _autoRiflemenLoadOut;
 _rifleLoadOuts pushBack _sniperLoadout;
 

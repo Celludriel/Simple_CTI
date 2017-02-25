@@ -4,7 +4,13 @@ params ["_mhq"];
 
 private ["_marker", "_respawnId", "_vehType"];
 
-waitUntil { sleep 1; !alive _mhq };
+waitUntil { 
+	sleep 1; 
+	if(underwater _mhq) then {
+		_mhq setDamage 1;
+	};
+	!alive _mhq 
+};
 
 [["I'm killed", []]] call CTISHR_fnc_ctiLog;
 _mhq = _this select 0;

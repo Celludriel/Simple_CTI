@@ -9,7 +9,7 @@ _sectorLocation = getpos _sector;
 if(_sectorSide != WEST) then {
 	_sectorState = _sector getVariable "condition";
 
-	if(_sectorOPFORcount > 0 && _sectorBLUFORcount > 0 && _sectorState != "contested") then {
+	if(_sectorOPFORcount >= 0 && _sectorBLUFORcount > 0 && _sectorState != "contested") then {
 		//contest the sector
 		_sector setVariable ["condition", "contested", false];
 

@@ -117,6 +117,7 @@ FAR_Player_Init =
 
 	// Clear event handler before adding it
 	player removeAllEventHandlers "HandleDamage";
+	player removeAllEventHandlers "Killed";
 
 	player addEventHandler ["HandleDamage", FAR_HandleDamage_EH];
 	player addEventHandler
