@@ -1,6 +1,11 @@
 [["Init equipment module"]] call CTISHR_fnc_ctiLog;
 
+private ["_handle", "_weaponSupply"];
+
+// load weapon and loadout configurations
 _handle = [] execVM "custom\modules\EquipmentModule\configurations\VanillaRifleWeapons.sqf";
+waitUntil {isNull _handle};
+_handle = [] execVM "custom\modules\EquipmentModule\configurations\Loadouts.sqf";
 waitUntil {isNull _handle};
 
 // only clear weapons with player respawn on the scavenge option
