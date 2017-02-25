@@ -39,6 +39,7 @@ class CfgFunctions
 	#include "custom\modules\SlingableArmoryModule\CfgFunctions.hpp"
 	#include "custom\modules\ArsenalModule\CfgFunctions.hpp"
 	#include "custom\modules\SimpleMhqModule\CfgFunctions.hpp"
+	#include "custom\modules\EquipmentModule\CfgFunctions.hpp"
 };
 
 // debrief
