@@ -5,6 +5,16 @@ params ["_marker", "_type"];
 private ["_mhq", "_coord", "_deployLabel", "_selfDestructLabel"];
 
 _coord = getmarkerpos _marker;
+
+{
+	[["_x: %1", _x]] call CTISHR_fnc_ctiLog;		
+	_typeVehicle = typeOf _x;
+	[["_typeVehicle: %1", _typeVehicle]] call CTISHR_fnc_ctiLog;
+	if( _x in allDead ) then {
+		deleteVehicle _x;
+	};
+} forEach (_coord nearObjects 10);
+
 _mhq = createVehicle [_type, _coord, [], 0, "can_collide"];
 
 waitUntil { !isNil("_mhq") };
@@ -21,7 +31,6 @@ _mhq setVariable ["type", _type, true];
 _mhq setVariable ["MhqDeployed", false, true];
 
 [[_mhq, _marker], "custom\modules\SimpleMhqModule\scripts\mhqPositionMarker.sqf"] remoteExec ["execVM", -2, true];
-
 
 _deployLabel = format ["<t color='#11ff11'>%1</t>", (localize "STR_MHQ_DEPLOY")];
 [_mhq, [_deployLabel, { [_this select 0] call MHQ_fnc_mhqDeployAction; }, [], 6, false, false, "", "(speed (vehicle _target)) < 1 && (getPosATL _target) select 2 < 2"]] remoteExec ["addAction", 0, true];
