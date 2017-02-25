@@ -92,13 +92,14 @@ FAR_dropBackpack =
 	
 	//filter stuff that shouldn't be in the arrays
 	_WEAPS = [_WEAPS, ["Binocular","MineDetector","Rangefinder","Laserdesignator"]] call FAR_filterArray;
-	
+
+/*	
 	diag_log format ["_WEAPS: %1", _WEAPS];
 	diag_log format ["_PWITEMS: %1", _PWITEMS];
 	diag_log format ["_SWITEMS: %1", _SWITEMS];
 	diag_log format ["_HGITEMS: %1", _HGITEMS];
 	diag_log format ["_MAGS: %1", _MAGS];
-	diag_log format ["_PITEMS: %1", _PITEMS];
+	diag_log format ["_PITEMS: %1", _PITEMS]; */
 	
 	_target = "B_Carryall_khk" createVehicle position _origin;
 
@@ -117,6 +118,7 @@ FAR_Player_Init =
 
 	// Clear event handler before adding it
 	player removeAllEventHandlers "HandleDamage";
+	player removeAllEventHandlers "Killed";
 
 	player addEventHandler ["HandleDamage", FAR_HandleDamage_EH];
 	player addEventHandler
