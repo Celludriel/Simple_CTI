@@ -31,6 +31,7 @@ class CfgFunctions
 	#include "core\server\CfgFunctions.hpp"
 	#include "core\server\ai\T8\FUNCTIONS.hpp"
 	#include "core\shared\CfgFunctions.hpp"
+	#include "core\shared\collections\CfgFunctions.hpp"
 	#include "core\shared\shk_pos\CfgFunctions.hpp"
 	#include "core\client\CfgFunctions.hpp"
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"

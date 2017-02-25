@@ -1,0 +1,1 @@
+missionNamespace getVariable [format ["%1_KEYS", _this], []]
