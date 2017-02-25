@@ -36,3 +36,5 @@ if(count _weaponPick > 0) then {
 		_unit addMagazine ["1Rnd_HE_Grenade_shell", 3];
 	};
 };
+
+_unit setVariable ["hasBeenGeared", true];
