@@ -12,7 +12,7 @@ _weaponPick = [];
 {
 	_typeContainer = _x select 0;
 	if(_type in _typeContainer) then {
-		_weaponPick = selectRandom (_x select 1)
+		_weaponPick = selectRandom (_x select 1);
 	};
 } forEach _rifleLoadouts;
 
