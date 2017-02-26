@@ -1,0 +1,14 @@
+		<Container name="EquipmentModule">
+            <Key ID="STR_PARAMS_EQUIPMENT_MODULE_OPTIONS">
+                <Original>Equipment module options</Original>
+                <French>Options du module d'équipement</French>
+                <German>Ausstattung Modul Optionen</German>
+				<Spanish>Opciones del módulo de equipo</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_USE_RANDOM_UI_LOADOUT">
+                <Original>Random AI loadout</Original>
+            	<French>Chargement aléatoire d'AI</French>
+                <German>Zufälliges AI-Laden</German>
+				<Spanish>Carga de AI al azar</Spanish>
+            </Key>
+		</Container>

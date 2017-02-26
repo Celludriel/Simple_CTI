@@ -23,6 +23,7 @@ class Params
 	#include "custom\modules\TawdModule\params.hpp"
 	#include "custom\modules\TacticalIconModule\params.hpp"
 	#include "custom\modules\SupplyDropModule\params.hpp"
+	#include "custom\modules\EquipmentModule\params.hpp"
 };
 
 // functions

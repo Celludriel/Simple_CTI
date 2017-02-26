@@ -1,6 +1,6 @@
 [["Init equipment module"]] call CTISHR_fnc_ctiLog;
 
-private ["_handle", "_weaponSupply"];
+private ["_handle", "_weaponSupply", "_useRandomAiLoadouts"];
 
 // load weapon and loadout configurations
 _handle = [] execVM "custom\modules\EquipmentModule\configurations\VanillaRifleWeapons.sqf";
@@ -15,4 +15,7 @@ if(_weaponSupply == 0) then {
 	["custom\modules\EquipmentModule\scripts\respawnScript.sqf"] call CTICLN_fnc_addRespawnScript;
 };
 
-
+_useRandomAiLoadouts = ["EquipmentModuleUseRandomAiLoadouts", 1] call BIS_fnc_getParamValue;
+if(_useRandomAiLoadouts == 1) then {
+	[] execVM "custom\modules\EquipmentModule\scripts\equipNewUnitsMonitor.sqf";
+};
