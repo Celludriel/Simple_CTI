@@ -111,6 +111,19 @@ FAR_dropBackpack =
 	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
 };
 
+FAR_dropBackpackNew =
+{
+	params ["_origin"];
+
+    _inventory = [_origin] call BIS_fnc_inv;
+
+	_target = "B_Carryall_khk" createVehicle position _origin;
+
+    {
+        [_target, _x] call BIS_fnc_invAdd;
+    } forEach _inventory;
+};
+
 FAR_Player_Init =
 {
 	// Cache player's side
@@ -126,7 +139,7 @@ FAR_Player_Init =
 		"Killed",
 		{
 			_body = _this select 0;
-			[_body] call FAR_dropBackpack;				
+			[_body] call FAR_dropBackpackNew;
 
 			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn
