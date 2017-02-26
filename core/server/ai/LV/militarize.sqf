@@ -141,6 +141,7 @@ if((_men select 0)||(_men select 1))then{
 			_dir = random 360;
 			_range = random _radius;
 			_pos = [(_centerPos select 0) + (sin _dir) * _range, (_centerPos select 1) + (cos _dir) * _range, 0];
+			_pos = [_pos, 1, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 
 			if(_side > 0)then{
 				if(surfaceIsWater _pos)then{
@@ -190,6 +191,7 @@ if((_vehicles select 0)||(_vehicles select 1)||(_vehicles select 2))then{
 			_dir = random 360;
 			_range = random _radius;
 			_pos = [(_centerPos select 0) + (sin _dir) * _range, (_centerPos select 1) + (cos _dir) * _range, 0];
+			_pos = [_pos, 1, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 
 			if(_side > 0)then{
 				if(surfaceIsWater _pos)then{

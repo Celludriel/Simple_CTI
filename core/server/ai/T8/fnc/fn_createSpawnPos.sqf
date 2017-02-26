@@ -53,4 +53,11 @@ while { _loop } do
 if ( T8U_var_DEBUG ) then { [ "fn_createSpawnPos.sqf", "SpawnPos", _wpPosFEP ] spawn T8U_fnc_DebugLog; };
 
 // Return
+/*
+_radius = 1500; 
+_options = "+trees +forest*10 -meadow"; 
+_result = selectBestPlaces [_wpPosFEP, _radius, _options, (_radius / 10) min 500, 100]; 
+_wpPosFEP = _result select 0 select 0;  */
+
+_wpPosFEP = [_wpPosFEP, 1, 150, 3, 0, 20, 0] call BIS_fnc_findSafePos;
 _wpPosFEP
