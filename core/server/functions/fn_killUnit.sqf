@@ -3,6 +3,8 @@ if (!isDedicated) exitWith {};
 params ["_unit"];
 private ["_veh", "_grenade"];
 
+[["Killing: %1", _unit]] call CTISHR_fnc_ctiLog;
+
 _veh = vehicle _unit;
 if (_veh != _unit) then {	
 	{
@@ -16,7 +18,7 @@ if (_veh != _unit) then {
 	_veh setDamage 1;
 } else {
 	_unit disableAI "MOVE";
-	_grenade = "HandGrenade" createVehicle (getPos _unit);
+	_grenade = "grenade" createVehicle (getPos _unit);
 	_grenade setDamage 1;
 	_unit setDamage 1;
 };
