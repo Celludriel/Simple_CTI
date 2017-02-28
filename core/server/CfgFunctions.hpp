@@ -36,5 +36,6 @@ class CTITemplateServerFunctions {
 		class fillContainerWithContents {};
 		class fetchContentOfInventory {};
 		class moveInventory {};
+		class killUnit {};
 	};
 };

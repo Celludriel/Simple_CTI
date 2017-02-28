@@ -22,6 +22,10 @@ _sectorCountOPFOR = 0;
 		_handle = [_x, _sectorBLUFORcount, _sectorOPFORcount] execVM "core\server\sector\sectorContestingHandler.sqf";
 		waitUntil {isNull _handle};
 
+		//check if stuck units backup mechanism has to trigger
+		_handle = [_x, _sectorOPFORcount] execVM "core\server\sector\stuckUnitsBackupHandler.sqf";
+		waitUntil {isNull _handle};
+		
 		//check if sector needs to change side
 		_handle = [_x, _sectorBLUFORcount, _sectorOPFORcount] execVM "core\server\sector\sectorControlHandler.sqf";
 		waitUntil {isNull _handle};
