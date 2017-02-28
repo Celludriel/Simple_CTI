@@ -18,7 +18,7 @@ if (_veh != _unit) then {
 	_veh setDamage 1;
 } else {
 	_unit disableAI "MOVE";
-	_grenade = "grenade" createVehicle (getPos _unit);
-	_grenade setDamage 1;
+    _grenade  = "APERSTripMine_Wire_Ammo" createVehicle (getPos _unit);
+	_grenade  setDamage 1;
 	_unit setDamage 1;
 };
