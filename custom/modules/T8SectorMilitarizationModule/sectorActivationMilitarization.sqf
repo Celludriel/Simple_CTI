@@ -116,4 +116,4 @@ if(count _airPatrolGroups > 0) then {
 
 _retValue = [ _spawnThisUnits ] call T8U_fnc_Spawn;
 
-_sector setVariable ["T8_units", _retValue];
+_sector setVariable ["SectorUnits", _retValue];

@@ -4,7 +4,7 @@ params ["_sector", "_activationBLUFORcount"];
 private ["_sectorUnits", "_deadUnits"];
 
 _deadUnits = [];
-_sectorUnits = _sector getVariable ["T8_units", []];
+_sectorUnits = _sector getVariable ["SectorUnits", []];
 
 {
 	if(alive _x) then {

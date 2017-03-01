@@ -22,7 +22,7 @@ if(_playerCount > 8 && _playerCount <= 10) then {
 	_percentageOffset = 2;
 };
 
-if(_missionDifficulty > 0 && _missionDifficulty <= 10) then {
+if(_missionDifficulty >= 0 && _missionDifficulty <= 10) then {
 	LV_MINIMUM_INFANTRY = floor (12 * _percentageOffset);
 	LV_VARIABLE_INFANTRY = 0;
 	LV_MINIMUM_VEHICLES = 0;

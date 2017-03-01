@@ -376,6 +376,12 @@
                 <German>AI-System</German>
                 <Spanish>Sistema AI</Spanish>
             </Key>
+			<Key ID="STR_PARAMS_AI_RANDOM_EQUIPMENT">
+                <Original>Random AI Equipment</Original>
+                <French>Équipement AI aléatoire</French>
+                <German>Random AI Ausrüstung</German>
+                <Spanish>Equipo AI al azar</Spanish>
+            </Key>			
         </Container>
         <Container name="EquipmentModule">
             <Key ID="STR_PARAMS_EQUIPMENT_MODULE_OPTIONS">

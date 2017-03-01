@@ -111,6 +111,34 @@ FAR_dropBackpack =
 	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
 };
 
+FAR_dropBackpackNew =
+{
+	params ["_origin"];
+	private ["_inventory", "_target", "_tokens", "_category", "_type", "_PITEMS"];
+
+    _inventory = [_origin] call BIS_fnc_inv;
+	_target = "B_Carryall_khk" createVehicle position _origin;
+
+    {
+		_tokens = (format ["%1", _x]) splitString "/";
+		
+		_category = _tokens select 1;
+		_type = _tokens select 2;
+		if(_category == "CfgWeapons") then {
+			_target addWeaponCargoGlobal [_type, 1]
+		};		
+		
+		if(_category == "CfgMagazines") then {
+			_target addMagazineCargoGlobal [_type, 1]
+		};
+		
+    } forEach _inventory;
+	
+	_PITEMS = items _origin;
+	_PITEMS = [_PITEMS, ["Binocular", "MineDetector", "Rangefinder", "Laserdesignator"]] call FAR_filterArray;
+	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
+};
+
 FAR_Player_Init =
 {
 	// Cache player's side
@@ -126,7 +154,7 @@ FAR_Player_Init =
 		"Killed",
 		{
 			_body = _this select 0;
-			[_body] call FAR_dropBackpack;				
+			[_body] call FAR_dropBackpackNew;
 
 			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn
