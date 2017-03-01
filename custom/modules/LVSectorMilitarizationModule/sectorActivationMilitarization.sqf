@@ -9,14 +9,22 @@ _newCounter = GROUP_COUNTER + 1;
 
 _sector setVariable ["LVgroupId", _newCounter, false];
 
-[(getPos _sector),2,SECTOR_RANGE,[true,false],[true,false,false],false,[LV_MINIMUM_INFANTRY,LV_VARIABLE_INFANTRY],[LV_MINIMUM_VEHICLES,LV_VARIABLE_VEHICLES],LV_SKILL_LEVEL,nil,nil,_newCounter] execVM "core\server\ai\LV\militarize.sqf";
+_handle = [(getPos _sector),2,SECTOR_RANGE,[true,false],[true,false,false],false,[LV_MINIMUM_INFANTRY,LV_VARIABLE_INFANTRY],[LV_MINIMUM_VEHICLES,LV_VARIABLE_VEHICLES],LV_SKILL_LEVEL,nil,nil,_newCounter] execVM "core\server\ai\LV\militarize.sqf";
+waitUntil { isNull _handle };
 
 _sectorUnits = [];
-_newGroup = ("LVgroup" + str _lvGroupId);
-// _newGroup deleteGroupWhenEmpty true; -- Introduce when dev branch 1.67 is released
+_newGroup = ("LVgroup" + str _newCounter);
+
+[["_newGroup: %1", _newGroup]] call CTISHR_fnc_ctiLog;
+
+_threatGroup = missionNamespace getVariable _newGroup;
+
+[["_threatGroup: %1", _threatGroup]] call CTISHR_fnc_ctiLog;
+
+// _threatGroup deleteGroupWhenEmpty true; -- Introduce when dev branch 1.67 is released
 {
 	_sectorUnits pushBack _x;
-} forEach units _newGroup;
+} forEach units _threatGroup;
 
 
 if(GROUP_COUNTER < _newCounter) then {

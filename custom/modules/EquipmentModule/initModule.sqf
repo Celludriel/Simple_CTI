@@ -15,4 +15,9 @@ if(_weaponSupply == 0) then {
 	["custom\modules\EquipmentModule\scripts\respawnScript.sqf"] call CTICLN_fnc_addRespawnScript;
 };
 
+_aiRandomEquipment = ["AiRandomEquipment", 0] call BIS_fnc_getParamValue;
+if(_aiRandomEquipment == 1) then {
+	[] execVM "custom\modules\EquipmentModule\scripts\equipNewUnitsMonitor.sqf";
+};
+
 

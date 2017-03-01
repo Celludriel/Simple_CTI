@@ -21,19 +21,27 @@ if(count _weaponPick > 0) then {
 	_currentWeapon = primaryWeapon _unit;
 	_currentMagazines = primaryWeaponMagazine _unit;
 	removeAllPrimaryWeaponItems _unit;
-	_unit removeMagazines _currentMagazines;
+	
+	{
+		_unit removeMagazines _x;	
+	} forEach _currentMagazines;
+	
 	_unit removeWeaponGlobal _currentWeapon;
 
 	// add new primary weapon with magazines
 	_newWeapon = selectRandom (_weaponPick select 0);
 	_newMagazine = selectRandom (_weaponPick select 1);
 
-	_unit addMagazine [_newMagazine, 7];
+	[["Adding weapon %1 to %2", _newWeapon, _unit]] call CTISHR_fnc_ctiLog;
+	[["Adding magazine %1 to %2", _newMagazine, _unit]] call CTISHR_fnc_ctiLog;
+	
+	_unit addMagazines [_newMagazine, 7];
 	_unit addWeapon _newWeapon;
 
 	// add grenades if weaponname contains GL
 	if(_newWeapon find "GL" > 0) then {
-		_unit addMagazine ["1Rnd_HE_Grenade_shell", 3];
+		[["Adding magazine %1 to %2", "1Rnd_HE_Grenade_shell", _unit]] call CTISHR_fnc_ctiLog;
+		_unit addMagazines ["1Rnd_HE_Grenade_shell", 3];
 	};
 };
 

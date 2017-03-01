@@ -25,3 +25,10 @@ class AiSystem {
 	texts[] = { "LV", "T8" };
 	default = 1;
 };
+
+class AiRandomEquipment {
+	title = $STR_PARAMS_AI_RANDOM_EQUIPMENT;
+	values[] = {1, 0};
+	texts[] = { $STR_OPTION_YES, $STR_OPTION_NO };
+	default = 1;
+};
