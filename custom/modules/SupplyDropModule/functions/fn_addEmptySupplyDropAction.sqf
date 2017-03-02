@@ -9,8 +9,8 @@ _actionFunction = {
 
 	{
 		if([_x] call CTISHR_fnc_canHaveInventory  && !(_x isKindOf "CAManBase")) exitWith {
-			[["Remote calling: %1 with %2, %3", "CTISRV_fnc_moveInventory", _x, _target]] call CTISHR_fnc_ctiLog;
-			[_target, _x] remoteExecCall ["CTISRV_fnc_moveInventory", 0];
+			[["Remote calling: %1 with %2, %3", "CTISRV_fnc_moveContentsBetweenContainers", _x, _target]] call CTISHR_fnc_ctiLog;
+			[_target, _x] remoteExecCall ["CTISRV_fnc_moveContentsBetweenContainers", 0];
 		};
 	} forEach ((_target nearEntities 5) - [_target]);
 

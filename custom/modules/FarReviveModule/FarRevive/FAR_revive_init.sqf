@@ -81,6 +81,22 @@ FAR_filterArray = {
 
 FAR_dropBackpack =
 {
+	params ["_origin"];
+    private ["_inventory", "_target", "_items", "_magazines", "_allWeapons"];
+
+    _inventory = [_origin] call CTISRV_fnc_getUnitInventory;
+
+    diag_log format ["_inventory: %1", _inventory];
+
+	_target = "B_Carryall_khk" createVehicle position _origin;
+
+    _items = _inventory select 0;
+    _magazines = _inventory select 1;
+    _allWeapons = _inventory select 2;
+};
+
+FAR_dropBackpackTwo =
+{
 	params ["_origin"];		
 
 	_WEAPS = weapons _origin; 
@@ -111,7 +127,7 @@ FAR_dropBackpack =
 	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
 };
 
-FAR_dropBackpackNew =
+FAR_dropBackpackOne =
 {
 	params ["_origin"];
 	private ["_inventory", "_target", "_tokens", "_category", "_type", "_PITEMS"];

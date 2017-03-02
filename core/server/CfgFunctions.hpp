@@ -33,9 +33,10 @@ class CTITemplateServerFunctions {
 		class adminChangeSectorsOwnership {};
 		class adminListSectors {};
 
-		class fillContainerWithContents {};
-		class fetchContentOfInventory {};
-		class moveInventory {};
+		class putContentsInContainer {};
+		class getContentsInContainer {};
+		class moveContentsBetweenContainers {};
+		class getUnitInventory {};
 		class killUnit {};
 	};
 };

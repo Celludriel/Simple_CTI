@@ -18,7 +18,7 @@ _contents = missionNamespace getVariable "SLA_STARTING_ARMORY";
 		waitUntil { isNull _handle };
 		_hasInventory = [_armory] call CTISHR_fnc_hasInventory;
 		if(!_hasInventory) then {
-			[_armory, _contents] call CTISRV_fnc_fillContainerWithContents;
+			[_armory, _contents] call CTISRV_fnc_putContentsInContainer;
 		};
 		_armory setVariable ["markerTag", _x];
     };

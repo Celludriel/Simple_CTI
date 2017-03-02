@@ -3,7 +3,7 @@ if (!isDedicated) exitWith {};
 params ["_origin", "_target"];
 private ["_contents"];
 
-_contents = [_origin] call CTISRV_fnc_fetchContentOfInventory;
+_contents = [_origin] call CTISRV_fnc_getContentsInContainer;
 
 {_target addWeaponCargoGlobal [_x, 1]} forEach (_contents select 0);
 {_target addMagazineCargoGlobal [_x, 1]} forEach (_contents select 1);

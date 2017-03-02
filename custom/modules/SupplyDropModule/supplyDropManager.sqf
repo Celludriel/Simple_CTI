@@ -44,7 +44,7 @@ while { true } do {
 
 		// fill supply drop with contents
 		_contents = [] call SD_fnc_createSupplyContents;
-		[_drop, _contents] call CTISRV_fnc_fillContainerWithContents;
+		[_drop, _contents] call CTISRV_fnc_putContentsInContainer;
 
 		// create a marker
 		_netId = _drop call BIS_fnc_netId;
