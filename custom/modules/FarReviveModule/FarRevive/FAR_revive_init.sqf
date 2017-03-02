@@ -93,66 +93,43 @@ FAR_dropBackpack =
     _items = _inventory select 0;
     _magazines = _inventory select 1;
     _allWeapons = _inventory select 2;
-};
-
-FAR_dropBackpackTwo =
-{
-	params ["_origin"];		
-
-	_WEAPS = weapons _origin; 
-	_PWITEMS = primaryWeaponItems _origin;
-	_SWITEMS = secondaryWeaponItems _origin;
-	_HGITEMS  = handgunItems _origin;
-	_MAGS = magazines _origin;
-	_PITEMS = items _origin;
 	
-	//filter stuff that shouldn't be in the arrays
-	_WEAPS = [_WEAPS, ["Binocular","MineDetector","Rangefinder","Laserdesignator"]] call FAR_filterArray;
-
-/*	
-	diag_log format ["_WEAPS: %1", _WEAPS];
-	diag_log format ["_PWITEMS: %1", _PWITEMS];
-	diag_log format ["_SWITEMS: %1", _SWITEMS];
-	diag_log format ["_HGITEMS: %1", _HGITEMS];
-	diag_log format ["_MAGS: %1", _MAGS];
-	diag_log format ["_PITEMS: %1", _PITEMS]; */
+	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1]; }; } forEach _items;
+	{ if(count _x > 0) then { _target addMagazineCargoGlobal [_x select 0, 1]; }; } forEach _magazines;
 	
-	_target = "B_Carryall_khk" createVehicle position _origin;
-
-	{ if(_x != "") then { _target addWeaponCargoGlobal [_x, 1] }; } forEach _WEAPS;
-	{ if(_x != "") then { _target addWeaponCargoGlobal [_x, 1] }; } forEach _HGITEMS;
-	{ if(_x != "") then { _target addMagazineCargoGlobal [_x, 1] }; } forEach _MAGS;
-	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PWITEMS;
-	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _SWITEMS;
-	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
-};
-
-FAR_dropBackpackOne =
-{
-	params ["_origin"];
-	private ["_inventory", "_target", "_tokens", "_category", "_type", "_PITEMS"];
-
-    _inventory = [_origin] call BIS_fnc_inv;
-	_target = "B_Carryall_khk" createVehicle position _origin;
-
-    {
-		_tokens = (format ["%1", _x]) splitString "/";
-		
-		_category = _tokens select 1;
-		_type = _tokens select 2;
-		if(_category == "CfgWeapons") then {
-			_target addWeaponCargoGlobal [_type, 1]
+	{
+		if(count _x > 0) then {
+			{
+				private ["_weapon", "_surpressor", "_laser", "_optic", "_magazine", "_bipod"];
+			
+				_weapon = _x select 0;
+				if(_weapon != "" || _weapon != "Binocular" || _weapon != "hgun_P07_F") then {
+					_target addWeaponCargoGlobal [_weapon, 1];	
+				};		
+				_surpressor = _x select 1;
+				if(_surpressor != "") then {
+					_target addItemCargoGlobal [_surpressor, 1];	
+				};		
+				_laser = _x select 2;
+				if(_laser != "") then {
+					_target addItemCargoGlobal [_laser, 1];	
+				};		
+				_optic = _x select 3;
+				if(_optic != "") then {
+					_target addItemCargoGlobal [_optic, 1];	
+				};		
+				_magazine = _x select 4;
+				if(count _magazine > 0) then {
+					_target addMagazineCargoGlobal [_magazine select 0, 1];
+				};
+				_bipod = _x select 5;
+				if(_bipod != "") then {
+					_target addItemCargoGlobal [_bipod, 1];	
+				};		
+				
+			} forEach _x;
 		};		
-		
-		if(_category == "CfgMagazines") then {
-			_target addMagazineCargoGlobal [_type, 1]
-		};
-		
-    } forEach _inventory;
-	
-	_PITEMS = items _origin;
-	_PITEMS = [_PITEMS, ["Binocular", "MineDetector", "Rangefinder", "Laserdesignator"]] call FAR_filterArray;
-	{ if(_x != "") then { _target addItemCargoGlobal [_x, 1] }; } forEach _PITEMS;
+	} forEach _allWeapons;
 };
 
 FAR_Player_Init =
@@ -170,7 +147,7 @@ FAR_Player_Init =
 		"Killed",
 		{
 			_body = _this select 0;
-			[_body] call FAR_dropBackpackNew;
+			[_body] call FAR_dropBackpack;
 
 			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn

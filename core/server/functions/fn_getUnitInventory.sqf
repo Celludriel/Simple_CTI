@@ -1,5 +1,8 @@
 params ["_unit"];
 
+[["Calling getUnitInventory"]] call CTISHR_fnc_ctiLog;
+[["_unit: %1", _unit]] call CTISHR_fnc_ctiLog;
+
 //Retrieve items
 private _itemIsValid = {
 	private _r = {
@@ -7,6 +10,8 @@ private _itemIsValid = {
 	} count ["ItemCore", "DetectorCore"];
 	_r > 0
 };
+
+[["Initialised _itemIsValid"]] call CTISHR_fnc_ctiLog;
 
 private _items = [];
 private _magazines = [];
@@ -32,6 +37,8 @@ private _allWeapons = [];
 	};
 } forEach  backpackItems _unit;
 
+[["_items: %1", _items]] call CTISHR_fnc_ctiLog;
+
 //Retreieve mags in inventory only
 {
 	_x params [
@@ -54,6 +61,8 @@ private _allWeapons = [];
 		};
 	};
 } forEach magazinesAmmoFull _unit;
+
+[["_magazines: %1", _magazines]] call CTISHR_fnc_ctiLog;
 
 //Retrieve weapons in uniform vest and backpack
 private _uniformContainer =  uniformContainer _unit;
@@ -90,4 +99,8 @@ _allWeapons pushBack _vestWeapons;
 _allWeapons pushBack _backpackWeapons;
 _allWeapons pushBack _equipedWeapons;
 
+[["_allWeapons: %1", _allWeapons]] call CTISHR_fnc_ctiLog;
+
 _ret = [ _items, _magazines, _allWeapons ];
+
+_ret
