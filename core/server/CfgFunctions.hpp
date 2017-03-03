@@ -38,5 +38,6 @@ class CTITemplateServerFunctions {
 		class moveContentsBetweenContainers {};
 		class getUnitInventory {};
 		class killUnit {};
+		class deleteUnit {};
 	};
 };
