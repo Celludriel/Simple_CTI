@@ -35,6 +35,7 @@ _aiSystem = ["AiSystem", 1] call BIS_fnc_getParamValue;
 switch (_aiSystem) do {
 	case 0: { [] execVM "custom\modules\LVSectorMilitarizationModule\initModule.sqf"; };
 	case 1: { [] execVM "custom\modules\T8SectorMilitarizationModule\initModule.sqf"; };
+	case 2: { _handle = [] execVM "core\server\ai\VCOMAI\init.sqf"; waitUntil { isNull _handle }; };
 };
 
 _weaponSupply = ["WeaponSupply", 0] call BIS_fnc_getParamValue;
