@@ -383,5 +383,19 @@
                 <Spanish>Equipo AI al azar</Spanish>
             </Key>			
         </Container>
+		<Container name="Slingable Armory">
+            <Key ID="STR_PARAMS_SLING_TITLE">
+                <Original>Slingable Armory</Original>
+                <French>Fronde Arsenal</French>
+                <German>Schlinge Waffenkammer</German>
+                <Spanish>Honda Arsenal</Spanish>
+            </Key>
+            <Key ID="STR_PARAMS_SLING_ARM_TYPE">
+                <Original>Type</Original>
+                <French>Type</French>
+                <German>Art</German>
+                <Spanish>Tipo</Spanish>
+            </Key>
+		</Container>		
 	</Package>
 </Project>

@@ -4,11 +4,18 @@
 if(!isDedicated) exitWith {};
 
 params ["_spawnMarker", ["_trackingInfo", []]];
-private ["_spawnPosition", "_spawnDirection", "_armory"];
+private ["_spawnPosition", "_spawnDirection", "_armory", "_slingableArmoryType", "_type"];
 
 _spawnPosition = markerPos _spawnMarker;
 _spawnDirection = markerDir _spawnMarker;
-_armory = "B_Slingload_01_Cargo_F" createVehicle _spawnPosition;
+
+_slingableArmoryType = ["SlingableArmoryType", 0] call BIS_fnc_getParamValue;
+_type = "B_Slingload_01_Cargo_F";
+switch (_slingableArmoryType) do {
+	case 1: { _type = "B_Truck_01_covered_F"; };
+};
+
+_armory = _type createVehicle _spawnPosition;
 
 // empty the default inventory
 clearWeaponCargoGlobal _armory;
@@ -32,6 +39,6 @@ if(count _trackingInfo == 2) then {
 	[_armory, _spawnMarker, _trackingInfo select 0, _trackingInfo select 1] remoteExecCall ["CTICLN_fnc_trackObjectWithIconOnMap", -2, true];
 };
 
-[_armory] execVm "custom\modules\SlingableArmoryModule\slingableArmoryMonitor.sqf";
+[_armory] execVm "custom\modules\SlingableArmoryModule\scripts\slingableArmoryMonitor.sqf";
 
 _armory

@@ -112,9 +112,6 @@ class ScenarioData
 		minPlayers=1;
 		maxPlayers=10;
 	};
-	wreckManagerMode=1;
-	wreckRemovalMinTime=600;
-	wreckRemovalMaxTime=1200;
 };
 class CustomAttributes
 {
@@ -122,6 +119,25 @@ class CustomAttributes
 	{
 		name="Multiplayer";
 		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
 		{
 			property="RespawnTemplates";
 			expression="true";
@@ -154,25 +170,6 @@ class CustomAttributes
 							};
 						};
 					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
 				};
 			};
 		};
@@ -816,7 +813,7 @@ class Mission
 			name="mhq_car_3";
 			text="Mobile Hq Three";
 			type="Empty";
-			angle=225.58772;
+			angle=225.58774;
 			id=103;
 		};
 		class Item32
@@ -1450,7 +1447,7 @@ class Mission
 			name="ars_1";
 			text="Arsenal 1";
 			type="Empty";
-			angle=75.991974;
+			angle=75.991982;
 			id=178;
 			atlOffset=57476392;
 		};
