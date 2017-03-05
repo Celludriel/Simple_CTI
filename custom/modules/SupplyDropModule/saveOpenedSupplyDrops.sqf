@@ -8,7 +8,7 @@ _contents = [];
 	if( _isOpened ) then {
 		_supplyDropData = [];
 		_position = getPosASL _x;
-		_supplyDropContents = [_x] call CTISRV_fnc_fetchContentOfInventory;
+		_supplyDropContents = [_x] call CTISRV_fnc_getContentsInContainer;
 		_supplyDropData pushBack _position;
 		_supplyDropData pushBack _supplyDropContents;
 		_contents pushBack _supplyDropData;

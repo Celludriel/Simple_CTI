@@ -1,3 +1,5 @@
+if(!isDedicated) exitWith {};
+
 params ["_unit"];
 private ["_veh"];
 

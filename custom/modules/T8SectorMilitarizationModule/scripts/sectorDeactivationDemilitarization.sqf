@@ -8,7 +8,7 @@ _sectorUnits = _sector getVariable ["SectorUnits", []];
 
 {
 	if(alive _x) then {
-		_x call F_removeUnit;
+		_x call CTISRV_fnc_deleteUnit;
 	} else {
 		_deadUnits pushBack _x;
 	};
@@ -17,6 +17,6 @@ _sectorUnits = _sector getVariable ["SectorUnits", []];
 if(count _deadUnits > 0) then {
 	sleep 900;
 	{
-		_x call F_removeUnit;
+		_x call CTISRV_fnc_deleteUnit;
 	} foreach _deadUnits;
 };

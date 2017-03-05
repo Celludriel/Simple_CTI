@@ -14,11 +14,11 @@ _contents = missionNamespace getVariable "SLA_STARTING_ARMORY";
 
     if ( toString _armoryCheck == "sla_" ) then {
         _armory = [_x, ["mil_start", "ColorOrange"]] call SLA_fnc_spawnSlingableArmory;
-		_handle = [_armory] execVm "custom\modules\SlingableArmoryModule\loadSlingableArmoryContents.sqf";
+		_handle = [_armory] execVm "custom\modules\SlingableArmoryModule\scripts\loadSlingableArmoryContents.sqf";
 		waitUntil { isNull _handle };
 		_hasInventory = [_armory] call CTISHR_fnc_hasInventory;
 		if(!_hasInventory) then {
-			[_armory, _contents] call CTISRV_fnc_fillContainerWithContents;
+			[_armory, _contents] call CTISRV_fnc_putContentsInContainer;
 		};
 		_armory setVariable ["markerTag", _x];
     };

@@ -1,13 +1,13 @@
 if(!isDedicated) exitWith {};
 
-private ["_hasBeenGeared"];
+private ["_gearedUnits"];
+
+_gearedUnits = [];
 
 while { true } do {
 	sleep 1;
 	{
-		_hasBeenGeared = _x getVariable ["hasBeenGeared", false];
-		if(!_hasBeenGeared) then {
-			[_x] call EM_fnc_gearUnit;
-		};
-	} forEach allUnits;
+		[_x] call EM_fnc_gearUnit;
+		_gearedUnits pushBack _x;
+	} forEach allUnits - _gearedUnits;
 };

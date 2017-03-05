@@ -21,8 +21,8 @@ class WeaponSupply {
 
 class AiSystem {
 	title = $STR_PARAMS_AI_SYSTEM;
-	values[] = {0, 1};
-	texts[] = { "LV", "T8" };
+	values[] = {0, 1, 2};
+	texts[] = { "LV", "T8", "VCOMAI" };
 	default = 1;
 };
 

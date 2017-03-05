@@ -3,6 +3,9 @@ diag_log format ["Executing init.sqf"];
 // init shared scripts
 call compileFinal preprocessFileLineNumbers "core\shared\coreSharedConstants.sqf";
 
+// Run the briefing
+[] execVM "briefing.sqf";
+
 // init BIS group management
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
@@ -35,6 +38,10 @@ _aiSystem = ["AiSystem", 1] call BIS_fnc_getParamValue;
 switch (_aiSystem) do {
 	case 0: { [] execVM "custom\modules\LVSectorMilitarizationModule\initModule.sqf"; };
 	case 1: { [] execVM "custom\modules\T8SectorMilitarizationModule\initModule.sqf"; };
+	case 2: { [] execVM "core\server\ai\VCOMAI\init.sqf";
+			  sleep 1;
+	          [] execVM "custom\modules\VCOMAISectorMilitarizationModule\initModule.sqf";
+	        };
 };
 
 _weaponSupply = ["WeaponSupply", 0] call BIS_fnc_getParamValue;

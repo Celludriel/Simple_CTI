@@ -2,7 +2,7 @@ if(!isDedicated) exitWith {};
 
 params ["_sector", "_activationBLUFORcount", "_sectorBLUFORcount"];
 
-_handle = [] execVM "custom\modules\LVSectorMilitarizationModule\config.sqf";
+_handle = [] execVM "custom\modules\LVSectorMilitarizationModule\configurations\config.sqf";
 waitUntil { isNull _handle };
 
 _newCounter = GROUP_COUNTER + 1;
