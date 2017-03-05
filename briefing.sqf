@@ -43,6 +43,8 @@ _cre = player createDiaryRecord ["diary", ["Credits","
 * JohnnyBoy<br/>
 * Serena<br/>
 * Nikander<br/>
+* Shuko<br/>
+* Larrow<br/>
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];

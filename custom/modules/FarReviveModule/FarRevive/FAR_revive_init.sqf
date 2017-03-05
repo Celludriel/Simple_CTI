@@ -122,11 +122,26 @@ FAR_dropBackpack =
 				if(count _magazine > 0) then {
 					_target addMagazineCargoGlobal [_magazine select 0, 1];
 				};
-				_bipod = _x select 5;
-				if(_bipod != "") then {
-					_target addItemCargoGlobal [_bipod, 1];	
-				};		
 				
+				if(count _x == 6) then {
+					_bipod = _x select 5;
+					if(_bipod != "") then {
+						_target addItemCargoGlobal [_bipod, 1];	
+					};		
+				};
+				
+				if(count _x == 7) then {
+					_magazine = _x select 5;
+					if(count _magazine > 0) then {
+						_target addMagazineCargoGlobal [_magazine select 0, 1];
+					};
+				
+					_bipod = _x select 6;
+					if(_bipod != "") then {
+						_target addItemCargoGlobal [_bipod, 1];	
+					};		
+				};
+								
 			} forEach _x;
 		};		
 	} forEach _allWeapons;
