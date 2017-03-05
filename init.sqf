@@ -3,6 +3,9 @@ diag_log format ["Executing init.sqf"];
 // init shared scripts
 call compileFinal preprocessFileLineNumbers "core\shared\coreSharedConstants.sqf";
 
+// Run the briefing
+[] execVM "briefing.sqf";
+
 // init BIS group management
 ["Initialize"] call BIS_fnc_dynamicGroups;
 
