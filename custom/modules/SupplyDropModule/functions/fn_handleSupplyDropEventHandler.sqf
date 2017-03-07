@@ -17,7 +17,7 @@ switch ( toUpper _mode ) do {
 
 		//Store local EH handle on the container
 		_crate setVariable[ "supplyDropOpenedEH", _openedEH ];
-	};break;
+	};
 
 	case "REM" : {
 		//Get local EH handle
@@ -27,5 +27,5 @@ switch ( toUpper _mode ) do {
 			[["Removing %1 from %2", _EH, _crate]] call CTISHR_fnc_ctiLog;
 			_crate removeEventHandler [ "ContainerOpened", _EH ];
 		};
-	};break;
+	};
 };

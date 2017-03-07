@@ -145,6 +145,7 @@ FAR_dropBackpack =
 			} forEach _x;
 		};		
 	} forEach _allWeapons;
+	true
 };
 
 FAR_Player_Init =
@@ -162,7 +163,10 @@ FAR_Player_Init =
 		"Killed",
 		{
 			_body = _this select 0;
-			[_body] call FAR_dropBackpack;
+			_backPackDropped = false;
+			_backPackDropped = [_body] call FAR_dropBackpack;
+			
+			waitUntil { _backPackDropped };	
 
 			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn
