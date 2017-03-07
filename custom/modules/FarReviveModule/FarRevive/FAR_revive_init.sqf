@@ -103,7 +103,7 @@ FAR_dropBackpack =
 				private ["_weapon", "_surpressor", "_laser", "_optic", "_magazine", "_bipod"];
 			
 				_weapon = _x select 0;
-				if(_weapon != "" || _weapon != "Binocular" || _weapon != "hgun_P07_F") then {
+				if(_weapon != "" && _weapon != "Binocular" && _weapon != "hgun_P07_F") then {
 					_target addWeaponCargoGlobal [_weapon call BIS_fnc_BaseWeapon, 1];	
 				};		
 				_surpressor = _x select 1;
