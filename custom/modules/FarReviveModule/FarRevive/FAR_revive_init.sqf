@@ -103,7 +103,7 @@ FAR_dropBackpack =
 				private ["_weapon", "_surpressor", "_laser", "_optic", "_magazine", "_bipod"];
 			
 				_weapon = _x select 0;
-				if(_weapon != "" || _weapon != "Binocular" || _weapon != "hgun_P07_F") then {
+				if(_weapon != "" && _weapon != "Binocular" && _weapon != "hgun_P07_F") then {
 					_target addWeaponCargoGlobal [_weapon call BIS_fnc_BaseWeapon, 1];	
 				};		
 				_surpressor = _x select 1;
@@ -122,14 +122,30 @@ FAR_dropBackpack =
 				if(count _magazine > 0) then {
 					_target addMagazineCargoGlobal [_magazine select 0, 1];
 				};
-				_bipod = _x select 5;
-				if(_bipod != "") then {
-					_target addItemCargoGlobal [_bipod, 1];	
-				};		
 				
+				if(count _x == 6) then {
+					_bipod = _x select 5;
+					if(_bipod != "") then {
+						_target addItemCargoGlobal [_bipod, 1];	
+					};		
+				};
+				
+				if(count _x == 7) then {
+					_magazine = _x select 5;
+					if(count _magazine > 0) then {
+						_target addMagazineCargoGlobal [_magazine select 0, 1];
+					};
+				
+					_bipod = _x select 6;
+					if(_bipod != "") then {
+						_target addItemCargoGlobal [_bipod, 1];	
+					};		
+				};
+								
 			} forEach _x;
 		};		
 	} forEach _allWeapons;
+	true
 };
 
 FAR_Player_Init =
@@ -147,7 +163,10 @@ FAR_Player_Init =
 		"Killed",
 		{
 			_body = _this select 0;
-			[_body] call FAR_dropBackpack;
+			_backPackDropped = false;
+			_backPackDropped = [_body] call FAR_dropBackpack;
+			
+			waitUntil { _backPackDropped };	
 
 			// Remove dead body of player (for missions with respawn enabled)
 			[_body] spawn
