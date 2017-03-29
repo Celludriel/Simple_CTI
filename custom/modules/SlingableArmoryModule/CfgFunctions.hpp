@@ -7,5 +7,6 @@ class SlingableArmoryFunctions {
 		class spawnSlingableArmory {};
 		class addTransferCargoAction {};
 		class vehicleCloseWithCargo {};
+		class saveSlingableArmoryContentsCallBack {};
 	};
 };

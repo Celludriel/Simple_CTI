@@ -1,0 +1,1 @@
+INFINV_CURRENT_CONTAINER setVariable ["NeedsRefresh", true];

@@ -5,6 +5,9 @@ enableDebugConsole = 1;
 
 // gui
 #include "interface.hpp"
+#include "core\shared\InfiniteInventory\gui\ParentClasses166.hpp"
+#include "core\shared\InfiniteInventory\gui\InfiniteInventoryGui.hpp"
+#include "core\shared\InfiniteInventory\gui\InfiniteInventoryDialog.hpp"
 #include "custom\modules\TawdModule\taw_vd\GUI.h"
 #include "custom\modules\FarReviveModule\FarRevive\FAR_interface.hpp"
 #include "custom\modules\SimpleMhqModule\gui\deployDialog.hpp"
@@ -34,6 +37,7 @@ class CfgFunctions
 	#include "core\shared\CfgFunctions.hpp"
 	#include "core\shared\collections\CfgFunctions.hpp"
 	#include "core\shared\shk_pos\CfgFunctions.hpp"
+	#include "core\shared\InfiniteInventory\CfgFunctions.hpp"
 	#include "core\client\CfgFunctions.hpp"
 	#include "custom\modules\TawdModule\taw_vd\CfgFunctions.hpp"
 	#include "custom\modules\SupplyDropModule\CfgFunctions.hpp"
