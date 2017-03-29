@@ -19,5 +19,5 @@ params ["_container", "_items", "_player", "_clientID"];
     };
 } forEach _items;
 
-[true] call InfInv_fnc_toggleControls;
+[true] remoteExecCall ["InfInv_fnc_toggleControls", _clientID];
 

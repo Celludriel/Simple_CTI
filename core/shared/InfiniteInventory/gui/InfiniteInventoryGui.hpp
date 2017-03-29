@@ -2,7 +2,7 @@
 // GUI EDITOR OUTPUT START (by Celludriel, v1.063, #Femuby)
 ////////////////////////////////////////////////////////
 
-class InfiniteInventoryFrame: RscFrame
+class InfiniteInventoryFrame: InfInvFrame
 {
 	idc = INFINVFRAME;
 	x = 0 * GUI_GRID_W + GUI_GRID_X;
@@ -10,7 +10,7 @@ class InfiniteInventoryFrame: RscFrame
 	w = 40 * GUI_GRID_W;
 	h = 25 * GUI_GRID_H;
 };
-class InventoryFilter: RscCombo
+class InventoryFilter: InfInvCombo
 {
 	idc = INFINVINVENTORYFILTER;
 	x = 0.5 * GUI_GRID_W + GUI_GRID_X;
@@ -20,7 +20,7 @@ class InventoryFilter: RscCombo
 	tooltip = "Filter Items"; //--- ToDo: Localize;
     onLBSelChanged = "[] call InfInv_fnc_setFilter;";
 };
-class EquipmentFilter: RscCombo
+class EquipmentFilter: InfInvCombo
 {
 	idc = INFINVEQUIPMENTFILTER;
 	x = 26 * GUI_GRID_W + GUI_GRID_X;
@@ -30,7 +30,7 @@ class EquipmentFilter: RscCombo
 	tooltip = "Filter items"; //--- ToDo: Localize;
     onLBSelChanged = "[] call InfInv_fnc_setFilter;";
 };
-class InventoryContainer: RscListbox
+class InventoryContainer: InfInvListbox
 {
 	idc = INFINVINVENTORYCONTAINER;
 	x = 0.5 * GUI_GRID_W + GUI_GRID_X;
@@ -51,7 +51,7 @@ class InventoryContainer: RscListbox
         color[] = {1,1,1,1};
     };
 };
-class EquipmentContainer: RscListbox
+class EquipmentContainer: InfInvListbox
 {
 	idc = INFINVEQUIPMENTCONTAINER;
 	x = 26 * GUI_GRID_W + GUI_GRID_X;
@@ -72,7 +72,7 @@ class EquipmentContainer: RscListbox
         color[] = {1,1,1,1};
     };
 };
-class AddSingleItemButton: RscButton
+class AddSingleItemButton: InfInvButton
 {
 	idc = INFINVADDSINGLEBUTTON;
 	text = "<"; //--- ToDo: Localize;
@@ -83,7 +83,7 @@ class AddSingleItemButton: RscButton
 	tooltip = "Add"; //--- ToDo: Localize;
 	action = "[] call InfInv_fnc_addItemToContainer;";
 };
-class TakeSingleItemButton: RscButton
+class TakeSingleItemButton: InfInvButton
 {
 	idc = INFINVTAKESINGLEBUTTON;
 	text = ">"; //--- ToDo: Localize;
@@ -94,7 +94,7 @@ class TakeSingleItemButton: RscButton
 	tooltip = "Take"; //--- ToDo: Localize;
 	action = "[] call InfInv_fnc_takeItemFromContainer;";
 };
-class AddAllButton: RscButton
+class AddAllButton: InfInvButton
 {
 	idc = INFINVADDALLBUTTON;
 	text = "<<<"; //--- ToDo: Localize;

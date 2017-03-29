@@ -31,8 +31,7 @@ class InfInv {
 		file = "core\shared\InfiniteInventory\functions\server";
 
 		addFunction(register);
-		addFunction(setContents);
-		addFunction(getContents);
+		addFunction(setContents);		
 		addFunction(getContainerContents);
 		addFunction(takeFromContainerContents);
 		addFunction(addToContainerContents);
