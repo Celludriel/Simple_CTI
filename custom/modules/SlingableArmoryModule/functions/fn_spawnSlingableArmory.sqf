@@ -39,6 +39,6 @@ if(count _trackingInfo == 2) then {
 	[_armory, _spawnMarker, _trackingInfo select 0, _trackingInfo select 1] remoteExecCall ["CTICLN_fnc_trackObjectWithIconOnMap", -2, true];
 };
 
-[_armory] execVm "custom\modules\SlingableArmoryModule\scripts\slingableArmoryMonitor.sqf";
+[_armory] execVM "custom\modules\SlingableArmoryModule\scripts\slingableArmoryMonitor.sqf";
 
 _armory

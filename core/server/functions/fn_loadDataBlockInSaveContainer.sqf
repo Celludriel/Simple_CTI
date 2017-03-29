@@ -14,7 +14,7 @@ if(count _ctiSaveGame > 0) then {
 		if(_x select 0 == _key) then {
 			_retValue = _x select 1;
 		};
-	}foreach _ctiSaveGame;
+	}forEach _ctiSaveGame;
 };
 
 _retValue
