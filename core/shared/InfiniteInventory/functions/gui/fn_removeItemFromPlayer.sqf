@@ -7,7 +7,11 @@ _deleteDone = false;
 _detachWeaponItem = {
     params ["_weaponItem"];
     if(typeName _weaponItem == "ARRAY") then {
-        _weaponItem = _weaponItem select 0;
+        if(count _weaponItem > 0) then {
+            _weaponItem = _weaponItem select 0;
+        } else {
+            _weaponItem = "";
+        };
     };
 
     if(_weaponItem != "") then {
@@ -40,7 +44,7 @@ _hasAttachment = {
 };
 
 //check if is primary weapon
-if( _item == (primaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
+if( _item == primaryWeapon player) exitWith {
     //if primary weapon and has attachments put attachments in inventory if they can't fit on the ground
     _weaponItems = primaryWeaponItems player;
     removeAllPrimaryWeaponItems player;
@@ -52,7 +56,7 @@ if( _item == (primaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
 };
 
 //check if is secondary weapon
-if( _item == (secondaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
+if( _item == secondaryWeapon player) exitWith {
     //if secondary weapon and has attachements put attachments in inventory if they can't fit on the ground
     _weaponItems = secondaryWeaponItems player;
     {
@@ -67,7 +71,7 @@ if( _item == (secondaryWeapon player) call Bis_fnc_BaseWeapon) exitWith {
 };
 
 //check if is handgun
-if( _item == (handgunWeapon player) call Bis_fnc_BaseWeapon) exitWith {
+if( _item == handgunWeapon player) exitWith {
     //if handgun and has attachements put attachements in inventory if they can't fit on the ground
     _weaponItems = handgunItems player;
     removeAllHandgunItems player;
@@ -83,7 +87,7 @@ _uniform = uniformContainer player;
 if(!(isNull _uniform)) then {
     _weaponItems = weaponsItems _uniform;
     {
-        if(_item == (_x select 0)) exitWith {
+        if((_item call BIS_fnc_baseWeapon) == ((_x select 0) call BIS_fnc_baseWeapon)) exitWith {
             {
                 if(_forEachIndex == 0) then {
                     player removeItemFromUniform _x;
@@ -103,7 +107,7 @@ _vest = vestContainer player;
 if(!(isNull _vest)) then {
     _weaponItems = weaponsItems _vest;
     {
-        if(_item == (_x select 0)) exitWith {
+        if((_item call BIS_fnc_baseWeapon) == ((_x select 0) call BIS_fnc_baseWeapon)) exitWith {
             {
                 if(_forEachIndex == 0) then {
                     player removeItemFromVest _x;
@@ -123,7 +127,7 @@ _backpack = backpackContainer player;
 if(!(isNull _backpack)) then {
     _weaponItems = weaponsItems _backpack;
     {
-        if(_item == (_x select 0)) exitWith {
+        if((_item call BIS_fnc_baseWeapon) == ((_x select 0) call BIS_fnc_baseWeapon)) exitWith {
             {
                 if(_forEachIndex == 0) then {
                     player removeItemFromBackpack _x;
@@ -175,17 +179,26 @@ if(!(isNull _backpack)) then {
 };
 
 {
-    if([_x, _item] call _hasAttachment) then {
+    if([_x, _item] call _hasAttachment) exitWith {
+        _dataToRemove = _x select 0;
         //delete the weapon
-        player removeItem (_x select 0);
+        player removeItem _dataToRemove;
         {
             //only way is to fake disassembling the weapon and adding each part again except the one we don't want
             if(typeName _x == "ARRAY") then {
-                _x = _x select 0;
+                if(count _x > 0) then {
+                    _x = _x select 0;
+                } else {
+                    _x = "";
+                };
             };
 
             if(_x != _item && _x != "") then {
-                player addItem _x;
+                if(_forEachIndex == 0) then {
+                    player addItem (_x call BIS_fnc_baseWeapon);
+                } else {
+                    player addItem _x;
+                };
             };
         } forEach _x;
         _deleteDone = true;
