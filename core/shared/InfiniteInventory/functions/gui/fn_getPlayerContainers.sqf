@@ -2,7 +2,7 @@ private _addToContents = {
     params ["_contents", "_item", "_baseWeapons"];
     if ( isClass (configFile >> "CFGweapons" >> _x)) then {
        //is weapon do nothing will be handled later
-       if(!((_x call Bis_fnc_BaseWeapon) in _baseWeapons)) then {
+       if(!(_x in _baseWeapons)) then {
             _contents pushBack _x;
        }
     }else{
